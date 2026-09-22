@@ -75,6 +75,15 @@
           ],
           "obs": "Base",
           "concluido": true
+        },
+        {
+          "id": "10",
+          "nome": "PERNAS (PRA CALCA)",
+          "texturas": [
+            "mpernas1a, mpernas2a, mpernas3a"
+          ],
+          "obs": "Base",
+          "concluido": true
         }
       ]
     },
@@ -208,14 +217,15 @@
           "concluido": true
         },
         {
-          "id": "-",
-          "nome": "BERMUDA 2",
+          "id": "11",
+          "nome": "CALCA 1",
           "texturas": [
-            "bermuda2a",
-            "bermuda2b"
+            "calca1a",
+            "calca1b",
+            "calca1c"
           ],
-          "obs": "2 texturas",
-          "concluido": false
+          "obs": "3 texturas",
+          "concluido": true
         }
       ]
     },

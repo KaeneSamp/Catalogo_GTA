@@ -12,3 +12,5 @@
 | **07** | ✅ | 👕 1 Camisa + 1 Casaco | **CASACO (Moletom)** | `mcasaco1a` | 2 texturas |
 | **08** | ✅ | 👤 Corpo Base (3 tons de pele) | **PERNAS (PRA BERMUDA)** | `mpernas1a, mpernas2a, mpernas3a` | Base |
 | **09** | ✅ | 🩳 1 Bermuda + 1 Calca | **BERMUDA 1** | `bermuda1a`, `bermuda1b` | 2 texturas |
+| **10** | ✅ | 👤 Corpo Base (3 tons de pele) | **PERNAS (PRA CALCA)** | `mpernas1a, mpernas2a, mpernas3a` | Base |
+| **11** | ✅ | 🩳 1 Bermuda + 1 Calca | **CALCA 1** | `calca1a`, `calca1b`, `calca1c` | 3 texturas |
