@@ -66,6 +66,15 @@
           ],
           "obs": "Apenas mãos",
           "concluido": true
+        },
+        {
+          "id": "08",
+          "nome": "PERNAS (PRA BERMUDA)",
+          "texturas": [
+            "mpernas1a, mpernas2a, mpernas3a"
+          ],
+          "obs": "Base",
+          "concluido": true
         }
       ]
     },
@@ -189,14 +198,14 @@
       "resumo_texturas": "4 Texturas (2 cada)",
       "itens": [
         {
-          "id": "-",
+          "id": "09",
           "nome": "BERMUDA 1",
           "texturas": [
             "bermuda1a",
             "bermuda1b"
           ],
           "obs": "2 texturas",
-          "concluido": false
+          "concluido": true
         },
         {
           "id": "-",
