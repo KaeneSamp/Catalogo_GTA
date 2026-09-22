@@ -18,7 +18,7 @@
         {"id": "02", "nome": "BRACOS (PRA CAMISETA)", "texturas": ["mbracos1a, mbracos2a, mbracos3a"], "obs": "Corte ombro", "concluido": true},
         {"id": "03", "nome": "PERNAS (COMPLETO)", "texturas": ["mpernas1a, mpernas2a, mpernas3a"], "obs": "Base", "concluido": true},
         {"id": "04", "nome": "CUECA", "texturas": ["mcueca1"], "obs": "Base", "concluido": true},
-        {"id": "07", "nome": "BRACOS (PRO CASACO)", "texturas": ["mbracos1a, mbracos2a, mbracos3a"], "obs": "Apenas mãos", "concluido": true}
+        {"id": "06", "nome": "BRACOS (PRO CASACO)", "texturas": ["mbracos1a, mbracos2a, mbracos3a"], "obs": "Apenas mãos", "concluido": true}
       ]
     },
         {
@@ -55,7 +55,7 @@
       "resumo_texturas": "4 Texturas (2 cada)",
       "itens": [
         {"id": "05", "nome": "CAMISETA (Básica)", "texturas": ["mcamisa1a", "mcamisa1b"], "obs": "2 texturas", "concluido": true},
-        {"id": "08", "nome": "CASACO (Moletom)", "texturas": ["mcasaco1a"], "obs": "2 texturas", "concluido": true}
+        {"id": "07", "nome": "CASACO (Moletom)", "texturas": ["mcasaco1a"], "obs": "2 texturas", "concluido": true}
       ]
     },
     {

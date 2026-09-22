@@ -8,8 +8,8 @@
 | **03** | ✅ | 👤 Corpo Base (3 tons de pele) | **PERNAS (COMPLETO)** | `mpernas1a, mpernas2a, mpernas3a` | Base |
 | **04** | ✅ | 👤 Corpo Base (3 tons de pele) | **CUECA** | `mcueca1` | Base |
 | **05** | ✅ | 👕 1 Camisa + 1 Casaco | **CAMISETA (Básica)** | `mcamisa1a`, `mcamisa1b` | 2 texturas |
-| **07** | ✅ | 👤 Corpo Base (3 tons de pele) | **BRACOS (PRO CASACO)** | `mbracos1a, mbracos2a, mbracos3a` | Apenas mãos |
-| **08** | ✅ | 👕 1 Camisa + 1 Casaco | **CASACO (Moletom)** | `mcasaco1a` | 2 texturas |
+| **06** | ✅ | 👤 Corpo Base (3 tons de pele) | **BRACOS (PRO CASACO)** | `mbracos1a, mbracos2a, mbracos3a` | Apenas mãos |
+| **07** | ✅ | 👕 1 Camisa + 1 Casaco | **CASACO (Moletom)** | `mcasaco1a` | 2 texturas |
 | **09** | ⏳ | ✂️ 2 Modelos de Cabelo | **CABELO 1** | `cabelo1_preto`, `cabelo1_loiro` | 2 texturas |
 | **10** | ⏳ | ✂️ 2 Modelos de Cabelo | **CABELO 2** | `cabelo2_preto`, `cabelo2_loiro` | 2 texturas |
 | **11** | ⏳ | 🧔 2 Modelos de Barba | **BARBA 1** | `barba1_preto`, `barba1_loiro` | 2 texturas |
