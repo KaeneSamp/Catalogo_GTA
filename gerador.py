@@ -207,10 +207,12 @@ def gerar_md(dados):
     md += "| ID | Status | Grupo | Acessório | Texturas | Obs |\n"
     md += "|:---|:---|:---|:---|:---|:---|\n"
     
-    # Extrair todos os itens com a informação do grupo
+    # Extrair todos os itens concluidos com a informação do grupo
     todos_itens = []
     for grupo in dados.get('grupos', []):
         for item in grupo.get('itens', []):
+            if not item.get('concluido', False):
+                continue
             item_copy = item.copy()
             item_copy['grupo'] = grupo['titulo']
             item_copy['emoji'] = grupo['emoji']
