@@ -166,7 +166,6 @@ def gerar_html(dados):
             <div class="pricing-section">
                 <div>
                     <div class="price-header">
-                        <span>Valor Avulso: {orc.get('valor_avulso', '')}</span>
                         <div class="price-val">
                             {orc.get('valor_final', 'R$ 0,00')}
                             <small>à vista</small>
