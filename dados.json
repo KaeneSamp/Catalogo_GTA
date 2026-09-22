@@ -1,0 +1,80 @@
+{
+  "projeto": "Sistema de Skin Modular .DFF",
+  "descricao": "Projeto sob medida para o seu servidor. Peças independentes, otimizadas para engine mobile e integradas sem conflito de malha.",
+  "orcamento": {
+    "valor_final": "R$ 200,00",
+    "link_pagamento": "https://nubank.com.br/cobrar/3avuif/6aacb296-7a8e-4243-a30a-9182ccd73e02",
+    "pago": false,
+    "link_download": "https://drive.google.com/file/d/seulink_aqui"
+  },
+  "grupos": [
+    {
+      "titulo": "Corpo Base (3 tons de pele)",
+      "emoji": "👤",
+      "resumo_texturas": "Malha Base",
+      "itens": [
+        {"id": "00", "nome": "FACE1", "texturas": ["mface1a, mface2a, mface3a"], "obs": "Base", "concluido": true},
+        {"id": "01", "nome": "BRACOS (COMPLETO)", "texturas": ["mbracos1a, mbracos2a, mbracos3a"], "obs": "Sem camisa", "concluido": true},
+        {"id": "02", "nome": "BRACOS (PRA CAMISETA)", "texturas": ["mbracos1a, mbracos2a, mbracos3a"], "obs": "Corte ombro", "concluido": true},
+        {"id": "03", "nome": "PERNAS (COMPLETO)", "texturas": ["mpernas1a, mpernas2a, mpernas3a"], "obs": "Base", "concluido": true},
+        {"id": "04", "nome": "CUECA", "texturas": ["mcueca1"], "obs": "Base", "concluido": true},
+        {"id": "07", "nome": "BRACOS (PRO CASACO)", "texturas": ["mbracos1a, mbracos2a, mbracos3a"], "obs": "Apenas mãos", "concluido": true}
+      ]
+    },
+        {
+      "titulo": "3 Modelos de Face",
+      "emoji": "👤",
+      "resumo_texturas": "Malha Base",
+      "itens": [
+        {"id": "-", "nome": "FACE2", "texturas": ["mface1b, mface2b, mface3b"], "obs": "Base", "concluido": false},
+        {"id": "-", "nome": "FACE3", "texturas": ["mface1c, mface2c, mface3c"], "obs": "Base", "concluido": false},
+        {"id": "-", "nome": "FACE4", "texturas": ["mface1d, mface2d, mface3d"], "obs": "Base", "concluido": false}
+      ]
+    },
+    {
+      "titulo": "2 Modelos de Cabelo",
+      "emoji": "✂️",
+      "resumo_texturas": "Preto & Loiro",
+      "itens": [
+        {"id": "09", "nome": "CABELO 1", "texturas": ["cabelo1_preto", "cabelo1_loiro"], "obs": "2 texturas", "concluido": false},
+        {"id": "10", "nome": "CABELO 2", "texturas": ["cabelo2_preto", "cabelo2_loiro"], "obs": "2 texturas", "concluido": false}
+      ]
+    },
+    {
+      "titulo": "2 Modelos de Barba",
+      "emoji": "🧔",
+      "resumo_texturas": "Preto & Loiro",
+      "itens": [
+        {"id": "11", "nome": "BARBA 1", "texturas": ["barba1_preto", "barba1_loiro"], "obs": "2 texturas", "concluido": false},
+        {"id": "12", "nome": "BARBA 2", "texturas": ["barba2_preto", "barba2_loiro"], "obs": "2 texturas", "concluido": false}
+      ]
+    },
+    {
+      "titulo": "1 Camisa + 1 Casaco",
+      "emoji": "👕",
+      "resumo_texturas": "4 Texturas (2 cada)",
+      "itens": [
+        {"id": "05", "nome": "CAMISETA (Básica)", "texturas": ["mcamisa1a", "mcamisa1b"], "obs": "2 texturas", "concluido": true},
+        {"id": "08", "nome": "CASACO (Moletom)", "texturas": ["mcasaco1a"], "obs": "2 texturas", "concluido": true}
+      ]
+    },
+    {
+      "titulo": "1 Bermuda + 1 Calca",
+      "emoji": "🩳",
+      "resumo_texturas": "4 Texturas (2 cada)",
+      "itens": [
+        {"id": "13", "nome": "BERMUDA 1", "texturas": ["bermuda1a", "bermuda1b"], "obs": "2 texturas", "concluido": false},
+        {"id": "14", "nome": "BERMUDA 2", "texturas": ["bermuda2a", "bermuda2b"], "obs": "2 texturas", "concluido": false}
+      ]
+    },
+    {
+      "titulo": "1 Havaiana + 1 Tênis",
+      "emoji": "👟",
+      "resumo_texturas": "4 Texturas (2 cada)",
+      "itens": [
+        {"id": "15", "nome": "HAVAIANA", "texturas": ["havaiana1a", "havaiana1b"], "obs": "2 texturas", "concluido": false},
+        {"id": "16", "nome": "TÊNIS", "texturas": ["tenis1a", "tenis1b"], "obs": "2 texturas", "concluido": false}
+      ]
+    }
+  ]
+}

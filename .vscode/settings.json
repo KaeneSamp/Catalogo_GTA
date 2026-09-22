@@ -1,0 +1,10 @@
+{
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "dados\\.json$",
+                "cmd": "python3 gerador.py"
+            }
+        ]
+    }
+}
