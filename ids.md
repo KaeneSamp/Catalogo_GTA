@@ -15,3 +15,4 @@
 | **10** | ✅ | 👤 Corpo Base (3 tons de pele) | **PERNAS (PRA CALCA)** | `mpernas1a, mpernas2a, mpernas3a` | Base |
 | **11** | ✅ | 🩳 1 Bermuda + 1 Calca | **CALCA 1** | `calca1a`, `calca1b`, `calca1c` | 3 texturas |
 | **12** | ✅ | 👟 1 Havaiana + 1 Tênis | **HAVAIANA** | `havaiana1a`, `havaiana1b` | 2 texturas |
+| **13** | ✅ | 👟 1 Havaiana + 1 Tênis | **TÊNIS** | `tenis1a`, `tenis1b` | 2 texturas |

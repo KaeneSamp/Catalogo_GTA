@@ -245,14 +245,14 @@
           "concluido": true
         },
         {
-          "id": "-",
+          "id": "13",
           "nome": "TÊNIS",
           "texturas": [
             "tenis1a",
             "tenis1b"
           ],
           "obs": "2 texturas",
-          "concluido": false
+          "concluido": true
         }
       ]
     }
