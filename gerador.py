@@ -17,7 +17,7 @@ def gerar_html(dados):
 
     if pago:
         badge_pagamento = '<div class="pix-badge" style="background: rgba(0, 210, 106, 0.1); color: #00d26a; border-color: rgba(0, 210, 106, 0.2);">✅ Pagamento Confirmado</div>'
-        btn_acao = f'<a href="{orc.get("link_download", "#")}" target="_blank" class="btn-action" style="background-color: #3b82f6;">⬇️ BAIXAR ARQUIVOS (.RAR)</a>'
+        btn_acao = f'<a href="{orc.get("link_download", "#")}" target="_blank" class="btn-action" style="background-color: #00d26a;">📂 BAIXAR SKIN (DRIVE)</a>'
     else:
         badge_pagamento = '<div class="pix-badge" style="background: rgba(234, 179, 8, 0.1); color: #eab308; border-color: rgba(234, 179, 8, 0.2);">⏳ Aguardando Pagamento</div>'
         btn_acao = f'<a href="{orc.get("link_pagamento", "#")}" target="_blank" class="btn-action">💳 EFETUAR PAGAMENTO</a>'
