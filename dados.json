@@ -235,14 +235,14 @@
       "resumo_texturas": "4 Texturas (2 cada)",
       "itens": [
         {
-          "id": "-",
+          "id": "12",
           "nome": "HAVAIANA",
           "texturas": [
             "havaiana1a",
             "havaiana1b"
           ],
           "obs": "2 texturas",
-          "concluido": false
+          "concluido": true
         },
         {
           "id": "-",
