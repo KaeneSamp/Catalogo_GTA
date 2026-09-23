@@ -22,6 +22,6 @@
 | **OVERLAY1** | ✅ | ✂️ 2 Cabelos + 3 Sombrancelhas | **SOMBRANCELHA 1** | `meyebrow6a` | Textura Branca |
 | **OVERLAY2** | ✅ | ✂️ 2 Cabelos + 3 Sombrancelhas | **SOMBRANCELHA 2** | `meyebrow6b` | Textura Branca |
 | **OVERLAY3** | ✅ | ✂️ 2 Cabelos + 3 Sombrancelhas | **SOMBRANCELHA 3** | `meyebrow6c` | Textura Branca |
-| **OVERLAY1** | ✅ | 🧔 3 Overlays de Barba | **BARBA 1** | `barba1a`, `barba1b` | Cavanhaque e Bigode |
-| **OVERLAY2** | ✅ | 🧔 3 Overlays de Barba | **BARBA 2** | `braba2a`, `barba2b` | Cavanhaque e Bigode |
-| **OVERLAY3** | ✅ | 🧔 3 Overlays de Barba | **BARBA 3** | `barba3a`, `barba3b` | Barba Completa |
+| **OVERLAY1** | ✅ | 🧔 3 Overlays de Barba | **BARBA 1** | `barba2a` | Cavanhaque e Bigode |
+| **OVERLAY2** | ✅ | 🧔 3 Overlays de Barba | **BARBA 2** | `braba3a` | Cavanhaque e Bigode |
+| **OVERLAY3** | ✅ | 🧔 3 Overlays de Barba | **BARBA 3** | `barba18a` | Barba Completa |

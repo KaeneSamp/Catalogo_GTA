@@ -176,14 +176,13 @@
     {
       "titulo": "3 Overlays de Barba",
       "emoji": "🧔",
-      "resumo_texturas": "Preto & Branco",
+      "resumo_texturas": "Branca",
       "itens": [
         {
           "id": "OVERLAY1",
           "nome": "BARBA 1",
           "texturas": [
-            "barba1a",
-            "barba1b"
+            "barba2a"
           ],
           "obs": "Cavanhaque e Bigode",
           "concluido": true
@@ -192,8 +191,7 @@
           "id": "OVERLAY2",
           "nome": "BARBA 2",
           "texturas": [
-            "braba2a",
-            "barba2b"
+            "braba3a"
           ],
           "obs": "Cavanhaque e Bigode",
           "concluido": true
@@ -202,8 +200,7 @@
           "id": "OVERLAY3",
           "nome": "BARBA 3",
           "texturas": [
-            "barba3a",
-            "barba3b"
+            "barba18a"
           ],
           "obs": "Barba Completa",
           "concluido": true
