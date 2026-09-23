@@ -191,7 +191,7 @@
           "id": "OVERLAY2",
           "nome": "BARBA 2",
           "texturas": [
-            "braba3a"
+            "barba3a"
           ],
           "obs": "Cavanhaque e Bigode",
           "concluido": true
@@ -210,14 +210,13 @@
     {
       "titulo": "1 Camisa + 1 Casaco",
       "emoji": "👕",
-      "resumo_texturas": "4 Texturas (2 cada)",
+      "resumo_texturas": "Todas Brancas",
       "itens": [
         {
           "id": "05",
           "nome": "CAMISETA (Básica)",
           "texturas": [
-            "mcamisa1a",
-            "mcamisa1b"
+            "mcamisa1a"
           ],
           "obs": "2 texturas",
           "concluido": true
@@ -236,14 +235,13 @@
     {
       "titulo": "1 Bermuda + 1 Calca",
       "emoji": "🩳",
-      "resumo_texturas": "4 Texturas (2 cada)",
+      "resumo_texturas": "Todas Brancas",
       "itens": [
         {
           "id": "09",
           "nome": "BERMUDA 1",
           "texturas": [
-            "bermuda1a",
-            "bermuda1b"
+            "bermuda1a"
           ],
           "obs": "2 texturas",
           "concluido": true
@@ -252,9 +250,7 @@
           "id": "11",
           "nome": "CALCA 1",
           "texturas": [
-            "calca1a",
-            "calca1b",
-            "calca1c"
+            "calca1a"
           ],
           "obs": "3 texturas",
           "concluido": true
