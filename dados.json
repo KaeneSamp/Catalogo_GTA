@@ -130,19 +130,19 @@
           "id": "-",
           "nome": "CABELO 1",
           "texturas": [
-            "mcabelo1a"
+            "mcabelo3a"
           ],
           "obs": "Textura Branca",
-          "concluido": false
+          "concluido": true
         },
         {
           "id": "-",
           "nome": "CABELO 2",
           "texturas": [
-            "mcabelo2a"
+            "mcabelo14a"
           ],
           "obs": "Textura Branca",
-          "concluido": false
+          "concluido": true
         },
         {
           "id": "OVERLAY1",
