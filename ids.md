@@ -16,3 +16,6 @@
 | **11** | ✅ | 🩳 1 Bermuda + 1 Calca | **CALCA 1** | `calca1a`, `calca1b`, `calca1c` | 3 texturas |
 | **12** | ✅ | 👟 1 Havaiana + 1 Tênis | **HAVAIANA** | `havaiana1a`, `havaiana1b` | 2 texturas |
 | **13** | ✅ | 👟 1 Havaiana + 1 Tênis | **TÊNIS** | `tenis1a`, `tenis1b` | 2 texturas |
+| **OVERLAY1** | ✅ | 🧔 3 Overlays de Barba | **BARBA 1** | `barba1a`, `barba1b` | Cavanhaque e Bigode |
+| **OVERLAY2** | ✅ | 🧔 3 Overlays de Barba | **BARBA 2** | `braba2a`, `barba2b` | Cavanhaque e Bigode |
+| **OVERLAY3** | ✅ | 🧔 3 Overlays de Barba | **BARBA 3** | `barba3a`, `barba3b` | Barba Completa |

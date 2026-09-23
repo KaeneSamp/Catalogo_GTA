@@ -149,29 +149,39 @@
       ]
     },
     {
-      "titulo": "2 Modelos de Barba",
+      "titulo": "3 Overlays de Barba",
       "emoji": "🧔",
-      "resumo_texturas": "Preto & Loiro",
+      "resumo_texturas": "Preto & Branco",
       "itens": [
         {
-          "id": "-",
+          "id": "OVERLAY1",
           "nome": "BARBA 1",
           "texturas": [
-            "barba1_preto",
-            "barba1_loiro"
+            "barba1a",
+            "barba1b"
           ],
-          "obs": "2 texturas",
-          "concluido": false
+          "obs": "Cavanhaque e Bigode",
+          "concluido": true
         },
         {
-          "id": "-",
+          "id": "OVERLAY2",
           "nome": "BARBA 2",
           "texturas": [
-            "barba2_preto",
-            "barba2_loiro"
+            "braba2a",
+            "barba2b"
           ],
-          "obs": "2 texturas",
-          "concluido": false
+          "obs": "Cavanhaque e Bigode",
+          "concluido": true
+        },
+        {
+          "id": "OVERLAY3",
+          "nome": "BARBA 3",
+          "texturas": [
+            "barba3a",
+            "barba3b"
+          ],
+          "obs": "Barba Completa",
+          "concluido": true
         }
       ]
     },
