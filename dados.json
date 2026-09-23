@@ -15,9 +15,9 @@
       "itens": [
         {
           "id": "00",
-          "nome": "FACE1",
+          "nome": "FACE0",
           "texturas": [
-            "mface1a, mface2a, mface3a"
+            "mface0a, mface0b, mface0c"
           ],
           "obs": "Base",
           "concluido": true
@@ -26,7 +26,7 @@
           "id": "01",
           "nome": "BRACOS (COMPLETO)",
           "texturas": [
-            "mbracos1a, mbracos2a, mbracos3a"
+            "mbracos1a, mbracos1b, mbracos1c"
           ],
           "obs": "Sem camisa",
           "concluido": true
@@ -35,7 +35,7 @@
           "id": "02",
           "nome": "BRACOS (PRA CAMISETA)",
           "texturas": [
-            "mbracos1a, mbracos2a, mbracos3a"
+            "mbracos1a, mbracos1b, mbracos1c"
           ],
           "obs": "Corte ombro",
           "concluido": true
@@ -62,7 +62,7 @@
           "id": "06",
           "nome": "BRACOS (PRO CASACO)",
           "texturas": [
-            "mbracos1a, mbracos2a, mbracos3a"
+            "mbracos1a, mbracos1b, mbracos1c"
           ],
           "obs": "Apenas mãos",
           "concluido": true
@@ -93,31 +93,31 @@
       "resumo_texturas": "Malha Base",
       "itens": [
         {
-          "id": "-",
+          "id": "14",
+          "nome": "FACE1",
+          "texturas": [
+            "mface45a, mface45b, mface45c"
+          ],
+          "obs": "Base",
+          "concluido": true
+        },
+        {
+          "id": "15",
           "nome": "FACE2",
           "texturas": [
-            "mface1b, mface2b, mface3b"
+            "mface24a, mface24b, mface24c"
           ],
           "obs": "Base",
-          "concluido": false
+          "concluido": true
         },
         {
-          "id": "-",
+          "id": "16",
           "nome": "FACE3",
           "texturas": [
-            "mface1c, mface2c, mface3c"
+            "mface8a, mface8b, mface8c"
           ],
           "obs": "Base",
-          "concluido": false
-        },
-        {
-          "id": "-",
-          "nome": "FACE4",
-          "texturas": [
-            "mface1d, mface2d, mface3d"
-          ],
-          "obs": "Base",
-          "concluido": false
+          "concluido": true
         }
       ]
     },
