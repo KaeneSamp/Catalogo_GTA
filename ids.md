@@ -19,6 +19,9 @@
 | **14** | ✅ | 🧑 3 Modelos de Face | **FACE1** | `mface45a, mface45b, mface45c` | Base |
 | **15** | ✅ | 🧑 3 Modelos de Face | **FACE2** | `mface24a, mface24b, mface24c` | Base |
 | **16** | ✅ | 🧑 3 Modelos de Face | **FACE3** | `mface8a, mface8b, mface8c` | Base |
+| **OVERLAY1** | ✅ | ✂️ 2 Cabelos + 3 Sombrancelhas | **SOMBRANCELHA 1** | `meyebrow6a` | Textura Branca |
+| **OVERLAY2** | ✅ | ✂️ 2 Cabelos + 3 Sombrancelhas | **SOMBRANCELHA 2** | `meyebrow6b` | Textura Branca |
+| **OVERLAY3** | ✅ | ✂️ 2 Cabelos + 3 Sombrancelhas | **SOMBRANCELHA 3** | `meyebrow6c` | Textura Branca |
 | **OVERLAY1** | ✅ | 🧔 3 Overlays de Barba | **BARBA 1** | `barba1a`, `barba1b` | Cavanhaque e Bigode |
 | **OVERLAY2** | ✅ | 🧔 3 Overlays de Barba | **BARBA 2** | `braba2a`, `barba2b` | Cavanhaque e Bigode |
 | **OVERLAY3** | ✅ | 🧔 3 Overlays de Barba | **BARBA 3** | `barba3a`, `barba3b` | Barba Completa |

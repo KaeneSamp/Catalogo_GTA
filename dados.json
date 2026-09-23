@@ -122,29 +122,54 @@
       ]
     },
     {
-      "titulo": "2 Modelos de Cabelo",
+      "titulo": "2 Cabelos + 3 Sombrancelhas",
       "emoji": "✂️",
-      "resumo_texturas": "Preto & Loiro",
+      "resumo_texturas": "Modelo & Textura",
       "itens": [
         {
           "id": "-",
           "nome": "CABELO 1",
           "texturas": [
-            "cabelo1_preto",
-            "cabelo1_loiro"
+            "mcabelo1a"
           ],
-          "obs": "2 texturas",
+          "obs": "Textura Branca",
           "concluido": false
         },
         {
           "id": "-",
           "nome": "CABELO 2",
           "texturas": [
-            "cabelo2_preto",
-            "cabelo2_loiro"
+            "mcabelo2a"
           ],
-          "obs": "2 texturas",
+          "obs": "Textura Branca",
           "concluido": false
+        },
+        {
+          "id": "OVERLAY1",
+          "nome": "SOMBRANCELHA 1",
+          "texturas": [
+            "meyebrow6a"
+          ],
+          "obs": "Textura Branca",
+          "concluido": true
+        },
+        {
+          "id": "OVERLAY2",
+          "nome": "SOMBRANCELHA 2",
+          "texturas": [
+            "meyebrow6b"
+          ],
+          "obs": "Textura Branca",
+          "concluido": true
+        },
+        {
+          "id": "OVERLAY3",
+          "nome": "SOMBRANCELHA 3",
+          "texturas": [
+            "meyebrow6c"
+          ],
+          "obs": "Textura Branca",
+          "concluido": true
         }
       ]
     },
