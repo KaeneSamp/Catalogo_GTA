@@ -4,7 +4,7 @@
   "orcamento": {
     "valor_final": "R$ 200,00",
     "link_pagamento": "https://nubank.com.br/cobrar/3avuif/6ab1c5e3-0bc8-47c2-b68a-21f377e624ef",
-    "pago": false,
+    "pago": true,
     "link_download": "https://drive.google.com/drive/folders/1BMJtawQCqs_USxhxFuygb45JCCqwTc4X?usp=sharing"
   },
   "grupos": [
