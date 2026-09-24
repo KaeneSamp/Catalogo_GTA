@@ -21,7 +21,14 @@
         .header h1 span { color: var(--primary); }
         .header p { color: var(--text-muted); font-size: 1rem; max-width: 620px; margin: 0 auto; line-height: 1.5; }
         
-        .main-card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 20px; overflow: hidden; display: grid; grid-template-columns: 1.3fr 1fr; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); }
+        /* New Top Level Skin Accordion */
+        details.skin-accordion { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); margin-bottom: 10px; transition: all 0.3s ease; }
+        summary.skin-summary { padding: 25px; font-size: 1.4rem; font-weight: 800; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid transparent; transition: background 0.2s; }
+        summary.skin-summary::-webkit-details-marker { display: none; }
+        summary.skin-summary:hover { background-color: #1a1c23; }
+        details.skin-accordion[open] summary.skin-summary { border-bottom: 1px solid var(--border-color); background-color: #1a1c23; }
+        
+        .main-card { display: grid; grid-template-columns: 1.3fr 1fr; }
         @media (max-width: 768px) { .main-card { grid-template-columns: 1fr; } }
         
         .scope-section { padding: 35px; display: flex; flex-direction: column; gap: 24px; }
@@ -80,364 +87,777 @@
             <h1>Sistema <span>de Skin Modular .DFF</span></h1>
             <p>Projeto sob medida para o seu servidor. Peças independentes, otimizadas para engine mobile e integradas sem conflito de malha.</p>
         </div>
-
-        <div class="main-card">
-            <div class="scope-section">
-                <div class="section-title"><span>📦 Itens Inclusos no Pacote</span></div>
-                <div class="items-list">
-                    <details class="group-card">
-                        <summary class="group-header">
-                            <div class="group-info">
-                                <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluído"></span>
-                                <span class="group-icon">👤</span>
-                                <strong>Corpo Base (3 tons de pele)</strong>
+        <details class="skin-accordion" id="skin-masculina">
+            <summary class="skin-summary">
+                <span>♂️ Skin Masculina</span>
+                <span style="font-size: 1rem; color: var(--text-muted);">▼</span>
+            </summary>
+            <div class="main-card">
+                <div class="scope-section">
+                    <div class="section-title"><span>📦 Itens Inclusos no Pacote</span></div>
+                    <div class="items-list">
+                        <details class="group-card">
+                            <summary class="group-header">
+                                <div class="group-info">
+                                    <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluído"></span>
+                                    <span class="group-icon">👤</span>
+                                    <strong>Corpo Base (3 tons de pele)</strong>
+                                </div>
+                                <span class="tag-texture">Malha Base ▼</span>
+                            </summary>
+                            <div class="group-content">
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 00 - FACE0</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mface0a, mface0b, mface0c</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 01 - BRACOS (COMPLETO)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mbracos1a, mbracos1b, mbracos1c</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 02 - BRACOS (PRA CAMISETA)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mbracos1a, mbracos1b, mbracos1c</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 03 - PERNAS (COMPLETO)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mpernas1a, mpernas2a, mpernas3a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 04 - CUECA</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mcueca1</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 06 - BRACOS (PRO CASACO)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mbracos1a, mbracos1b, mbracos1c</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 08 - PERNAS (PRA BERMUDA)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mpernas1a, mpernas2a, mpernas3a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 10 - PERNAS (PRA CALCA)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mpernas1a, mpernas2a, mpernas3a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
                             </div>
-                            <span class="tag-texture">Malha Base ▼</span>
-                        </summary>
-                        <div class="group-content">
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 00 - FACE0</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mface0a, mface0b, mface0c</span>
+                        </details>
+                        <details class="group-card">
+                            <summary class="group-header">
+                                <div class="group-info">
+                                    <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluído"></span>
+                                    <span class="group-icon">🧑</span>
+                                    <strong>3 Modelos de Face</strong>
                                 </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
+                                <span class="tag-texture">Malha Base ▼</span>
+                            </summary>
+                            <div class="group-content">
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 14 - FACE1</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mface45a, mface45b, mface45c</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 01 - BRACOS (COMPLETO)</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mbracos1a, mbracos1b, mbracos1c</span>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 15 - FACE2</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mface24a, mface24b, mface24c</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
                                 </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 02 - BRACOS (PRA CAMISETA)</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mbracos1a, mbracos1b, mbracos1c</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 03 - PERNAS (COMPLETO)</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mpernas1a, mpernas2a, mpernas3a</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 04 - CUECA</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mcueca1</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 16 - FACE3</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mface8a, mface8b, mface8c</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
                                 </div>
                             </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 06 - BRACOS (PRO CASACO)</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mbracos1a, mbracos1b, mbracos1c</span>
+                        </details>
+                        <details class="group-card">
+                            <summary class="group-header">
+                                <div class="group-info">
+                                    <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluído"></span>
+                                    <span class="group-icon">✂️</span>
+                                    <strong>2 Cabelos + 3 Sombrancelhas</strong>
                                 </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
+                                <span class="tag-texture">Todas Brancas ▼</span>
+                            </summary>
+                            <div class="group-content">
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - CABELO 1</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mcabelo3a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - CABELO 2</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mcabelo14a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID OVERLAY1 - SOMBRANCELHA 1</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: meyebrow6a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID OVERLAY2 - SOMBRANCELHA 2</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: meyebrow6b</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID OVERLAY3 - SOMBRANCELHA 3</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: meyebrow6c</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
                                 </div>
                             </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 08 - PERNAS (PRA BERMUDA)</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mpernas1a, mpernas2a, mpernas3a</span>
+                        </details>
+                        <details class="group-card">
+                            <summary class="group-header">
+                                <div class="group-info">
+                                    <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluído"></span>
+                                    <span class="group-icon">🧔</span>
+                                    <strong>3 Overlays de Barba</strong>
                                 </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
+                                <span class="tag-texture">Todas Brancas ▼</span>
+                            </summary>
+                            <div class="group-content">
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID OVERLAY1 - BARBA 1</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: barba2a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID OVERLAY2 - BARBA 2</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: barba3a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID OVERLAY3 - BARBA 3</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: barba18a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
                                 </div>
                             </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 10 - PERNAS (PRA CALCA)</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mpernas1a, mpernas2a, mpernas3a</span>
+                        </details>
+                        <details class="group-card">
+                            <summary class="group-header">
+                                <div class="group-info">
+                                    <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluído"></span>
+                                    <span class="group-icon">👕</span>
+                                    <strong>1 Camisa + 1 Casaco</strong>
                                 </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
+                                <span class="tag-texture">Todas Brancas ▼</span>
+                            </summary>
+                            <div class="group-content">
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 05 - CAMISETA (Básica)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mcamisa1a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 07 - CASACO (Moletom)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mcasaco1a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
                                 </div>
                             </div>
+                        </details>
+                        <details class="group-card">
+                            <summary class="group-header">
+                                <div class="group-info">
+                                    <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluído"></span>
+                                    <span class="group-icon">🩳</span>
+                                    <strong>1 Bermuda + 1 Calca</strong>
+                                </div>
+                                <span class="tag-texture">Todas Brancas ▼</span>
+                            </summary>
+                            <div class="group-content">
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 09 - BERMUDA 1</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: bermuda1a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 11 - CALCA 1</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: calca1a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <details class="group-card">
+                            <summary class="group-header">
+                                <div class="group-info">
+                                    <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluído"></span>
+                                    <span class="group-icon">👟</span>
+                                    <strong>1 Havaiana + 1 Tênis</strong>
+                                </div>
+                                <span class="tag-texture">4 Texturas (2 cada) ▼</span>
+                            </summary>
+                            <div class="group-content">
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 12 - HAVAIANA</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: havaiana1a, havaiana1b</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 13 - TÊNIS</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: tenis1a, tenis1b</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-done"></span> Pronto
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="engineering-box">
+                        <h4>Engenharia & Performance</h4>
+                        <div class="eng-points">
+                            <div>Decimate (Otimizado Mobile)</div>
+                            <div>Rigging & Skinning GTA SA</div>
+                            <div>Hierarquia Modular no .DFF</div>
+                            <div>Zero Vazamento de Pele</div>
                         </div>
-                    </details>
-                    <details class="group-card">
-                        <summary class="group-header">
-                            <div class="group-info">
-                                <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluído"></span>
-                                <span class="group-icon">🧑</span>
-                                <strong>3 Modelos de Face</strong>
-                            </div>
-                            <span class="tag-texture">Malha Base ▼</span>
-                        </summary>
-                        <div class="group-content">
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 14 - FACE1</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mface45a, mface45b, mface45c</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 15 - FACE2</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mface24a, mface24b, mface24c</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 16 - FACE3</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mface8a, mface8b, mface8c</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                        </div>
-                    </details>
-                    <details class="group-card">
-                        <summary class="group-header">
-                            <div class="group-info">
-                                <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluído"></span>
-                                <span class="group-icon">✂️</span>
-                                <strong>2 Cabelos + 3 Sombrancelhas</strong>
-                            </div>
-                            <span class="tag-texture">Todas Brancas ▼</span>
-                        </summary>
-                        <div class="group-content">
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - CABELO 1</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mcabelo3a</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - CABELO 2</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mcabelo14a</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID OVERLAY1 - SOMBRANCELHA 1</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: meyebrow6a</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID OVERLAY2 - SOMBRANCELHA 2</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: meyebrow6b</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID OVERLAY3 - SOMBRANCELHA 3</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: meyebrow6c</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                        </div>
-                    </details>
-                    <details class="group-card">
-                        <summary class="group-header">
-                            <div class="group-info">
-                                <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluído"></span>
-                                <span class="group-icon">🧔</span>
-                                <strong>3 Overlays de Barba</strong>
-                            </div>
-                            <span class="tag-texture">Todas Brancas ▼</span>
-                        </summary>
-                        <div class="group-content">
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID OVERLAY1 - BARBA 1</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: barba2a</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID OVERLAY2 - BARBA 2</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: barba3a</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID OVERLAY3 - BARBA 3</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: barba18a</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                        </div>
-                    </details>
-                    <details class="group-card">
-                        <summary class="group-header">
-                            <div class="group-info">
-                                <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluído"></span>
-                                <span class="group-icon">👕</span>
-                                <strong>1 Camisa + 1 Casaco</strong>
-                            </div>
-                            <span class="tag-texture">Todas Brancas ▼</span>
-                        </summary>
-                        <div class="group-content">
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 05 - CAMISETA (Básica)</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mcamisa1a</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 07 - CASACO (Moletom)</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: mcasaco1a</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                        </div>
-                    </details>
-                    <details class="group-card">
-                        <summary class="group-header">
-                            <div class="group-info">
-                                <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluído"></span>
-                                <span class="group-icon">🩳</span>
-                                <strong>1 Bermuda + 1 Calca</strong>
-                            </div>
-                            <span class="tag-texture">Todas Brancas ▼</span>
-                        </summary>
-                        <div class="group-content">
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 09 - BERMUDA 1</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: bermuda1a</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 11 - CALCA 1</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: calca1a</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                        </div>
-                    </details>
-                    <details class="group-card">
-                        <summary class="group-header">
-                            <div class="group-info">
-                                <span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluído"></span>
-                                <span class="group-icon">👟</span>
-                                <strong>1 Havaiana + 1 Tênis</strong>
-                            </div>
-                            <span class="tag-texture">4 Texturas (2 cada) ▼</span>
-                        </summary>
-                        <div class="group-content">
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 12 - HAVAIANA</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: havaiana1a, havaiana1b</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID 13 - TÊNIS</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: tenis1a, tenis1b</span>
-                                </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot status-done"></span> Pronto
-                                </div>
-                            </div>
-                        </div>
-                    </details>
+                    </div>
                 </div>
-                <div class="engineering-box">
-                    <h4>Engenharia & Performance</h4>
-                    <div class="eng-points">
-                        <div>Decimate (Otimizado Mobile)</div>
-                        <div>Rigging & Skinning GTA SA</div>
-                        <div>Hierarquia Modular no .DFF</div>
-                        <div>Zero Vazamento de Pele</div>
+
+                <div class="pricing-section">
+                    <div>
+                        <div class="price-header">
+                            <div class="price-val">
+                                R$ 200,00
+                                <small>à vista</small>
+                            </div>
+                        </div>
+                        <div class="pix-badge" style="background: rgba(0, 210, 106, 0.1); color: #00d26a; border-color: rgba(0, 210, 106, 0.2);">✅ Pagamento Confirmado</div>
+                        
+                        <div class="progress-container">
+                            <div class="spec-line" style="margin-bottom: 8px;">
+                                <span>Progresso do Desenvolvimento</span>
+                                <strong style="color: var(--accent);">100%</strong>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 100%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="summary-specs">
+                            <div class="spec-line"><span>Total de Peças:</span><strong>25 Malhas</strong></div>
+                            <div class="spec-line"><span>Modelos Concluídos:</span><strong>25/25</strong></div>
+                            <div class="spec-line"><span>Compatibilidade:</span><strong>SAMP Mobile / PC</strong></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="https://drive.google.com/drive/folders/1BMJtawQCqs_USxhxFuygb45JCCqwTc4X?usp=sharing" target="_blank" class="btn-action" style="background-color: #00d26a;">↓ BAIXAR SKIN (DRIVE)</a>
                     </div>
                 </div>
             </div>
-
-            <div class="pricing-section">
-                <div>
-                    <div class="price-header">
-                        <div class="price-val">
-                            R$ 200,00
-                            <small>à vista</small>
-                        </div>
+        </details>        <details class="skin-accordion" id="skin-feminina">
+            <summary class="skin-summary">
+                <span>♀️ Skin Feminina</span>
+                <span style="font-size: 1rem; color: var(--text-muted);">▼</span>
+            </summary>
+            <div class="main-card">
+                <div class="scope-section">
+                    <div class="section-title"><span>📦 Itens Inclusos no Pacote</span></div>
+                    <div class="items-list">
+                        <details class="group-card">
+                            <summary class="group-header">
+                                <div class="group-info">
+                                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
+                                    <span class="group-icon">👤</span>
+                                    <strong>Corpo Base (3 tons de pele)</strong>
+                                </div>
+                                <span class="tag-texture">Malha Base ▼</span>
+                            </summary>
+                            <div class="group-content">
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - FACE0</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fface0a, fface0b, fface0c</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - BRACOS (COMPLETO)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fbracos1a, fbracos1b, fbracos1c</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - BRACOS (PRA CROPPED)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fbracos1a, fbracos1b, fbracos1c</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - PERNAS (COMPLETO)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fpernas1a, fpernas2a, fpernas3a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - CONJUNTO ÍNTIMO</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: flingerie1</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - BRACOS (PRO CASACO)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fbracos1a, fbracos1b, fbracos1c</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - PERNAS (PRO SHORTS)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fpernas1a, fpernas2a, fpernas3a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - PERNAS (PRA CALÇA)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fpernas1a, fpernas2a, fpernas3a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <details class="group-card">
+                            <summary class="group-header">
+                                <div class="group-info">
+                                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
+                                    <span class="group-icon">👩</span>
+                                    <strong>3 Modelos de Face</strong>
+                                </div>
+                                <span class="tag-texture">Malha Base ▼</span>
+                            </summary>
+                            <div class="group-content">
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - FACE1</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fface1a, fface1b, fface1c</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - FACE2</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fface2a, fface2b, fface2c</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - FACE3</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fface3a, fface3b, fface3c</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <details class="group-card">
+                            <summary class="group-header">
+                                <div class="group-info">
+                                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
+                                    <span class="group-icon">✂️</span>
+                                    <strong>2 Cabelos + 3 Sobrancelhas</strong>
+                                </div>
+                                <span class="tag-texture">Todas Brancas ▼</span>
+                            </summary>
+                            <div class="group-content">
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - CABELO 1 (Longo)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fcabelo1a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - CABELO 2 (Preso/Coque)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fcabelo2a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - SOBRANCELHA 1</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: feyebrow1a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - SOBRANCELHA 2</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: feyebrow2a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - SOBRANCELHA 3</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: feyebrow3a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <details class="group-card">
+                            <summary class="group-header">
+                                <div class="group-info">
+                                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
+                                    <span class="group-icon">💄</span>
+                                    <strong>3 Overlays de Maquiagem</strong>
+                                </div>
+                                <span class="tag-texture">Rosto ▼</span>
+                            </summary>
+                            <div class="group-content">
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - MAQUIAGEM 1</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fmakeup1a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - MAQUIAGEM 2</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fmakeup2a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - MAQUIAGEM 3</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fmakeup3a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <details class="group-card">
+                            <summary class="group-header">
+                                <div class="group-info">
+                                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
+                                    <span class="group-icon">👚</span>
+                                    <strong>1 Cropped + 1 Casaco</strong>
+                                </div>
+                                <span class="tag-texture">Todas Brancas ▼</span>
+                            </summary>
+                            <div class="group-content">
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - TOP / CROPPED</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fcropped1a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - CASACO / JAQUETA</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fcasaco1a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <details class="group-card">
+                            <summary class="group-header">
+                                <div class="group-info">
+                                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
+                                    <span class="group-icon">👗</span>
+                                    <strong>1 Shorts + 1 Calça</strong>
+                                </div>
+                                <span class="tag-texture">Todas Brancas ▼</span>
+                            </summary>
+                            <div class="group-content">
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - SHORTS / SAIA</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fshorts1a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - CALÇA (Legging/Jeans)</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fcalca1a</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <details class="group-card">
+                            <summary class="group-header">
+                                <div class="group-info">
+                                    <span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>
+                                    <span class="group-icon">👠</span>
+                                    <strong>1 Havaiana + 1 Tênis</strong>
+                                </div>
+                                <span class="tag-texture">4 Texturas (2 cada) ▼</span>
+                            </summary>
+                            <div class="group-content">
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - SANDÁLIA / RASTEIRINHA</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: fsandalia1a, fsandalia1b</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID - - TÊNIS FEMININO</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: ftenis1a, ftenis1b</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot status-pend"></span> Pendente
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
                     </div>
-                    <div class="pix-badge" style="background: rgba(0, 210, 106, 0.1); color: #00d26a; border-color: rgba(0, 210, 106, 0.2);">✅ Pagamento Confirmado</div>
-                    
-                    <div class="progress-container">
-                        <div class="spec-line" style="margin-bottom: 8px;">
-                            <span>Progresso do Desenvolvimento</span>
-                            <strong style="color: var(--accent);">100%</strong>
+                    <div class="engineering-box">
+                        <h4>Engenharia & Performance</h4>
+                        <div class="eng-points">
+                            <div>Decimate (Otimizado Mobile)</div>
+                            <div>Rigging & Skinning GTA SA</div>
+                            <div>Hierarquia Modular no .DFF</div>
+                            <div>Zero Vazamento de Pele</div>
                         </div>
-                        <div class="progress-bar-bg">
-                            <div class="progress-bar-fill" style="width: 100%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="summary-specs">
-                        <div class="spec-line"><span>Total de Peças:</span><strong>25 Malhas</strong></div>
-                        <div class="spec-line"><span>Modelos Concluídos:</span><strong>25/25</strong></div>
-                        <div class="spec-line"><span>Compatibilidade:</span><strong>SAMP Mobile / PC</strong></div>
                     </div>
                 </div>
 
-                <div>
-                    <a href="https://drive.google.com/drive/folders/1BMJtawQCqs_USxhxFuygb45JCCqwTc4X?usp=sharing" target="_blank" class="btn-action" style="background-color: #00d26a;">📂 BAIXAR SKIN (DRIVE)</a>
+                <div class="pricing-section">
+                    <div>
+                        <div class="price-header">
+                            <div class="price-val">
+                                R$ 200,00
+                                <small>à vista</small>
+                            </div>
+                        </div>
+                        <div class="pix-badge" style="background: rgba(234, 179, 8, 0.1); color: #eab308; border-color: rgba(234, 179, 8, 0.2);">⏳ Aguardando Pagamento</div>
+                        
+                        <div class="progress-container">
+                            <div class="spec-line" style="margin-bottom: 8px;">
+                                <span>Progresso do Desenvolvimento</span>
+                                <strong style="color: var(--accent);">0%</strong>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 0%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="summary-specs">
+                            <div class="spec-line"><span>Total de Peças:</span><strong>25 Malhas</strong></div>
+                            <div class="spec-line"><span>Modelos Concluídos:</span><strong>0/25</strong></div>
+                            <div class="spec-line"><span>Compatibilidade:</span><strong>SAMP Mobile / PC</strong></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="" target="_blank" class="btn-action">💳 EFETUAR PAGAMENTO</a>
+<a href="#" class="btn-action disabled-btn" onclick="event.preventDefault();">🔒 DOWNLOAD BLOQUEADO</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </details>
     </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const skinAccordions = document.querySelectorAll('.skin-accordion');
+            
+            // 1. Carregar estado salvo do LocalStorage
+            let activeSkin = localStorage.getItem('activeSkinId');
+            let hasOpened = false;
+
+            if (activeSkin) {
+                skinAccordions.forEach(acc => {
+                    if (acc.id === activeSkin) {
+                        acc.open = true;
+                        hasOpened = true;
+                    } else {
+                        acc.open = false;
+                    }
+                });
+            } 
+            
+            // 2. Se não tinha estado salvo (ou ID não existe), abre a Feminina por padrão
+            if (!hasOpened) {
+                const feminina = document.getElementById('skin-feminina');
+                if (feminina) {
+                    feminina.open = true;
+                } else if (skinAccordions.length > 0) {
+                    skinAccordions[0].open = true;
+                }
+            }
+
+            // 3. Salvar estado ao clicar e fechar os outros (comportamento de sanfona)
+            skinAccordions.forEach(acc => {
+                acc.addEventListener('toggle', (e) => {
+                    if (acc.open) {
+                        localStorage.setItem('activeSkinId', acc.id);
+                        skinAccordions.forEach(other => {
+                            if (other !== acc && other.open) {
+                                other.open = false;
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

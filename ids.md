@@ -1,5 +1,7 @@
 # Sistema de Skin Modular .DFF
 
+## ♂️ Skin Masculina
+
 | ID | Status | Grupo | Acessório | Texturas | Obs |
 |:---|:---|:---|:---|:---|:---|
 | **00** | ✅ | 👤 Corpo Base (3 tons de pele) | **FACE0** | `mface0a, mface0b, mface0c` | Base |
@@ -27,3 +29,9 @@
 | **OVERLAY1** | ✅ | 🧔 3 Overlays de Barba | **BARBA 1** | `barba2a` | Cavanhaque e Bigode |
 | **OVERLAY2** | ✅ | 🧔 3 Overlays de Barba | **BARBA 2** | `barba3a` | Cavanhaque e Bigode |
 | **OVERLAY3** | ✅ | 🧔 3 Overlays de Barba | **BARBA 3** | `barba18a` | Barba Completa |
+
+## ♀️ Skin Feminina
+
+| ID | Status | Grupo | Acessório | Texturas | Obs |
+|:---|:---|:---|:---|:---|:---|
+

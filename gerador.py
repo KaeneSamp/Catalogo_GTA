@@ -1,28 +1,6 @@
 import json
 
 def gerar_html(dados):
-    orc = dados.get('orcamento', {})
-    
-    # Calcular progresso (Total de itens dentro dos grupos)
-    total_itens = 0
-    concluidos = 0
-    for grupo in dados.get('grupos', []):
-        for item in grupo.get('itens', []):
-            total_itens += 1
-            if item.get('concluido', False):
-                concluidos += 1
-                
-    porcentagem = int((concluidos / total_itens) * 100) if total_itens > 0 else 0
-    pago = orc.get('pago', False)
-
-    if pago:
-        badge_pagamento = '<div class="pix-badge" style="background: rgba(0, 210, 106, 0.1); color: #00d26a; border-color: rgba(0, 210, 106, 0.2);">✅ Pagamento Confirmado</div>'
-        btn_acao = f'<a href="{orc.get("link_download", "#")}" target="_blank" class="btn-action" style="background-color: #00d26a;">📂 BAIXAR SKIN (DRIVE)</a>'
-    else:
-        badge_pagamento = '<div class="pix-badge" style="background: rgba(234, 179, 8, 0.1); color: #eab308; border-color: rgba(234, 179, 8, 0.2);">⏳ Aguardando Pagamento</div>'
-        btn_acao = f'<a href="{orc.get("link_pagamento", "#")}" target="_blank" class="btn-action">💳 EFETUAR PAGAMENTO</a>'
-        btn_acao += f'\n<a href="#" class="btn-action disabled-btn" onclick="event.preventDefault();">🔒 DOWNLOAD BLOQUEADO</a>'
-
     html = f"""<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -46,7 +24,14 @@ def gerar_html(dados):
         .header h1 span {{ color: var(--primary); }}
         .header p {{ color: var(--text-muted); font-size: 1rem; max-width: 620px; margin: 0 auto; line-height: 1.5; }}
         
-        .main-card {{ background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 20px; overflow: hidden; display: grid; grid-template-columns: 1.3fr 1fr; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); }}
+        /* New Top Level Skin Accordion */
+        details.skin-accordion {{ background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); margin-bottom: 10px; transition: all 0.3s ease; }}
+        summary.skin-summary {{ padding: 25px; font-size: 1.4rem; font-weight: 800; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid transparent; transition: background 0.2s; }}
+        summary.skin-summary::-webkit-details-marker {{ display: none; }}
+        summary.skin-summary:hover {{ background-color: #1a1c23; }}
+        details.skin-accordion[open] summary.skin-summary {{ border-bottom: 1px solid var(--border-color); background-color: #1a1c23; }}
+        
+        .main-card {{ display: grid; grid-template-columns: 1.3fr 1fr; }}
         @media (max-width: 768px) {{ .main-card {{ grid-template-columns: 1fr; }} }}
         
         .scope-section {{ padding: 35px; display: flex; flex-direction: column; gap: 24px; }}
@@ -105,97 +90,176 @@ def gerar_html(dados):
             <h1>{dados['projeto'].split()[0]} <span>{' '.join(dados['projeto'].split()[1:])}</span></h1>
             <p>{dados.get('descricao', '')}</p>
         </div>
-
-        <div class="main-card">
-            <div class="scope-section">
-                <div class="section-title"><span>📦 Itens Inclusos no Pacote</span></div>
-                <div class="items-list">
 """
-    
-    for grupo in dados.get('grupos', []):
-        grupo_total = len(grupo.get('itens', []))
-        grupo_concluidos = sum(1 for item in grupo.get('itens', []) if item.get('concluido', False))
-        grupo_pronto = (grupo_total > 0 and grupo_total == grupo_concluidos)
-        
-        if grupo_pronto:
-            grupo_status = '<span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluído"></span>'
+
+    for skin in dados.get('skins', []):
+        orc = skin.get('orcamento', {})
+        total_itens = 0
+        concluidos = 0
+        for grupo in skin.get('grupos', []):
+            for item in grupo.get('itens', []):
+                total_itens += 1
+                if item.get('concluido', False):
+                    concluidos += 1
+                    
+        porcentagem = int((concluidos / total_itens) * 100) if total_itens > 0 else 0
+        pago = orc.get('pago', False)
+
+        if pago:
+            badge_pagamento = '<div class="pix-badge" style="background: rgba(0, 210, 106, 0.1); color: #00d26a; border-color: rgba(0, 210, 106, 0.2);">✅ Pagamento Confirmado</div>'
+            btn_acao = f'<a href="{orc.get("link_download", "#")}" target="_blank" class="btn-action" style="background-color: #3b82f6;">📁 BAIXAR SKIN (DRIVE)</a>'
         else:
-            grupo_status = '<span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>'
+            badge_pagamento = '<div class="pix-badge" style="background: rgba(234, 179, 8, 0.1); color: #eab308; border-color: rgba(234, 179, 8, 0.2);">⏳ Aguardando Pagamento</div>'
+            btn_acao = f'<a href="{orc.get("link_pagamento", "#")}" target="_blank" class="btn-action">💳 EFETUAR PAGAMENTO</a>'
+            btn_acao += f'\n<a href="#" class="btn-action disabled-btn" onclick="event.preventDefault();">🔒 DOWNLOAD BLOQUEADO</a>'
 
-        html += f"""                    <details class="group-card">
-                        <summary class="group-header">
-                            <div class="group-info">
-                                {grupo_status}
-                                <span class="group-icon">{grupo['emoji']}</span>
-                                <strong>{grupo['titulo']}</strong>
-                            </div>
-                            <span class="tag-texture">{grupo['resumo_texturas']} ▼</span>
-                        </summary>
-                        <div class="group-content">\n"""
+        html += f"""        <details class="skin-accordion" id="skin-{skin['id']}">
+            <summary class="skin-summary">
+                <span>{skin['titulo']}</span>
+                <span style="font-size: 1rem; color: var(--text-muted);">▼</span>
+            </summary>
+            <div class="main-card">
+                <div class="scope-section">
+                    <div class="section-title"><span>📦 Itens Inclusos no Pacote</span></div>
+                    <div class="items-list">\n"""
         
-        for item in grupo.get('itens', []):
-            status_class = "status-done" if item.get('concluido', False) else "status-pend"
-            status_text = "Pronto" if item.get('concluido', False) else "Pendente"
-            tex_str = ", ".join(item['texturas'])
+        if not skin.get('grupos', []):
+            html += """                        <div style="text-align:center; padding:20px; color:var(--text-muted); font-size:0.9rem;">
+                            Os itens desta skin estão sendo adicionados...
+                        </div>\n"""
+
+        for grupo in skin.get('grupos', []):
+            grupo_total = len(grupo.get('itens', []))
+            grupo_concluidos = sum(1 for item in grupo.get('itens', []) if item.get('concluido', False))
+            grupo_pronto = (grupo_total > 0 and grupo_total == grupo_concluidos)
             
-            html += f"""                            <div class="inner-item">
-                                <div style="display:flex; flex-direction:column; gap:4px;">
-                                    <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID {item['id']} - {item['nome']}</span>
-                                    <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: {tex_str}</span>
+            if grupo_pronto:
+                grupo_status = '<span class="status-dot status-done" style="width: 10px; height: 10px; flex-shrink: 0;" title="Concluído"></span>'
+            else:
+                grupo_status = '<span class="status-dot status-pend" style="width: 10px; height: 10px; background-color: #eab308; box-shadow: 0 0 8px #eab308; flex-shrink: 0;" title="Pendente"></span>'
+
+            html += f"""                        <details class="group-card">
+                            <summary class="group-header">
+                                <div class="group-info">
+                                    {grupo_status}
+                                    <span class="group-icon">{grupo.get('emoji', '📦')}</span>
+                                    <strong>{grupo['titulo']}</strong>
                                 </div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">
-                                    <span class="status-dot {status_class}"></span> {status_text}
-                                </div>
-                            </div>\n"""
-                            
-        html += """                        </div>
-                    </details>\n"""
-                    
-    html += f"""                </div>
-                <div class="engineering-box">
-                    <h4>Engenharia & Performance</h4>
-                    <div class="eng-points">
-                        <div>Decimate (Otimizado Mobile)</div>
-                        <div>Rigging & Skinning GTA SA</div>
-                        <div>Hierarquia Modular no .DFF</div>
-                        <div>Zero Vazamento de Pele</div>
+                                <span class="tag-texture">{grupo.get('resumo_texturas', '')} ▼</span>
+                            </summary>
+                            <div class="group-content">\n"""
+            
+            for item in grupo.get('itens', []):
+                status_class = "status-done" if item.get('concluido', False) else "status-pend"
+                status_text = "Pronto" if item.get('concluido', False) else "Pendente"
+                tex_str = ", ".join(item['texturas'])
+                
+                html += f"""                                <div class="inner-item">
+                                    <div style="display:flex; flex-direction:column; gap:4px;">
+                                        <span style="font-size: 0.9rem; font-weight: 600; color: #e0e0e0;">ID {item.get('id', '-')} - {item['nome']}</span>
+                                        <span style="font-size: 0.75rem; color: #8a8b9d;">Texturas: {tex_str}</span>
+                                    </div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted);">
+                                        <span class="status-dot {status_class}"></span> {status_text}
+                                    </div>
+                                </div>\n"""
+                                
+            html += """                            </div>
+                        </details>\n"""
+                        
+        html += f"""                    </div>
+                    <div class="engineering-box">
+                        <h4>Engenharia & Performance</h4>
+                        <div class="eng-points">
+                            <div>Decimate (Otimizado Mobile)</div>
+                            <div>Rigging & Skinning GTA SA</div>
+                            <div>Hierarquia Modular no .DFF</div>
+                            <div>Zero Vazamento de Pele</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-section">
+                    <div>
+                        <div class="price-header">
+                            <div class="price-val">
+                                {orc.get('valor_final', 'R$ 0,00')}
+                                <small>à vista</small>
+                            </div>
+                        </div>
+                        {badge_pagamento}
+                        
+                        <div class="progress-container">
+                            <div class="spec-line" style="margin-bottom: 8px;">
+                                <span>Progresso do Desenvolvimento</span>
+                                <strong style="color: var(--accent);">{porcentagem}%</strong>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: {porcentagem}%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="summary-specs">
+                            <div class="spec-line"><span>Total de Peças:</span><strong>{total_itens} Malhas</strong></div>
+                            <div class="spec-line"><span>Modelos Concluídos:</span><strong>{concluidos}/{total_itens}</strong></div>
+                            <div class="spec-line"><span>Compatibilidade:</span><strong>SAMP Mobile / PC</strong></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        {btn_acao}
                     </div>
                 </div>
             </div>
+        </details>"""
 
-            <div class="pricing-section">
-                <div>
-                    <div class="price-header">
-                        <div class="price-val">
-                            {orc.get('valor_final', 'R$ 0,00')}
-                            <small>à vista</small>
-                        </div>
-                    </div>
-                    {badge_pagamento}
-                    
-                    <div class="progress-container">
-                        <div class="spec-line" style="margin-bottom: 8px;">
-                            <span>Progresso do Desenvolvimento</span>
-                            <strong style="color: var(--accent);">{porcentagem}%</strong>
-                        </div>
-                        <div class="progress-bar-bg">
-                            <div class="progress-bar-fill" style="width: {porcentagem}%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="summary-specs">
-                        <div class="spec-line"><span>Total de Peças:</span><strong>{total_itens} Malhas</strong></div>
-                        <div class="spec-line"><span>Modelos Concluídos:</span><strong>{concluidos}/{total_itens}</strong></div>
-                        <div class="spec-line"><span>Compatibilidade:</span><strong>SAMP Mobile / PC</strong></div>
-                    </div>
-                </div>
-
-                <div>
-                    {btn_acao}
-                </div>
-            </div>
-        </div>
+    html += """
     </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const skinAccordions = document.querySelectorAll('.skin-accordion');
+            
+            // 1. Carregar estado salvo do LocalStorage
+            let activeSkin = localStorage.getItem('activeSkinId');
+            let hasOpened = false;
+
+            if (activeSkin) {
+                skinAccordions.forEach(acc => {
+                    if (acc.id === activeSkin) {
+                        acc.open = true;
+                        hasOpened = true;
+                    } else {
+                        acc.open = false;
+                    }
+                });
+            } 
+            
+            // 2. Se não tinha estado salvo (ou ID não existe), abre a Feminina por padrão
+            if (!hasOpened) {
+                const feminina = document.getElementById('skin-feminina');
+                if (feminina) {
+                    feminina.open = true;
+                } else if (skinAccordions.length > 0) {
+                    skinAccordions[0].open = true;
+                }
+            }
+
+            // 3. Salvar estado ao clicar e fechar os outros (comportamento de sanfona)
+            skinAccordions.forEach(acc => {
+                acc.addEventListener('toggle', (e) => {
+                    if (acc.open) {
+                        localStorage.setItem('activeSkinId', acc.id);
+                        skinAccordions.forEach(other => {
+                            if (other !== acc && other.open) {
+                                other.open = false;
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>"""
 
@@ -203,32 +267,37 @@ def gerar_html(dados):
 
 def gerar_md(dados):
     md = f"# {dados['projeto']}\n\n"
-    md += "| ID | Status | Grupo | Acessório | Texturas | Obs |\n"
-    md += "|:---|:---|:---|:---|:---|:---|\n"
     
-    # Extrair todos os itens concluidos com a informação do grupo
-    todos_itens = []
-    for grupo in dados.get('grupos', []):
-        for item in grupo.get('itens', []):
-            if not item.get('concluido', False):
-                continue
-            item_copy = item.copy()
-            item_copy['grupo'] = grupo['titulo']
-            item_copy['emoji'] = grupo['emoji']
-            todos_itens.append(item_copy)
+    for skin in dados.get('skins', []):
+        md += f"## {skin['titulo']}\n\n"
+        md += "| ID | Status | Grupo | Acessório | Texturas | Obs |\n"
+        md += "|:---|:---|:---|:---|:---|:---|\n"
+        
+        # Extrair todos os itens concluidos com a informação do grupo
+        todos_itens = []
+        for grupo in skin.get('grupos', []):
+            for item in grupo.get('itens', []):
+                if not item.get('concluido', False):
+                    continue
+                item_copy = item.copy()
+                item_copy['grupo'] = grupo.get('titulo', '')
+                item_copy['emoji'] = grupo.get('emoji', '')
+                todos_itens.append(item_copy)
+                
+        def sort_key(x):
+            try:
+                return int(x['id'])
+            except ValueError:
+                return 9999
+                
+        itens_ordenados = sorted(todos_itens, key=sort_key)
+        
+        for item in itens_ordenados:
+            status = "✅" if item.get('concluido', False) else "⏳"
+            texturas = ", ".join([f"`{t}`" for t in item['texturas']])
+            md += f"| **{item.get('id', '-')}** | {status} | {item.get('emoji', '')} {item.get('grupo', '')} | **{item['nome']}** | {texturas} | {item.get('obs', '')} |\n"
             
-    def sort_key(x):
-        try:
-            return int(x['id'])
-        except ValueError:
-            return 9999
-            
-    itens_ordenados = sorted(todos_itens, key=sort_key)
-    
-    for item in itens_ordenados:
-        status = "✅" if item.get('concluido', False) else "⏳"
-        texturas = ", ".join([f"`{t}`" for t in item['texturas']])
-        md += f"| **{item['id']}** | {status} | {item['emoji']} {item['grupo']} | **{item['nome']}** | {texturas} | {item['obs']} |\n"
+        md += "\n"
         
     return md
 
@@ -242,4 +311,4 @@ if __name__ == "__main__":
     with open("ids.md", "w", encoding="utf-8") as f:
         f.write(gerar_md(dados))
         
-    print("Arquivos gerados com sistema expansível e agrupamento!")
+    print("Arquivos gerados com sistema expansível para skins multiplas!")
