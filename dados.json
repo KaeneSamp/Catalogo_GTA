@@ -122,6 +122,15 @@
               ],
               "obs": "Base",
               "concluido": true
+            },
+            {
+              "id": "OVERLAYS",
+              "nome": "EXTRAS",
+              "texturas": [
+                "olho1a, havaianas1ov"
+              ],
+              "obs": "Apenas textura-overlay (iris e havaianas)",
+              "concluido": true
             }
           ]
         },
