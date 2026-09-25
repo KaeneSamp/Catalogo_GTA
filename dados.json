@@ -124,12 +124,12 @@
               "concluido": true
             },
             {
-              "id": "OVERLAYS",
-              "nome": "EXTRAS",
+              "id": "OVERLAY",
+              "nome": "EXTRA",
               "texturas": [
-                "olho1a, havaianas1ov"
+                "olho1a"
               ],
-              "obs": "Apenas textura-overlay (iris e havaianas)",
+              "obs": "Apenas textura-overlay",
               "concluido": true
             }
           ]
@@ -293,6 +293,15 @@
                 "tenis1b"
               ],
               "obs": "2 texturas",
+              "concluido": true
+            },
+            {
+              "id": "OVERLAY",
+              "nome": "EXTRA",
+              "texturas": [
+                "havaianas1ov"
+              ],
+              "obs": "Apenas textura-overlay",
               "concluido": true
             }
           ]
