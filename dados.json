@@ -48,7 +48,7 @@
               "id": "03",
               "nome": "PERNAS (COMPLETO)",
               "texturas": [
-                "mpernas1a, mpernas2a, mpernas3a"
+                "mpernas1a, mpernas1b, mpernas1c"
               ],
               "obs": "Base",
               "concluido": true
@@ -75,7 +75,7 @@
               "id": "08",
               "nome": "PERNAS (PRA BERMUDA)",
               "texturas": [
-                "mpernas1a, mpernas2a, mpernas3a"
+                "mpernas1a, mpernas1b, mpernas1c"
               ],
               "obs": "Base",
               "concluido": true
@@ -84,7 +84,7 @@
               "id": "10",
               "nome": "PERNAS (PRA CALCA)",
               "texturas": [
-                "mpernas1a, mpernas2a, mpernas3a"
+                "mpernas1a, mpernas1b, mpernas1c"
               ],
               "obs": "Base",
               "concluido": true
