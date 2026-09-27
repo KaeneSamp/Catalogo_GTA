@@ -324,67 +324,58 @@
           "resumo_texturas": "Malha Base",
           "itens": [
             {
-              "id": "-",
-              "nome": "FACE0",
+              "id": "00",
+              "nome": "FACE21",
               "texturas": [
-                "fface0a, fface0b, fface0c"
+                "fface21a"
               ],
               "obs": "Base",
-              "concluido": false
+              "concluido": true
             },
             {
-              "id": "-",
+              "id": "01",
               "nome": "BRACOS (COMPLETO)",
               "texturas": [
-                "fbracos1a, fbracos1b, fbracos1c"
+                "fbracos1a"
               ],
               "obs": "Sem blusa",
-              "concluido": false
+              "concluido": true
             },
             {
-              "id": "-",
-              "nome": "BRACOS (PRA CROPPED)",
-              "texturas": [
-                "fbracos1a, fbracos1b, fbracos1c"
-              ],
-              "obs": "Corte ombro",
-              "concluido": false
-            },
-            {
-              "id": "-",
+              "id": "02",
               "nome": "PERNAS (COMPLETO)",
               "texturas": [
-                "fpernas1a, fpernas2a, fpernas3a"
+                "fpernas1a"
               ],
               "obs": "Base",
-              "concluido": false
+              "concluido": true
             },
             {
-              "id": "-",
-              "nome": "CONJUNTO ÍNTIMO",
+              "id": "03",
+              "nome": "CALCINHA",
               "texturas": [
-                "flingerie1"
+                "calcinha1a"
               ],
-              "obs": "Sutiã e Calcinha",
-              "concluido": false
+              "obs": "Calcinha",
+              "concluido": true
             },
             {
-              "id": "-",
-              "nome": "BRACOS (PRO CASACO)",
+              "id": "04",
+              "nome": "SUTIÃ",
               "texturas": [
-                "fbracos1a, fbracos1b, fbracos1c"
+                "sutian1a"
               ],
-              "obs": "Apenas mãos",
-              "concluido": false
+              "obs": "Sutiã",
+              "concluido": true
             },
             {
-              "id": "-",
-              "nome": "PERNAS (PRO SHORTS)",
+              "id": "09",
+              "nome": "BRACOS (PRA BLUSA)",
               "texturas": [
-                "fpernas1a, fpernas2a, fpernas3a"
+                "fbracos1a"
               ],
               "obs": "Base",
-              "concluido": false
+              "concluido": true
             },
             {
               "id": "-",
@@ -403,31 +394,31 @@
           "resumo_texturas": "Malha Base",
           "itens": [
             {
-              "id": "-",
-              "nome": "FACE1",
+              "id": "05",
+              "nome": "FACE25",
               "texturas": [
-                "fface1a, fface1b, fface1c"
+                "fface25a"
               ],
               "obs": "Base",
-              "concluido": false
+              "concluido": true
             },
             {
-              "id": "-",
-              "nome": "FACE2",
+              "id": "06",
+              "nome": "FACE26",
               "texturas": [
-                "fface2a, fface2b, fface2c"
+                "fface26a"
               ],
               "obs": "Base",
-              "concluido": false
+              "concluido": true
             },
             {
-              "id": "-",
-              "nome": "FACE3",
+              "id": "07",
+              "nome": "FACE29",
               "texturas": [
-                "fface3a, fface3b, fface3c"
+                "fface29a"
               ],
               "obs": "Base",
-              "concluido": false
+              "concluido": true
             }
           ]
         },
@@ -523,22 +514,22 @@
           "resumo_texturas": "Todas Brancas",
           "itens": [
             {
-              "id": "-",
-              "nome": "TOP / CROPPED",
+              "id": "08",
+              "nome": "CROPPED",
               "texturas": [
-                "fcropped1a"
+                "crop1a"
               ],
-              "obs": "2 texturas",
-              "concluido": false
+              "obs": "Textura Branca",
+              "concluido": true
             },
             {
-              "id": "-",
-              "nome": "CASACO / JAQUETA",
+              "id": "09",
+              "nome": "BLUSA CANELADA",
               "texturas": [
-                "fcasaco1a"
+                "fblusa1a"
               ],
-              "obs": "2 texturas",
-              "concluido": false
+              "obs": "Textura Branca",
+              "concluido": true
             }
           ]
         },

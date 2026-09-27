@@ -36,4 +36,15 @@
 
 | ID | Status | Grupo | Acessório | Texturas | Obs |
 |:---|:---|:---|:---|:---|:---|
+| **00** | ✅ | 👤 Corpo Base (3 tons de pele) | **FACE21** | `fface21a` | Base |
+| **01** | ✅ | 👤 Corpo Base (3 tons de pele) | **BRACOS (COMPLETO)** | `fbracos1a` | Sem blusa |
+| **02** | ✅ | 👤 Corpo Base (3 tons de pele) | **PERNAS (COMPLETO)** | `fpernas1a` | Base |
+| **03** | ✅ | 👤 Corpo Base (3 tons de pele) | **CALCINHA** | `calcinha1a` | Calcinha |
+| **04** | ✅ | 👤 Corpo Base (3 tons de pele) | **SUTIÃ** | `sutian1a` | Sutiã |
+| **05** | ✅ | 👩 3 Modelos de Face | **FACE25** | `fface25a` | Base |
+| **06** | ✅ | 👩 3 Modelos de Face | **FACE26** | `fface26a` | Base |
+| **07** | ✅ | 👩 3 Modelos de Face | **FACE29** | `fface29a` | Base |
+| **08** | ✅ | 👚 1 Cropped + 1 Casaco | **CROPPED** | `crop1a` | Textura Branca |
+| **09** | ✅ | 👤 Corpo Base (3 tons de pele) | **BRACOS (PRA BLUSA)** | `fbracos1a` | Base |
+| **09** | ✅ | 👚 1 Cropped + 1 Casaco | **BLUSA CANELADA** | `fblusa1a` | Textura Branca |
 
