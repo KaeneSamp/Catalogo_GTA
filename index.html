@@ -571,7 +571,7 @@
                 ]
             },
             {
-                "id": "-",
+                "id": "pend_23bf06",
                 "name": "PERNAS (PRA CALÇA)",
                 "status": "pend",
                 "textures": [
@@ -645,7 +645,7 @@
         "exclusive": true,
         "items": [
             {
-                "id": "-",
+                "id": "pend_7bedfd",
                 "name": "CABELO 1 (Longo)",
                 "status": "pend",
                 "textures": [
@@ -679,7 +679,7 @@
                 ]
             },
             {
-                "id": "-",
+                "id": "pend_ce80ad",
                 "name": "SOBRANCELHA 1",
                 "status": "pend",
                 "textures": [
@@ -690,7 +690,7 @@
                 ]
             },
             {
-                "id": "-",
+                "id": "pend_81fde7",
                 "name": "SOBRANCELHA 2",
                 "status": "pend",
                 "textures": [
@@ -701,7 +701,7 @@
                 ]
             },
             {
-                "id": "-",
+                "id": "pend_6acd57",
                 "name": "SOBRANCELHA 3",
                 "status": "pend",
                 "textures": [
@@ -718,7 +718,7 @@
         "exclusive": false,
         "items": [
             {
-                "id": "-",
+                "id": "pend_37f066",
                 "name": "MAQUIAGEM 1",
                 "status": "pend",
                 "textures": [
@@ -729,7 +729,7 @@
                 ]
             },
             {
-                "id": "-",
+                "id": "pend_e5de81",
                 "name": "MAQUIAGEM 2",
                 "status": "pend",
                 "textures": [
@@ -740,7 +740,7 @@
                 ]
             },
             {
-                "id": "-",
+                "id": "pend_f694c7",
                 "name": "MAQUIAGEM 3",
                 "status": "pend",
                 "textures": [
@@ -825,7 +825,7 @@
         "exclusive": true,
         "items": [
             {
-                "id": "-",
+                "id": "pend_2cb0fb",
                 "name": "SANDÁLIA / RASTEIRINHA",
                 "status": "pend",
                 "textures": [
@@ -1576,7 +1576,18 @@
                     geo.setIndex(new THREE.BufferAttribute(ind, 1));
 
                     const status = statusMap[info.name] || 'done';
-                    const material = (status === 'pend') ? holoMaterial : createMaterial(info.texture);
+                    let initialTex = info.texture;
+                    if (status !== 'pend') {
+                        // Tenta achar a textura oficial na logicConfig para previnir bugs de textura do Blender
+                        const itemGrp = Object.values(logicConfig).find(g => g.items.some(i => i.id === info.name));
+                        if (itemGrp) {
+                            const itm = itemGrp.items.find(i => i.id === info.name);
+                            if (itm.textures && itm.textures.length > 0) {
+                                initialTex = itm.textures[0].file;
+                            }
+                        }
+                    }
+                    const material = (status === 'pend') ? holoMaterial : createMaterial(initialTex);
                     
                     const mesh = new THREE.Mesh(geo, material);
                     mesh.name = info.name;

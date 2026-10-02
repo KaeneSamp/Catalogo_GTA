@@ -725,7 +725,18 @@
                     geo.setIndex(new THREE.BufferAttribute(ind, 1));
 
                     const status = statusMap[info.name] || 'done';
-                    const material = (status === 'pend') ? holoMaterial : createMaterial(info.texture);
+                    let initialTex = info.texture;
+                    if (status !== 'pend') {
+                        // Tenta achar a textura oficial na logicConfig para previnir bugs de textura do Blender
+                        const itemGrp = Object.values(logicConfig).find(g => g.items.some(i => i.id === info.name));
+                        if (itemGrp) {
+                            const itm = itemGrp.items.find(i => i.id === info.name);
+                            if (itm.textures && itm.textures.length > 0) {
+                                initialTex = itm.textures[0].file;
+                            }
+                        }
+                    }
+                    const material = (status === 'pend') ? holoMaterial : createMaterial(initialTex);
                     
                     const mesh = new THREE.Mesh(geo, material);
                     mesh.name = info.name;

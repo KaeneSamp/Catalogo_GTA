@@ -124,8 +124,14 @@ def gerar_html(dados):
                 "items": []
             }
             for item in group['itens']:
+                item_id = item.get('id', 'unk')
+                if item_id == '-' or not item_id:
+                    import hashlib
+                    item_id = "pend_" + hashlib.md5(item.get('nome', '').encode()).hexdigest()[:6]
+                    item['id'] = item_id # Atualiza no item original para o resto do loop
+
                 logic_item = {
-                    "id": item.get('id', 'unk'),
+                    "id": item_id,
                     "name": item.get('nome', 'Item'),
                     "status": "done" if item.get('concluido', False) else "pend"
                 }
