@@ -531,7 +531,7 @@
         {
           "titulo": "2 Cabelos + 3 Sobrancelhas",
           "emoji": "✂️",
-          "resumo_texturas": "Todas Brancas",
+          "resumo_texturas": "Diversos/Branco",
           "itens": [
             {
               "id": "-",
@@ -552,13 +552,13 @@
             },
             {
               "id": "cabelo2",
-              "nome": "CABELO 2 (Preso/Coque)",
+              "nome": "CABELO 2 (Cacheado/Longo)",
               "texturas": [
-                "fcabelo2a"
+                "fcabelo2a, fcabelo2b, fcabelo2c, fcabelo2h, fcabelo2k, fcabelo2o"
               ],
-              "obs": "Textura Branca",
-              "concluido": false,
-              "status": "pend",
+              "obs": "Diversos/Branco",
+              "concluido": true,
+              "status": "done",
               "texturas_3d": [
                 {
                   "file": "cabelo2c.png",
@@ -760,7 +760,7 @@
               "id": "calca",
               "nome": "CALÇA JEANS",
               "texturas": [
-                "fcalca1a"
+                "fcalca1a, fcalca1b, fcalca1c, fcalca1d"
               ],
               "obs": "4 texturas",
               "concluido": true,
