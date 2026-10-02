@@ -62,18 +62,37 @@
                 flex-direction: column;
             }
             .canvas-section {
-                flex: 1;
+                height: 40vh; /* Da mais espaco pra interface no mobile */
+                flex: none;
                 width: 100%;
             }
             .ui-section {
-                flex: 1;
+                height: 60vh;
+                max-height: 60vh;
+                flex: none;
                 width: 100%;
                 border-left: none;
                 border-top: 1px solid var(--border-color);
                 box-shadow: 0 -10px 30px rgba(0,0,0,0.8);
-                height: auto;
-                max-height: 50vh;
             }
+            
+            /* Otimizacoes de Espaco no Mobile */
+            .ui-header { padding: 15px 15px 5px 15px; }
+            .ui-header h1 { font-size: 1.4rem; }
+            .ui-header p { font-size: 0.8rem; }
+            
+            .pricing-section { padding: 15px; }
+            .price-container { margin-bottom: 12px; }
+            .price-currency, .price-amount { font-size: 2.2rem; }
+            .badge-status { margin-bottom: 12px; padding: 6px 12px; font-size: 0.7rem; }
+            .btn-action, .btn-download { padding: 12px; font-size: 0.85rem; }
+            
+            .project-switcher { top: 10px; left: 10px; gap: 8px; }
+            .switch-btn { padding: 6px 12px; font-size: 0.8rem; }
+            
+            /* Ajuste dos itens do menu */
+            .ui-content { padding: 10px 15px; }
+            .group-header { padding: 12px 15px; font-size: 0.9rem; }
         }
 
         .ui-header {
@@ -570,23 +589,28 @@
                     `;
 
                     // Lógica de Clique (Interação UI -> 3D)
+                    // Lógica de Clique (Interação UI -> 3D)
                     div.onclick = () => {
+                        const wasActive = activeItems.has(item.id);
+
                         if (groupData.exclusive) {
-                            // Desativa os outros do mesmo grupo
+                            // Desativa TODOS do mesmo grupo (inclusive ele mesmo se estivesse ativo)
                             groupData.items.forEach(other => {
                                 activeItems.delete(other.id);
-                                document.getElementById(`ui-item-${other.id}`).classList.remove('active');
+                                const otherDiv = document.getElementById(`ui-item-${other.id}`);
+                                if (otherDiv) otherDiv.classList.remove('active');
                                 if (meshes3D[other.id]) meshes3D[other.id].visible = false;
                             });
-                        }
-                        
-                        // Alterna o atual se não for exclusivo, ou garante que ele ligue se for exclusivo
-                        if (groupData.exclusive) {
-                            activeItems.add(item.id);
-                            div.classList.add('active');
-                            if (meshes3D[item.id]) meshes3D[item.id].visible = true;
+                            
+                            // Se NÃO estava ativo antes do loop, ativa ele agora
+                            if (!wasActive) {
+                                activeItems.add(item.id);
+                                div.classList.add('active');
+                                if (meshes3D[item.id]) meshes3D[item.id].visible = true;
+                            }
                         } else {
-                            if (activeItems.has(item.id)) {
+                            // Alternância normal para grupos não-exclusivos
+                            if (wasActive) {
                                 activeItems.delete(item.id);
                                 div.classList.remove('active');
                                 if (meshes3D[item.id]) meshes3D[item.id].visible = false;
@@ -597,7 +621,6 @@
                             }
                         }
                     };
-                    
                     content.appendChild(div);
                 });
 

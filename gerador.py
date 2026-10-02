@@ -129,7 +129,7 @@ def gerar_html(dados):
                     "name": item.get('nome', 'Item'),
                     "status": "done" if item.get('concluido', False) else "pend"
                 }
-                if item.get('concluido'):
+                if item.get('visivel_padrao', False):
                     active_items.append(logic_item["id"])
                     
                 if 'texturas_3d' in item and len(item['texturas_3d']) > 0:
