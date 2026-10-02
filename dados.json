@@ -313,7 +313,7 @@
       "titulo": "♀️ Skin Feminina",
       "orcamento": {
         "valor_final": "R$ 200,00",
-        "link_pagamento": "",
+        "link_pagamento": "https://nubank.com.br/cobrar/3avuif/6ac040ea-4ec2-4f60-a05d-e7cb30d36a96",
         "pago": false,
         "link_download": ""
       },
@@ -334,7 +334,7 @@
               "status": "done",
               "texturas_3d": [
                 {
-                  "file": "fface21a",
+                  "file": "face21ka.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -351,7 +351,7 @@
               "status": "done",
               "texturas_3d": [
                 {
-                  "file": "fbracos1a",
+                  "file": "fbracos1a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -368,7 +368,7 @@
               "status": "done",
               "texturas_3d": [
                 {
-                  "file": "fpernas1a",
+                  "file": "fbracos1a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -385,7 +385,7 @@
               "status": "done",
               "texturas_3d": [
                 {
-                  "file": "calcinha1a",
+                  "file": "calcinha1a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -402,7 +402,7 @@
               "status": "done",
               "texturas_3d": [
                 {
-                  "file": "sutian1a",
+                  "file": "sutian1a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -419,7 +419,7 @@
               "status": "done",
               "texturas_3d": [
                 {
-                  "file": "fbracos1a",
+                  "file": "fbracos1a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -436,15 +436,15 @@
               "status": "pend",
               "texturas_3d": [
                 {
-                  "file": "fpernas1a",
+                  "file": "fbracos1a.png",
                   "color": "#aaaaaa"
                 },
                 {
-                  "file": "fpernas2a",
+                  "file": "fpernas2a.png",
                   "color": "#aaaaaa"
                 },
                 {
-                  "file": "fpernas3a",
+                  "file": "fpernas3a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -454,7 +454,12 @@
               "id": "torso",
               "nome": "TORSO",
               "texturas": [],
-              "texturas_3d": [],
+              "texturas_3d": [
+                {
+                  "file": "fbracos1a.png",
+                  "color": "#ffccaa"
+                }
+              ],
               "concluido": true,
               "visivel_padrao": true
             },
@@ -462,7 +467,12 @@
               "id": "cilhos",
               "nome": "CÍLIOS",
               "texturas": [],
-              "texturas_3d": [],
+              "texturas_3d": [
+                {
+                  "file": "fcilios1a.png",
+                  "color": "#111111"
+                }
+              ],
               "concluido": true,
               "visivel_padrao": true
             }
@@ -485,7 +495,7 @@
               "status": "done",
               "texturas_3d": [
                 {
-                  "file": "fface25a",
+                  "file": "fface25a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -502,7 +512,7 @@
               "status": "done",
               "texturas_3d": [
                 {
-                  "file": "fface26a",
+                  "file": "fface26a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -519,7 +529,7 @@
               "status": "done",
               "texturas_3d": [
                 {
-                  "file": "fface29a",
+                  "file": "fface29a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -544,7 +554,7 @@
               "status": "pend",
               "texturas_3d": [
                 {
-                  "file": "fcabelo1a",
+                  "file": "fcabelo1a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -562,19 +572,19 @@
               "texturas_3d": [
                 {
                   "file": "fcabelo2a.png",
-                  "color": "#404040"
+                  "color": "#30221a"
                 },
                 {
                   "file": "fcabelo2b.png",
-                  "color": "#402020"
+                  "color": "#d6ab5c"
                 },
                 {
                   "file": "fcabelo2c.png",
-                  "color": "#000000"
+                  "color": "#1a1a1c"
                 },
                 {
                   "file": "fcabelo2d.png",
-                  "color": "#000000"
+                  "color": "#8c3b28"
                 }
               ],
               "visivel_padrao": true
@@ -590,7 +600,7 @@
               "status": "pend",
               "texturas_3d": [
                 {
-                  "file": "feyebrow1a",
+                  "file": "feyebrow1a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -607,7 +617,7 @@
               "status": "pend",
               "texturas_3d": [
                 {
-                  "file": "feyebrow2a",
+                  "file": "feyebrow2a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -624,7 +634,7 @@
               "status": "pend",
               "texturas_3d": [
                 {
-                  "file": "feyebrow3a",
+                  "file": "feyebrow3a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -649,7 +659,7 @@
               "status": "pend",
               "texturas_3d": [
                 {
-                  "file": "fmakeup1a",
+                  "file": "fmakeup1a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -666,7 +676,7 @@
               "status": "pend",
               "texturas_3d": [
                 {
-                  "file": "fmakeup2a",
+                  "file": "fmakeup2a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -683,7 +693,7 @@
               "status": "pend",
               "texturas_3d": [
                 {
-                  "file": "fmakeup3a",
+                  "file": "fmakeup3a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -708,7 +718,7 @@
               "status": "done",
               "texturas_3d": [
                 {
-                  "file": "fregata1a",
+                  "file": "fregata1a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -725,7 +735,7 @@
               "status": "done",
               "texturas_3d": [
                 {
-                  "file": "fblusa1a",
+                  "file": "fblusa1a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -750,7 +760,7 @@
               "status": "done",
               "texturas_3d": [
                 {
-                  "file": "fshorts1a",
+                  "file": "fshorts1a.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -805,11 +815,11 @@
               "status": "pend",
               "texturas_3d": [
                 {
-                  "file": "fsandalia1a",
+                  "file": "fsandalia1a.png",
                   "color": "#aaaaaa"
                 },
                 {
-                  "file": "fsandalia1b",
+                  "file": "fsandalia1b.png",
                   "color": "#aaaaaa"
                 }
               ],
@@ -826,7 +836,7 @@
               "status": "done",
               "texturas_3d": [
                 {
-                  "file": "ftenis1a",
+                  "file": "ftenis1a.png",
                   "color": "#aaaaaa"
                 }
               ],

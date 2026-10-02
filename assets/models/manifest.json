@@ -21,7 +21,7 @@
     },
     "sys_cache_06.dat": {
         "name": "regata",
-        "texture": "fregata1c.png"
+        "texture": "fregata1a.png"
     },
     "sys_cache_07.dat": {
         "name": "calca",
@@ -29,11 +29,11 @@
     },
     "sys_cache_08.dat": {
         "name": "shorts",
-        "texture": "fshort1c.png"
+        "texture": "fshorts1a.png"
     },
     "sys_cache_09.dat": {
         "name": "blusa",
-        "texture": "ffkit1blusa1d.png"
+        "texture": "fblusa1a.png"
     },
     "sys_cache_10.dat": {
         "name": "bracos",
@@ -41,6 +41,6 @@
     },
     "sys_cache_11.dat": {
         "name": "cabelo2",
-        "texture": "1.png"
+        "texture": "fcabelo2a.png"
     }
 }

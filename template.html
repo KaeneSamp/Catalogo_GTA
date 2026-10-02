@@ -686,7 +686,11 @@
                 side: THREE.DoubleSide
             });
             if (textureFile) {
-                mat.map = textureLoader.load('assets/img/' + textureFile);
+                textureLoader.load('assets/img/' + textureFile, (tex) => {
+                    tex.encoding = THREE.sRGBEncoding || 3001;
+                    mat.map = tex;
+                    mat.needsUpdate = true;
+                });
             }
             return mat;
         }
@@ -725,9 +729,10 @@
                     geo.setIndex(new THREE.BufferAttribute(ind, 1));
 
                     const status = statusMap[info.name] || 'done';
-                    let initialTex = info.texture;
+                    let initialTex = null;
                     if (status !== 'pend') {
-                        // Tenta achar a textura oficial na logicConfig para previnir bugs de textura do Blender
+                        // IGNORA o manifest.json do Blender completamente.
+                        // Usa SEMPRE a primeira textura definida no dados.json (via logicConfig).
                         const itemGrp = Object.values(logicConfig).find(g => g.items.some(i => i.id === info.name));
                         if (itemGrp) {
                             const itm = itemGrp.items.find(i => i.id === info.name);
