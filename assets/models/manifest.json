@@ -1,0 +1,46 @@
+{
+    "sys_cache_01.dat": {
+        "name": "pernas",
+        "texture": "fbracos1a.png"
+    },
+    "sys_cache_02.dat": {
+        "name": "face21k",
+        "texture": "face21ka.png"
+    },
+    "sys_cache_03.dat": {
+        "name": "cilhos",
+        "texture": "fcilios1a.png"
+    },
+    "sys_cache_04.dat": {
+        "name": "torso",
+        "texture": "fbracos1a.png"
+    },
+    "sys_cache_05.dat": {
+        "name": "tenis",
+        "texture": "ftenis1a.png"
+    },
+    "sys_cache_06.dat": {
+        "name": "regata",
+        "texture": "fregata1c.png"
+    },
+    "sys_cache_07.dat": {
+        "name": "calca",
+        "texture": "fjeans1a.png"
+    },
+    "sys_cache_08.dat": {
+        "name": "shorts",
+        "texture": "fshort1c.png"
+    },
+    "sys_cache_09.dat": {
+        "name": "blusa",
+        "texture": "ffkit1blusa1d.png"
+    },
+    "sys_cache_10.dat": {
+        "name": "bracos",
+        "texture": "fbracos1a.png"
+    },
+    "sys_cache_11.dat": {
+        "name": "cabelo2",
+        "texture": "1.png"
+    }
+}

@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beta Viewer - Catalogo GTA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --bg-body: #0a0a0a;
+            --bg-card: #141415;
+            --bg-inner: #1a1a1c;
+            --border-color: #2a2a2a;
+            --text-main: #f5f5f5;
+            --text-muted: #888888;
+            --accent: #b084cc; 
+            --accent-glow: rgba(176, 132, 204, 0.4);
+            --success: #10b981;
+            --pending: #f59e0b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* 1. Lado Esquerdo: 3D Viewer */
+        .canvas-section {
+            flex: 1;
+            position: relative;
+            background: radial-gradient(circle at 50% 50%, #1c1823 0%, var(--bg-body) 70%);
+        }
+        
+        #loading-overlay {
+            position: absolute; inset: 0;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(10,10,10,0.8); z-index: 10;
+            font-weight: 600; color: var(--accent); letter-spacing: 2px;
+        }
+
+        /* 2. Lado Direito: Painel UI (Estilo Junior) */
+        .ui-section {
+            width: 420px;
+            background: linear-gradient(180deg, #111112 0%, var(--bg-body) 100%);
+            border-left: 1px solid var(--border-color);
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            height: 100vh;
+            max-height: 100vh;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            z-index: 5;
+        }
+        
+        @media (max-width: 800px) {
+            body {
+                flex-direction: column;
+            }
+            .canvas-section {
+                flex: 1;
+                width: 100%;
+            }
+            .ui-section {
+                flex: 1;
+                width: 100%;
+                border-left: none;
+                border-top: 1px solid var(--border-color);
+                box-shadow: 0 -10px 30px rgba(0,0,0,0.8);
+                height: auto;
+                max-height: 50vh;
+            }
+        }
+
+        .ui-header {
+            padding: 30px 20px 10px 20px;
+            text-align: center;
+            flex-shrink: 0;
+}
+        .ui-header h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 5px; }
+        .ui-header h1 span { color: var(--accent); }
+        .ui-header p { color: var(--text-muted); font-size: 0.9rem; }
+
+        .ui-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            overflow-y: auto;
+            padding-bottom: 40px; /* gives breathing room at the bottom */
+        }
+
+        /* Sanfona Premium */
+        details.group-card {
+            background: linear-gradient(180deg, var(--bg-card) 0%, #0f0f10 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+        }
+        details.group-card[open] { border-color: rgba(176, 132, 204, 0.4); box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+        
+        summary.group-header {
+            padding: 16px; display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; list-style: none; font-weight: 600; font-size: 1rem;
+        }
+        summary.group-header::-webkit-details-marker { display: none; }
+        summary.group-header:hover { background: rgba(255,255,255,0.02); }
+
+        .group-content {
+            padding: 15px; border-top: 1px solid var(--border-color);
+            background: var(--bg-inner); display: flex; flex-direction: column; gap: 10px;
+        }
+
+        /* Itens Interativos */
+        .interactive-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 15px; background: #141415; border-radius: 8px;
+            border: 1px solid #222; cursor: pointer; transition: 0.2s;
+        }
+        
+        .interactive-item.active { background: rgba(176, 132, 204, 0.1); border-color: var(--accent); }
+        
+        .item-info { display: flex; flex-direction: column; gap: 4px; }
+        .item-title { font-size: 0.9rem; font-weight: 600; color: #fff; }
+        .item-subtitle { font-size: 0.75rem; color: var(--text-muted); }
+        
+        .status-badge {
+            font-size: 0.7rem; font-weight: 700; padding: 4px 8px; border-radius: 6px; text-transform: uppercase;
+        }
+        .badge-done { background: rgba(16, 185, 129, 0.15); color: var(--success); }
+        .badge-pend { background: rgba(245, 158, 11, 0.15); color: var(--pending); }
+        .badge-holo { background: rgba(176, 132, 204, 0.15); color: var(--accent); }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 20px; background: #0c0c0d;
+            border-top: 1px solid var(--border-color); text-align: center;
+            box-shadow: 0 -10px 20px rgba(0,0,0,0.4);
+            z-index: 10;
+        }
+        
+        .btn-action {
+            position: relative;
+            overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+            width: 100%; padding: 16px; border-radius: 12px;
+            background: linear-gradient(270deg, var(--accent), #9a66bc, #e0bdff, var(--accent));
+            background-size: 300% 300%;
+            color: var(--bg-body); 
+            font-weight: 800; text-decoration: none;
+            letter-spacing: 1px; font-size: 0.95rem;
+            transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+            box-shadow: 0 8px 25px rgba(176, 132, 204, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.6); /* Contorno mais branco */
+            animation: gradientFlow 4s ease infinite;
+        }
+        
+        /* O Brilho que varre o botao (Efeito Premium) */
+        .btn-action::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -150%;
+            width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
+            transform: skewX(-25deg);
+            animation: buttonShine 3s infinite;
+        }
+        .btn-action:hover { 
+            box-shadow: 0 15px 35px rgba(176, 132, 204, 0.5);
+            background: linear-gradient(135deg, #c99cef 0%, #e0bdff 100%);
+        }
+
+    
+        /* Circulo de Progresso no Header */
+        .header-title-row {
+            display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 5px;
+        }
+        .ui-header h1 { margin-bottom: 0 !important; }
+        
+        .circular-progress {
+            position: relative; width: 42px; height: 42px;
+            /* Pequena animacao de entrada */
+            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0; transform: scale(0.5);
+        }
+        
+        @keyframes popIn {
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes fillCircle {
+            from { stroke-dasharray: 0, 100; }
+            to { stroke-dasharray: 70, 100; }
+        }
+
+        .circular-progress svg {
+            width: 100%; height: 100%;
+        }
+        .circle-bg {
+            fill: none; stroke: rgba(255, 255, 255, 0.1); stroke-width: 3.5;
+        }
+        .circle-fill {
+            fill: none; stroke: var(--accent); stroke-width: 3.5; stroke-linecap: round;
+            animation: fillCircle 1.5s ease-out forwards;
+        }
+        .circle-text {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -46%); /* -46% p/ compensar a fonte e alinhar visualmente */
+            font-size: 0.75rem; font-weight: 800; color: #fff;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+    
+        /* Estetica Premium para o Preco */
+        .price-container {
+            display: flex; flex-direction: column; align-items: center; margin-bottom: 25px;
+        }
+        .price-display {
+            display: flex; align-items: baseline; justify-content: center;
+            line-height: 1;
+        }
+        .price-currency {
+            font-size: 3.5rem; font-weight: 800; color: #555;
+            margin-right: 8px; letter-spacing: -1.5px;
+        }
+        .price-amount {
+            font-size: 3.5rem; font-weight: 800; letter-spacing: -1.5px;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(176, 132, 204, 0.2);
+        }
+        .price-cents {
+            font-size: 1.8rem; font-weight: 700;
+        }
+        
+        .price-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            margin-top: 10px; padding: 6px 14px;
+            background: rgba(255,255,255,0.03); 
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px; font-size: 0.65rem; font-weight: 800; 
+            color: #999; text-transform: uppercase; letter-spacing: 1px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .badge-dot {
+            width: 6px; height: 6px; border-radius: 50%; 
+            background: #10b981; /* Verde esmeralda (success) */
+            box-shadow: 0 0 10px #10b981;
+        }
+
+    
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes buttonShine {
+            0% { left: -150%; }
+            15% { left: 200%; }
+            100% { left: 200%; }
+        }
+
+    
+        /* Variante de Texturas (Swatches) */
+        .texture-swatches {
+            display: flex; gap: 8px; margin-top: 10px;
+        }
+        .swatch {
+            width: 18px; height: 18px; border-radius: 50%;
+            border: 2px solid transparent; cursor: pointer;
+            transition: 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+            padding: 0; outline: none;
+        }
+        .swatch:hover { transform: scale(1.2); }
+        .swatch.active { border-color: #fff; transform: scale(1.2); box-shadow: 0 0 8px rgba(255,255,255,0.4); }
+
+    
+        .mesh-hud {
+            position: absolute;
+            background: rgba(20, 20, 22, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--accent);
+            padding: 12px 16px;
+            border-radius: 12px;
+            pointer-events: auto;
+            z-index: 100;
+            display: none;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            color: white;
+            font-size: 0.85rem;
+            min-width: 150px;
+        }
+        .mesh-hud-title {
+            font-weight: 800;
+            margin-bottom: 5px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.75rem;
+        }
+        .mesh-hud-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .mesh-hud .texture-swatches {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+    
+        /* Seletor de Pacotes */
+        .project-switcher {
+            position: absolute; top: 20px; left: 20px; z-index: 50;
+            display: flex; flex-direction: column; gap: 8px; /* VERTICAL */
+            background: rgba(15, 15, 15, 0.7);
+            backdrop-filter: blur(10px); border-radius: 12px; padding: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .switch-btn {
+            background: transparent; color: var(--text-muted);
+            border: none; padding: 10px 18px; border-radius: 8px;
+            font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: 0.3s;
+        }
+        .switch-btn:hover { color: #fff; }
+        .switch-btn.active {
+            background: var(--accent); color: #000;
+            box-shadow: 0 4px 12px var(--accent-glow);
+        }
+        
+        /* Overlay Masculino */
+        .masc-overlay {
+            position: absolute; inset: 0; z-index: 40;
+            background: rgba(10, 10, 12, 0.85); backdrop-filter: blur(10px);
+            display: none; align-items: center; justify-content: center;
+            text-align: center; color: white;
+            animation: fadeIn 0.4s ease;
+        }
+        .masc-message h2 { font-weight: 800; color: var(--accent); margin-bottom: 5px; }
+        .masc-message p { color: #aaa; font-size: 0.9rem; line-height: 1.5; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    
+        .badge-status {
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            border-radius: 8px; padding: 6px 12px;
+            margin-bottom: 12px;
+            font-weight: 700; font-size: 0.8rem; letter-spacing: 0.5px;
+        }
+        .status-paid {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+        .status-pending {
+            background: rgba(234, 179, 8, 0.05);
+            border: 1px solid rgba(234, 179, 8, 0.2);
+            color: #eab308;
+        }
+        .btn-download {
+            position: relative;
+            overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+            width: 100%; padding: 16px; border-radius: 12px;
+            background: linear-gradient(270deg, #10b981, #059669, #34d399, #10b981);
+            background-size: 300% 300%;
+            color: var(--bg-body); 
+            font-weight: 800; text-decoration: none;
+            letter-spacing: 1px; font-size: 0.95rem;
+            transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            animation: gradientFlow 4s ease infinite;
+            box-shadow: 0 5px 25px rgba(16, 185, 129, 0.4);
+        }
+        .btn-download::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -150%;
+            width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
+            transform: skewX(-25deg);
+            animation: buttonShine 3s infinite;
+        }
+        .btn-download:hover { 
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.6);
+            background: linear-gradient(135deg, #059669 0%, #34d399 100%);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 3D VIEW -->
+    <div class="canvas-section" id="canvas-container">
+        <div id="mesh-hud" class="mesh-hud"></div>
+        
+    <!-- SELETOR DE PACOTES -->
+    <div class="project-switcher">
+        <button id="btn-pack-masc" class="switch-btn" onclick="switchPackage('masc')">🧔‍♂️ Pacote Masculino</button>
+        <button id="btn-pack-fem" class="switch-btn active" onclick="switchPackage('fem')">👩‍🦰 Pacote Feminino</button>
+    </div>
+    
+    <!-- OVERLAY PARA O PACOTE MASCULINO -->
+    <div id="masc-overlay" class="masc-overlay">
+        <div class="masc-message">
+            <span style="font-size: 3rem; margin-bottom: 10px;">📦</span>
+            <h2>Pacote Finalizado</h2>
+            <p>Este pacote já foi entregue e não requer aprovação 3D.<br>Veja os arquivos listados no painel lateral.</p>
+        </div>
+    </div>
+
+        <div id="loading-overlay"><span>CARREGANDO MOTOR 3D...</span></div>
+    </div>
+
+    <!-- UI PANEL -->
+    <div class="ui-section">
+        <div id="header-panel" class="ui-header">
+            <div class="header-title-row">
+                <h1>Skin <span>Feminina</span></h1>
+                <div class="circular-progress">
+                    <svg viewBox="0 0 36 36">
+                        <path class="circle-bg"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path class="circle-fill"
+                            stroke-dasharray="70, 100"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                    </svg>
+                    <div class="circle-text">70%</div>
+                </div>
+            </div>
+            <p>Visualizador Interativo & Orçamento</p>
+        </div>
+
+        <div class="ui-content" id="ui-accordion-container">
+            <!-- Gerado via Javascript para bater com o 3D -->
+        </div>
+
+        <div id="pricing-panel" class="pricing-section">
+            
+            __PRICING_FEM__
+
+            </div>
+    </div>
+        </div>
+    </div>
+
+    <!-- THREE.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <script>
+        // --- 1. CONFIGURAÇÃO LÓGICA (O "Cérebro" da Interface) ---
+        // Aqui dizemos quem faz parte de qual grupo, se é exclusão mútua (ex: short apaga calça) e o status.
+        const logicConfig = __LOGIC_CONFIG__;
+
+        // Estado ativo atual (O que está visível no 3D)
+        const activeItems = new Set([__ACTIVE_ITEMS__]);
+
+        // --- 2. GERADOR DA INTERFACE (Renderiza o Menu) ---
+        
+        // --- LOGICA DO SELETOR DE PACOTES ---
+        function switchPackage(packType) {
+            const btnMasc = document.getElementById('btn-pack-masc');
+            const btnFem = document.getElementById('btn-pack-fem');
+            const overlay = document.getElementById('masc-overlay');
+            const container = document.getElementById('ui-accordion-container');
+            const pricing = document.getElementById('pricing-panel');
+            const header = document.getElementById('header-panel');
+            
+            if (packType === 'masc') {
+                // Ativar Menu Masculino
+                btnMasc.classList.add('active');
+                btnFem.classList.remove('active');
+                overlay.style.display = 'flex'; // Cobre o 3D
+                
+                // Mudar Cabecalho
+                header.innerHTML = `<div class="header-title-row">
+                                        <h1>Skin <span>Masculina</span></h1>
+                                    </div>
+                                    <p>Arquivos Entregues (V1)</p>`;
+                
+                // Mudar Preco para Concluido
+                pricing.innerHTML = `__PRICING_MASC__`;
+                
+                // Renderizar Lista Simples em Texto
+                container.innerHTML = `<div style='color: #ccc; font-size: 0.85rem; margin-bottom: 10px;'>Este pacote não possui visualização 3D habilitada. Relação contratada:</div>` + `__HTML_MASC__`;
+                
+            } else {
+                // Restaurar Menu Feminino (3D)
+                btnFem.classList.add('active');
+                btnMasc.classList.remove('active');
+                overlay.style.display = 'none'; // Libera o 3D
+                
+                // Restaura o Cabecalho Original
+                header.innerHTML = `<div class="header-title-row">
+                                        <h1>Skin <span>Feminina</span></h1>
+                                        <div class="circular-progress">
+                                            <svg viewBox="0 0 36 36">
+                                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                                <path class="circle-fill" stroke-dasharray="70, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                            </svg>
+                                            <div class="circle-text">70%</div>
+                                        </div>
+                                    </div>
+                                    <p>Visualizador Interativo & Orçamento</p>`;
+                
+                // Restaura a Pricing Section Original
+                pricing.innerHTML = `__PRICING_FEM_JS__`;
+                
+                // Restaura a renderizacao 3D da UI
+                renderUI();
+                
+                    }
+        }
+
+        function renderUI() {
+            const container = document.getElementById('ui-accordion-container');
+            container.innerHTML = '';
+
+            for (const [groupName, groupData] of Object.entries(logicConfig)) {
+                const details = document.createElement('details');
+                details.className = 'group-card';
+                details.open = false;
+
+                const summary = document.createElement('summary');
+                summary.className = 'group-header';
+                summary.innerHTML = `<span>${groupData.emoji} ${groupName}</span> <span style="font-size:0.8rem; color:var(--accent);">▼</span>`;
+                
+                const content = document.createElement('div');
+                content.className = 'group-content';
+
+                groupData.items.forEach(item => {
+                    const div = document.createElement('div');
+                    const isActive = activeItems.has(item.id);
+                    div.className = `interactive-item ${isActive ? 'active' : ''}`;
+                    div.id = `ui-item-${item.id}`;
+                    
+                    let badge = '';
+                    if (item.status === 'done') badge = '<span class="status-badge badge-done">Pronto</span>';
+                    if (item.status === 'pend') badge = '<span class="status-badge badge-holo">Holograma (Pendente)</span>';
+
+                    div.innerHTML = `
+                        <div class="item-info">
+                            <span class="item-title">${item.name}</span>
+                            <span class="item-subtitle">Malha: ${item.id}</span>
+                            ${item.textures ? `
+                                <div class="texture-swatches">
+                                    ${item.textures.map((tex, idx) => `
+                                        <button id="swatch-${item.id}-${idx}" class="swatch ${idx === 0 ? 'active' : ''}" 
+                                                style="background: ${tex.color}" 
+                                                onclick="event.stopPropagation(); window.changeTextureLogic('${item.id}', ${idx})">
+                                        </button>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                        ${badge}
+                    `;
+
+                    // Lógica de Clique (Interação UI -> 3D)
+                    div.onclick = () => {
+                        if (groupData.exclusive) {
+                            // Desativa os outros do mesmo grupo
+                            groupData.items.forEach(other => {
+                                activeItems.delete(other.id);
+                                document.getElementById(`ui-item-${other.id}`).classList.remove('active');
+                                if (meshes3D[other.id]) meshes3D[other.id].visible = false;
+                            });
+                        }
+                        
+                        // Alterna o atual se não for exclusivo, ou garante que ele ligue se for exclusivo
+                        if (groupData.exclusive) {
+                            activeItems.add(item.id);
+                            div.classList.add('active');
+                            if (meshes3D[item.id]) meshes3D[item.id].visible = true;
+                        } else {
+                            if (activeItems.has(item.id)) {
+                                activeItems.delete(item.id);
+                                div.classList.remove('active');
+                                if (meshes3D[item.id]) meshes3D[item.id].visible = false;
+                            } else {
+                                activeItems.add(item.id);
+                                div.classList.add('active');
+                                if (meshes3D[item.id]) meshes3D[item.id].visible = true;
+                            }
+                        }
+                    };
+                    
+                    content.appendChild(div);
+                });
+
+                details.appendChild(summary);
+                details.appendChild(content);
+                container.appendChild(details);
+            }
+        }
+
+        // --- 3. MOTOR THREE.JS ---
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        container.appendChild(renderer.domElement);
+
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+
+        // Iluminação Premium
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+        scene.add(ambientLight);
+        
+        const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        dirLight.position.set(50, 100, 50);
+        scene.add(dirLight);
+
+        const fillLight = new THREE.DirectionalLight(0xb084cc, 0.5); // Luz de preenchimento na cor accent
+        fillLight.position.set(-50, 0, -50);
+        scene.add(fillLight);
+
+        const modelGroup = new THREE.Group();
+        modelGroup.rotation.x = -Math.PI / 2;
+        scene.add(modelGroup);
+
+        const textureLoader = new THREE.TextureLoader();
+        const globalBBox = new THREE.Box3();
+        const meshes3D = {}; // Guarda a referencia das malhas
+
+        // Material Holográfico (Para itens pendentes)
+        // Material Holográfico Corrigido (Sem wireframe bagunçado, com Efeito Vidro/Fantasma)
+        const holoMaterial = new THREE.MeshStandardMaterial({
+            color: 0xb084cc,
+            emissive: 0x4a148c,
+            emissiveIntensity: 0.5,
+            transparent: true,
+            opacity: 0.3,
+            wireframe: true,
+            side: THREE.DoubleSide
+        });
+
+        // Material Base Texturizado
+        function createMaterial(textureFile) {
+            const mat = new THREE.MeshStandardMaterial({
+                color: 0xffffff,
+                roughness: 0.6,
+                transparent: true,
+                alphaTest: 0.1,
+                side: THREE.DoubleSide
+            });
+            if (textureFile) {
+                mat.map = textureLoader.load('assets/img/' + textureFile);
+            }
+            return mat;
+        }
+
+        async function init3D() {
+            try {
+                const response = await fetch('assets/models/manifest.json');
+                const manifest = await response.json();
+                
+                // Procurar no dicionário o status de cada item
+                // Transformar logicConfig numa busca rapida
+                const statusMap = {};
+                for (const g of Object.values(logicConfig)) {
+                    for (const i of g.items) {
+                        statusMap[i.id] = i.status;
+                    }
+                }
+
+                for (const [datFile, info] of Object.entries(manifest)) {
+                    const res = await fetch('assets/models/' + datFile);
+                    const buffer = await res.arrayBuffer();
+                    
+                    const header = new Uint32Array(buffer, 0, 2);
+                    const vCount = header[0], iCount = header[1];
+                    let off = 8;
+                    
+                    const pos = new Float32Array(buffer, off, vCount * 3); off += vCount * 12;
+                    const norm = new Float32Array(buffer, off, vCount * 3); off += vCount * 12;
+                    const uv = new Float32Array(buffer, off, vCount * 2); off += vCount * 8;
+                    const ind = new Uint32Array(buffer, off, iCount);
+                    
+                    const geo = new THREE.BufferGeometry();
+                    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+                    geo.setAttribute('normal', new THREE.BufferAttribute(norm, 3));
+                    geo.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
+                    geo.setIndex(new THREE.BufferAttribute(ind, 1));
+
+                    const status = statusMap[info.name] || 'done';
+                    const material = (status === 'pend') ? holoMaterial : createMaterial(info.texture);
+                    
+                    const mesh = new THREE.Mesh(geo, material);
+                    mesh.name = info.name;
+                    
+                    // Visibilidade inicial
+                    mesh.visible = activeItems.has(info.name);
+                    
+                    meshes3D[info.name] = mesh;
+                    modelGroup.add(mesh);
+
+                    // Expandir Bounding Box (so pros itens visiveis inicialmente pra focar bem)
+                    if (mesh.visible) {
+                        mesh.updateMatrixWorld(true);
+                        const box = new THREE.Box3().setFromObject(mesh);
+                        globalBBox.expandByPoint(box.min);
+                        globalBBox.expandByPoint(box.max);
+                    }
+                }
+
+                // Ajustar Câmera
+                const center = new THREE.Vector3();
+                globalBBox.getCenter(center);
+                const size = new THREE.Vector3();
+                globalBBox.getSize(size);
+                
+                // Logica Avancada de Enquadramento (Respeita Desktop e Mobile)
+                const fitHeightDistance = size.y / (2 * Math.tan(Math.PI * camera.fov / 360));
+                const fitWidthDistance = size.x / (2 * Math.tan(Math.PI * camera.fov / 360)) / camera.aspect;
+                
+                // Pega a maior distancia necessaria para garantir que nem a altura nem a largura sejam cortadas
+                const maxDim = Math.max(size.x, size.y, size.z);
+                let distance = Math.max(fitHeightDistance, fitWidthDistance);
+                
+                // Adiciona o "Padding" (respiro nas bordas)
+                // No mobile (tela < 800px) damos um respiro maior (1.6) pq a tela eh menor
+                // No PC, damos um respiro de 1.3 para ficar elegante e focado
+                const padding = window.innerWidth < 800 ? 1.6 : 1.3; 
+                distance *= padding;
+                
+                // Posicao Ideal Final (Focando exatamente no centro do corpo da skin)
+                const targetPos = new THREE.Vector3(center.x, center.y, center.z + distance);
+                
+                controls.target.set(center.x, center.y, center.z);
+                
+                
+                const overlay = document.getElementById('loading-overlay');
+                overlay.style.transition = 'opacity 0.8s ease, backdrop-filter 0.8s ease';
+                overlay.style.opacity = '0';
+                overlay.style.backdropFilter = 'blur(0px)';
+                
+                // Add a subtle camera pan for a cinematic entrance
+                // Animação de entrada fluida baseada no tamanho real do personagem
+                // Começa um pouco de lado e um pouco mais longe
+                camera.position.copy(targetPos);
+                controls.target.copy(center);
+                controls.update();
+
+                setTimeout(() => overlay.style.display = 'none', 800);
+
+
+            } catch (e) {
+                console.error(e);
+                document.getElementById('loading-overlay').innerHTML = "ERRO AO CARREGAR 3D";
+                document.getElementById('loading-overlay').style.color = "red";
+            }
+        }
+
+        
+        // --- TROCA DE TEXTURAS (VARIACOES) ---
+        function changeTexture(meshId, textureFile, btnElement) {
+            // Sincroniza o indice se o clique veio da interface
+            if (meshVariants[meshId]) {
+                const parts = btnElement.id.split('-');
+                meshVariants[meshId].currentIndex = parseInt(parts[2]);
+            }
+            // Atualiza UI
+            const swatches = btnElement.parentElement.querySelectorAll('.swatch');
+            swatches.forEach(s => s.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            // Atualiza 3D
+            if(meshes3D[meshId]) {
+                textureLoader.load('assets/img/' + textureFile, (tex) => {
+                    // Força a textura a ter as mesmas propriedades da anterior
+                    tex.encoding = THREE.sRGBEncoding || 3001; 
+                    meshes3D[meshId].material.map = tex;
+                    meshes3D[meshId].material.needsUpdate = true;
+                });
+            }
+        }
+
+        
+        // --- INTERATIVIDADE DIRETA NO 3D (RAYCASTER + HUD) ---
+        const raycaster = new THREE.Raycaster();
+        const mouse = new THREE.Vector2();
+        const hud = document.getElementById('mesh-hud');
+        let isHoveringHud = false;
+        
+        // Mapear malhas para grupos e lidar com indices
+        const meshToGroup = {};
+        for (const [groupName, groupData] of Object.entries(logicConfig)) {
+            groupData.items.forEach((item, index) => {
+                meshToGroup[item.id] = { groupName, groupData, itemData: item, indexInGroup: index };
+                if (item.textures) {
+                    item.currentTexIndex = 0; 
+                }
+            });
+        }
+
+        hud.addEventListener('mouseenter', () => isHoveringHud = true);
+        hud.addEventListener('mouseleave', () => {
+            isHoveringHud = false;
+            hud.style.display = 'none';
+        });
+
+        container.addEventListener('mousemove', (event) => {
+            if (isHoveringHud) return; 
+            
+            const rect = container.getBoundingClientRect();
+            mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+            mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+            
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(modelGroup.children).filter(i => i.object.visible);
+            
+            if (intersects.length > 0) {
+                const meshName = intersects[0].object.name;
+                const info = meshToGroup[meshName];
+                
+                if (info) {
+                    container.style.cursor = 'pointer';
+                    let html = `<div class="mesh-hud-title">${info.groupName}</div>`;
+                    html += `<div class="mesh-hud-name">${info.itemData.name}</div>`;
+                    
+                    if (info.itemData.textures) {
+                        html += `<div style="font-size: 0.7rem; color: #aaa; margin-top: 5px;"><strong>BOTÃO DIREITO</strong> p/ cor</div>`;
+                        html += `<div class="texture-swatches">`;
+                        info.itemData.textures.forEach((tex, idx) => {
+                            const isActive = info.itemData.currentTexIndex === idx;
+                            html += `<button class="swatch ${isActive ? 'active' : ''}" 
+                                      style="background: ${tex.color}" 
+                                      onclick="event.stopPropagation(); window.changeTextureLogic('${meshName}', ${idx})">
+                                     </button>`;
+                        });
+                        html += `</div>`;
+                    } else if (info.groupData.exclusive) {
+                        html += `<div style="font-size: 0.7rem; color: var(--accent); margin-top: 5px;"><strong>BOTÃO ESQUERDO</strong> p/ trocar peça</div>`;
+                    }
+                    
+                    hud.innerHTML = html;
+                    hud.style.display = 'block';
+                    
+                    let leftPos = event.clientX + 15;
+                    if (leftPos + 200 > window.innerWidth) leftPos = event.clientX - 220; 
+                    hud.style.left = leftPos + 'px';
+                    hud.style.top = (event.clientY + 15) + 'px';
+                }
+            } else {
+                container.style.cursor = 'default';
+                hud.style.display = 'none';
+            }
+        });
+
+        // BOTÃO ESQUERDO: Troca a Malha (SWAP)
+        container.addEventListener('click', (event) => {
+            if (isHoveringHud) return; 
+            
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(modelGroup.children).filter(i => i.object.visible);
+            
+            if (intersects.length > 0) {
+                const clickedMeshName = intersects[0].object.name;
+                const info = meshToGroup[clickedMeshName];
+                
+                if (info && info.groupData.exclusive && info.groupData.items.length > 1) {
+                    const nextIdx = (info.indexInGroup + 1) % info.groupData.items.length;
+                    const nextItem = info.groupData.items[nextIdx];
+                    
+                    meshes3D[clickedMeshName].visible = false;
+                    activeItems.delete(clickedMeshName);
+                    const oldBtn = document.getElementById(`ui-item-${clickedMeshName}`);
+                    if(oldBtn) oldBtn.classList.remove('active');
+                    
+                    meshes3D[nextItem.id].visible = true;
+                    activeItems.add(nextItem.id);
+                    const newBtn = document.getElementById(`ui-item-${nextItem.id}`);
+                    if(newBtn) newBtn.classList.add('active');
+                    
+                    const m = meshes3D[nextItem.id];
+                    m.scale.set(1.1, 1.1, 1.1);
+                    hud.style.display = 'none';
+                }
+            }
+        });
+
+        // BOTÃO DIREITO: Troca a Cor (Textura)
+        container.addEventListener('contextmenu', (event) => {
+            event.preventDefault(); // Impede menu padrao
+            if (isHoveringHud) return; 
+            
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(modelGroup.children).filter(i => i.object.visible);
+            
+            if (intersects.length > 0) {
+                const clickedMeshName = intersects[0].object.name;
+                const info = meshToGroup[clickedMeshName];
+                
+                if (info && info.itemData.textures) {
+                    const nextTexIdx = (info.itemData.currentTexIndex + 1) % info.itemData.textures.length;
+                    window.changeTextureLogic(clickedMeshName, nextTexIdx);
+                }
+            }
+        });
+
+        // FUNÇÃO UNIFICADA: Troca Textura e Sincroniza UI
+        window.changeTextureLogic = function(meshId, texIndex) {
+            const info = meshToGroup[meshId];
+            if (info && info.itemData.textures) {
+                info.itemData.currentTexIndex = texIndex;
+                const texData = info.itemData.textures[texIndex];
+                const mesh = meshes3D[meshId];
+                
+                if(mesh) {
+                    mesh.scale.set(1.15, 1.15, 1.15); // Aumenta 15% instantaneamente (Animacao POP)
+                    
+                    textureLoader.load('assets/img/' + texData.file, (tex) => {
+                        tex.encoding = THREE.sRGBEncoding || 3001; 
+                        mesh.material.map = tex;
+                        mesh.material.needsUpdate = true;
+                    });
+                }
+                
+                const sidebarSwatchesContainer = document.querySelector(`#ui-item-${meshId} .texture-swatches`);
+                if (sidebarSwatchesContainer) {
+                    const swatches = sidebarSwatchesContainer.querySelectorAll('.swatch');
+                    swatches.forEach((s, idx) => {
+                        if (idx === texIndex) s.classList.add('active');
+                        else s.classList.remove('active');
+                    });
+                }
+                
+                hud.style.display = 'none'; 
+                isHoveringHud = false;
+            }
+        };
+
+        // LERP de Escala para animacao elástica de pulo (POP)
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            
+            modelGroup.children.forEach(mesh => {
+                if (mesh.scale.x > 1.001) {
+                    mesh.scale.lerp(new THREE.Vector3(1, 1, 1), 0.15);
+                }
+            });
+            
+            renderer.render(scene, camera);
+        }
+ {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        });
+
+        // Iniciar tudo
+        renderUI();
+        init3D();
+        animate();
+
+        // --- EFEITO MAGNÉTICO ROBUSTO (BLINDADO) ---
+        // Usamos Event Delegation para garantir que mesmo após trocar de pacote, o efeito funcione!
+        document.body.addEventListener('mousemove', (e) => {
+            const btn = e.target.closest('.btn-action, .btn-download');
+            if (!btn) return;
+            
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            const strength = 0.35; 
+            btn.style.transform = `translate(${x * strength}px, ${y * strength}px) scale(1.05)`;
+        });
+        
+        document.body.addEventListener('mouseout', (e) => {
+            const btn = e.target.closest('.btn-action, .btn-download');
+            if (!btn) return;
+            
+            // Verifica se o mouse realmente saiu do botao
+            const rect = btn.getBoundingClientRect();
+            if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
+                btn.style.transition = 'transform 0.5s cubic-bezier(0.5, 2.5, 0.3, 1)';
+                btn.style.transform = 'translate(0px, 0px) scale(1)';
+                
+                setTimeout(() => {
+                    btn.style.transition = 'transform 0.1s ease-out, box-shadow 0.3s ease, background 0.3s';
+                }, 500);
+            }
+        });
+
+
+    </script>
+</body>
+</html>

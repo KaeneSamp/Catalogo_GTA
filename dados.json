@@ -324,31 +324,52 @@
           "resumo_texturas": "Malha Base",
           "itens": [
             {
-              "id": "00",
+              "id": "face21k",
               "nome": "FACE21",
               "texturas": [
                 "fface21a"
               ],
               "obs": "Base",
-              "concluido": true
+              "concluido": true,
+              "status": "done",
+              "texturas_3d": [
+                {
+                  "file": "fface21a",
+                  "color": "#aaaaaa"
+                }
+              ]
             },
             {
-              "id": "01",
+              "id": "bracos",
               "nome": "BRACOS (COMPLETO)",
               "texturas": [
                 "fbracos1a"
               ],
               "obs": "Sem blusa",
-              "concluido": true
+              "concluido": true,
+              "status": "done",
+              "texturas_3d": [
+                {
+                  "file": "fbracos1a",
+                  "color": "#aaaaaa"
+                }
+              ]
             },
             {
-              "id": "02",
+              "id": "pernas",
               "nome": "PERNAS (COMPLETO)",
               "texturas": [
                 "fpernas1a"
               ],
               "obs": "Base",
-              "concluido": true
+              "concluido": true,
+              "status": "done",
+              "texturas_3d": [
+                {
+                  "file": "fpernas1a",
+                  "color": "#aaaaaa"
+                }
+              ]
             },
             {
               "id": "03",
@@ -357,7 +378,14 @@
                 "calcinha1a"
               ],
               "obs": "Calcinha",
-              "concluido": true
+              "concluido": true,
+              "status": "done",
+              "texturas_3d": [
+                {
+                  "file": "calcinha1a",
+                  "color": "#aaaaaa"
+                }
+              ]
             },
             {
               "id": "04",
@@ -366,7 +394,14 @@
                 "sutian1a"
               ],
               "obs": "Sutiã",
-              "concluido": true
+              "concluido": true,
+              "status": "done",
+              "texturas_3d": [
+                {
+                  "file": "sutian1a",
+                  "color": "#aaaaaa"
+                }
+              ]
             },
             {
               "id": "09",
@@ -375,7 +410,14 @@
                 "fbracos1a"
               ],
               "obs": "Base",
-              "concluido": true
+              "concluido": true,
+              "status": "done",
+              "texturas_3d": [
+                {
+                  "file": "fbracos1a",
+                  "color": "#aaaaaa"
+                }
+              ]
             },
             {
               "id": "-",
@@ -384,9 +426,37 @@
                 "fpernas1a, fpernas2a, fpernas3a"
               ],
               "obs": "Base",
-              "concluido": false
+              "concluido": false,
+              "status": "pend",
+              "texturas_3d": [
+                {
+                  "file": "fpernas1a",
+                  "color": "#aaaaaa"
+                },
+                {
+                  "file": "fpernas2a",
+                  "color": "#aaaaaa"
+                },
+                {
+                  "file": "fpernas3a",
+                  "color": "#aaaaaa"
+                }
+              ]
+            },
+            {
+              "id": "torso",
+              "nome": "TORSO",
+              "texturas": [], "texturas_3d": [],
+              "concluido": true
+            },
+            {
+              "id": "cilhos",
+              "nome": "CÍLIOS",
+              "texturas": [], "texturas_3d": [],
+              "concluido": true
             }
-          ]
+          ],
+          "exclusive": false
         },
         {
           "titulo": "3 Modelos de Face",
@@ -400,7 +470,14 @@
                 "fface25a"
               ],
               "obs": "Base",
-              "concluido": true
+              "concluido": true,
+              "status": "done",
+              "texturas_3d": [
+                {
+                  "file": "fface25a",
+                  "color": "#aaaaaa"
+                }
+              ]
             },
             {
               "id": "06",
@@ -409,7 +486,14 @@
                 "fface26a"
               ],
               "obs": "Base",
-              "concluido": true
+              "concluido": true,
+              "status": "done",
+              "texturas_3d": [
+                {
+                  "file": "fface26a",
+                  "color": "#aaaaaa"
+                }
+              ]
             },
             {
               "id": "07",
@@ -418,9 +502,17 @@
                 "fface29a"
               ],
               "obs": "Base",
-              "concluido": true
+              "concluido": true,
+              "status": "done",
+              "texturas_3d": [
+                {
+                  "file": "fface29a",
+                  "color": "#aaaaaa"
+                }
+              ]
             }
-          ]
+          ],
+          "exclusive": true
         },
         {
           "titulo": "2 Cabelos + 3 Sobrancelhas",
@@ -434,16 +526,42 @@
                 "fcabelo1a"
               ],
               "obs": "Textura Branca",
-              "concluido": false
+              "concluido": false,
+              "status": "pend",
+              "texturas_3d": [
+                {
+                  "file": "fcabelo1a",
+                  "color": "#aaaaaa"
+                }
+              ]
             },
             {
-              "id": "-",
+              "id": "cabelo2",
               "nome": "CABELO 2 (Preso/Coque)",
               "texturas": [
                 "fcabelo2a"
               ],
               "obs": "Textura Branca",
-              "concluido": false
+              "concluido": false,
+              "status": "pend",
+              "texturas_3d": [
+                {
+                  "file": "cabelo2c.png",
+                  "color": "#30221a"
+                },
+                {
+                  "file": "cabelo2h.png",
+                  "color": "#d6ab5c"
+                },
+                {
+                  "file": "cabelo2k.png",
+                  "color": "#1a1a1c"
+                },
+                {
+                  "file": "cabelo2o.png",
+                  "color": "#8c3b28"
+                }
+              ]
             },
             {
               "id": "-",
@@ -452,7 +570,14 @@
                 "feyebrow1a"
               ],
               "obs": "Textura Branca",
-              "concluido": false
+              "concluido": false,
+              "status": "pend",
+              "texturas_3d": [
+                {
+                  "file": "feyebrow1a",
+                  "color": "#aaaaaa"
+                }
+              ]
             },
             {
               "id": "-",
@@ -461,7 +586,14 @@
                 "feyebrow2a"
               ],
               "obs": "Textura Branca",
-              "concluido": false
+              "concluido": false,
+              "status": "pend",
+              "texturas_3d": [
+                {
+                  "file": "feyebrow2a",
+                  "color": "#aaaaaa"
+                }
+              ]
             },
             {
               "id": "-",
@@ -470,9 +602,17 @@
                 "feyebrow3a"
               ],
               "obs": "Textura Branca",
-              "concluido": false
+              "concluido": false,
+              "status": "pend",
+              "texturas_3d": [
+                {
+                  "file": "feyebrow3a",
+                  "color": "#aaaaaa"
+                }
+              ]
             }
-          ]
+          ],
+          "exclusive": true
         },
         {
           "titulo": "3 Overlays de Maquiagem",
@@ -486,7 +626,14 @@
                 "fmakeup1a"
               ],
               "obs": "Leve/Gloss",
-              "concluido": false
+              "concluido": false,
+              "status": "pend",
+              "texturas_3d": [
+                {
+                  "file": "fmakeup1a",
+                  "color": "#aaaaaa"
+                }
+              ]
             },
             {
               "id": "-",
@@ -495,7 +642,14 @@
                 "fmakeup2a"
               ],
               "obs": "Sombra/Delineador",
-              "concluido": false
+              "concluido": false,
+              "status": "pend",
+              "texturas_3d": [
+                {
+                  "file": "fmakeup2a",
+                  "color": "#aaaaaa"
+                }
+              ]
             },
             {
               "id": "-",
@@ -504,9 +658,17 @@
                 "fmakeup3a"
               ],
               "obs": "Festa/Batom Forte",
-              "concluido": false
+              "concluido": false,
+              "status": "pend",
+              "texturas_3d": [
+                {
+                  "file": "fmakeup3a",
+                  "color": "#aaaaaa"
+                }
+              ]
             }
-          ]
+          ],
+          "exclusive": false
         },
         {
           "titulo": "1 Cropped + 1 Casaco",
@@ -514,24 +676,39 @@
           "resumo_texturas": "Todas Brancas",
           "itens": [
             {
-              "id": "08",
+              "id": "regata",
               "nome": "CROPPED",
               "texturas": [
                 "crop1a"
               ],
               "obs": "Textura Branca",
-              "concluido": true
+              "concluido": true,
+              "status": "done",
+              "texturas_3d": [
+                {
+                  "file": "crop1a",
+                  "color": "#aaaaaa"
+                }
+              ]
             },
             {
-              "id": "09",
+              "id": "blusa",
               "nome": "BLUSA CANELADA",
               "texturas": [
                 "fblusa1a"
               ],
               "obs": "Textura Branca",
-              "concluido": true
+              "concluido": true,
+              "status": "done",
+              "texturas_3d": [
+                {
+                  "file": "fblusa1a",
+                  "color": "#aaaaaa"
+                }
+              ]
             }
-          ]
+          ],
+          "exclusive": true
         },
         {
           "titulo": "1 Shorts + 1 Calça",
@@ -539,24 +716,39 @@
           "resumo_texturas": "Todas Brancas",
           "itens": [
             {
-              "id": "-",
+              "id": "shorts",
               "nome": "SHORTS / SAIA",
               "texturas": [
                 "fshorts1a"
               ],
               "obs": "2 texturas",
-              "concluido": false
+              "concluido": false,
+              "status": "pend",
+              "texturas_3d": [
+                {
+                  "file": "fshorts1a",
+                  "color": "#aaaaaa"
+                }
+              ]
             },
             {
-              "id": "-",
+              "id": "calca",
               "nome": "CALÇA (Legging/Jeans)",
               "texturas": [
                 "fcalca1a"
               ],
               "obs": "3 texturas",
-              "concluido": false
+              "concluido": false,
+              "status": "pend",
+              "texturas_3d": [
+                {
+                  "file": "fcalca1a",
+                  "color": "#aaaaaa"
+                }
+              ]
             }
-          ]
+          ],
+          "exclusive": true
         },
         {
           "titulo": "1 Havaiana + 1 Tênis",
@@ -571,19 +763,42 @@
                 "fsandalia1b"
               ],
               "obs": "2 texturas",
-              "concluido": false
+              "concluido": false,
+              "status": "pend",
+              "texturas_3d": [
+                {
+                  "file": "fsandalia1a",
+                  "color": "#aaaaaa"
+                },
+                {
+                  "file": "fsandalia1b",
+                  "color": "#aaaaaa"
+                }
+              ]
             },
             {
-              "id": "-",
+              "id": "tenis",
               "nome": "TÊNIS FEMININO",
               "texturas": [
                 "ftenis1a",
                 "ftenis1b"
               ],
               "obs": "2 texturas",
-              "concluido": false
+              "concluido": false,
+              "status": "pend",
+              "texturas_3d": [
+                {
+                  "file": "ftenis1a",
+                  "color": "#aaaaaa"
+                },
+                {
+                  "file": "ftenis1b",
+                  "color": "#aaaaaa"
+                }
+              ]
             }
-          ]
+          ],
+          "exclusive": true
         }
       ]
     }
