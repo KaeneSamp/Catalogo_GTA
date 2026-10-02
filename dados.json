@@ -554,27 +554,27 @@
               "id": "cabelo2",
               "nome": "CABELO 2 (Cacheado/Longo)",
               "texturas": [
-                "fcabelo2a, fcabelo2b, fcabelo2c, fcabelo2h, fcabelo2k, fcabelo2o"
+                "fcabelo2a, fcabelo2b, fcabelo2c, fcabelo2d"
               ],
               "obs": "Diversos/Branco",
               "concluido": true,
               "status": "done",
               "texturas_3d": [
                 {
-                  "file": "cabelo2c.png",
-                  "color": "#30221a"
+                  "file": "fcabelo2a.png",
+                  "color": "#404040"
                 },
                 {
-                  "file": "cabelo2h.png",
-                  "color": "#d6ab5c"
+                  "file": "fcabelo2b.png",
+                  "color": "#402020"
                 },
                 {
-                  "file": "cabelo2k.png",
-                  "color": "#1a1a1c"
+                  "file": "fcabelo2c.png",
+                  "color": "#000000"
                 },
                 {
-                  "file": "cabelo2o.png",
-                  "color": "#8c3b28"
+                  "file": "fcabelo2d.png",
+                  "color": "#000000"
                 }
               ],
               "visivel_padrao": true
@@ -760,26 +760,26 @@
               "id": "calca",
               "nome": "CALÇA JEANS",
               "texturas": [
-                "fcalca1a, fcalca1b, fcalca1c, fcalca1d"
+                "fjeans1a, fjeans1b, fjeans1c, fjeans1d"
               ],
               "obs": "4 texturas",
               "concluido": true,
               "status": "done",
               "texturas_3d": [
                 {
-                  "file": "fcalca1a",
-                  "color": "#aaaaaa"
+                  "file": "fjeans1a.png",
+                  "color": "#707070"
                 },
                 {
-                  "file": "fcalca1b",
+                  "file": "fjeans1b.png",
                   "color": "#505070"
                 },
                 {
-                  "file": "fcalca1c",
+                  "file": "fjeans1c.png",
                   "color": "#708090"
                 },
                 {
-                  "file": "fcalca1d",
+                  "file": "fjeans1d.png",
                   "color": "#203040"
                 }
               ],
