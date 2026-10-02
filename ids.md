@@ -47,6 +47,9 @@
 | **pernas** | ✅ | 👤 Corpo Base (3 tons de pele) | **PERNAS (COMPLETO)** | `fpernas1a` | Base |
 | **torso** | ✅ | 👤 Corpo Base (3 tons de pele) | **TORSO** |  |  |
 | **cilhos** | ✅ | 👤 Corpo Base (3 tons de pele) | **CÍLIOS** |  |  |
-| **regata** | ✅ | 👚 1 Cropped + 1 Casaco | **CROPPED** | `crop1a` | Textura Branca |
-| **blusa** | ✅ | 👚 1 Cropped + 1 Casaco | **BLUSA CANELADA** | `fblusa1a` | Textura Branca |
+| **regata** | ✅ | 👚 1 Regata + 1 Blusa | **REGATA** | `fregata1a` | Textura Branca |
+| **blusa** | ✅ | 👚 1 Regata + 1 Blusa | **BLUSA CANELADA** | `fblusa1a` | Textura Branca |
+| **shorts** | ✅ | 👗 1 Shorts + 1 Calça | **SHORTS** | `fshorts1a` | Textura Branca |
+| **calca** | ✅ | 👗 1 Shorts + 1 Calça | **CALÇA JEANS** | `fcalca1a` | 4 texturas |
+| **tenis** | ✅ | 👠 1 Havaiana + 1 Tênis | **TÊNIS** | `ftenis1a` | 2 texturas |
 

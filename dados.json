@@ -693,22 +693,22 @@
           "exclusive": false
         },
         {
-          "titulo": "1 Cropped + 1 Casaco",
+          "titulo": "1 Regata + 1 Blusa",
           "emoji": "👚",
           "resumo_texturas": "Todas Brancas",
           "itens": [
             {
               "id": "regata",
-              "nome": "CROPPED",
+              "nome": "REGATA",
               "texturas": [
-                "crop1a"
+                "fregata1a"
               ],
               "obs": "Textura Branca",
               "concluido": true,
               "status": "done",
               "texturas_3d": [
                 {
-                  "file": "crop1a",
+                  "file": "fregata1a",
                   "color": "#aaaaaa"
                 }
               ],
@@ -741,13 +741,13 @@
           "itens": [
             {
               "id": "shorts",
-              "nome": "SHORTS / SAIA",
+              "nome": "SHORTS",
               "texturas": [
                 "fshorts1a"
               ],
-              "obs": "2 texturas",
-              "concluido": false,
-              "status": "pend",
+              "obs": "Textura Branca",
+              "concluido": true,
+              "status": "done",
               "texturas_3d": [
                 {
                   "file": "fshorts1a",
@@ -758,17 +758,29 @@
             },
             {
               "id": "calca",
-              "nome": "CALÇA (Legging/Jeans)",
+              "nome": "CALÇA JEANS",
               "texturas": [
                 "fcalca1a"
               ],
-              "obs": "3 texturas",
-              "concluido": false,
-              "status": "pend",
+              "obs": "4 texturas",
+              "concluido": true,
+              "status": "done",
               "texturas_3d": [
                 {
                   "file": "fcalca1a",
                   "color": "#aaaaaa"
+                },
+                {
+                  "file": "fcalca1b",
+                  "color": "#505070"
+                },
+                {
+                  "file": "fcalca1c",
+                  "color": "#708090"
+                },
+                {
+                  "file": "fcalca1d",
+                  "color": "#203040"
                 }
               ],
               "visivel_padrao": true
@@ -805,21 +817,16 @@
             },
             {
               "id": "tenis",
-              "nome": "TÊNIS FEMININO",
+              "nome": "TÊNIS",
               "texturas": [
-                "ftenis1a",
-                "ftenis1b"
+                "ftenis1a"
               ],
               "obs": "2 texturas",
-              "concluido": false,
-              "status": "pend",
+              "concluido": true,
+              "status": "done",
               "texturas_3d": [
                 {
                   "file": "ftenis1a",
-                  "color": "#aaaaaa"
-                },
-                {
-                  "file": "ftenis1b",
                   "color": "#aaaaaa"
                 }
               ],
