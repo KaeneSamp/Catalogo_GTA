@@ -61,7 +61,11 @@ def get_pricing_html(skin_data):
     is_pago = orcamento.get('pago', False)
     link = orcamento.get('link_download', '#') if is_pago else orcamento.get('link_pagamento', '#')
     
-    html = """<div class="pricing-drag-handle"><div class="handle-bar"></div></div>"""
+    html = """<div class="pricing-toggle-btn" onclick="this.parentElement.classList.toggle('minimized')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </div></div>"""
     
     if is_pago:
         html += f'''
