@@ -344,6 +344,7 @@
           "resumo_texturas": "Malha Base",
           "itens": [
             {
+              "dff_id": "00",
               "id": "face21k",
               "nome": "FACE21",
               "texturas": {
@@ -434,16 +435,7 @@
               "visivel_padrao": false
             },
             {
-              "id": "torso",
-              "nome": "TORSO",
-              "texturas": {
-                "fbracos1a": "#ffccaa"
-              },
-              "concluido": true,
-              "visivel_padrao": true
-            },
-            {
-              "id": "cilhos",
+              "id": "cilios",
               "nome": "CÍLIOS",
               "texturas": {
                 "fcilios1a": "#111111"
