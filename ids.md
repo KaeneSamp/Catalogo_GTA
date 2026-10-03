@@ -36,23 +36,23 @@
 
 | ID | Status | Grupo | Acessório | Texturas | Obs |
 |:---|:---|:---|:---|:---|:---|
-| **00** | ✅ | 👤 Corpo Base (3 tons de pele) | **FACE21** | `face21ka` | Base |
-| **03** | ✅ | 👤 Corpo Base (3 tons de pele) | **CALCINHA** | `calcinha1a` | Calcinha |
-| **04** | ✅ | 👤 Corpo Base (3 tons de pele) | **SUTIÃ** | `sutian1a` | Sutiã |
-| **05** | ✅ | 👩 3 Modelos de Face | **FACE25** | `fface25a` | Base |
-| **06** | ✅ | 👩 3 Modelos de Face | **FACE26** | `fface26a` | Base |
-| **07** | ✅ | 👩 3 Modelos de Face | **FACE29** | `fface29a` | Base |
-| **09** | ✅ | 👤 Corpo Base (3 tons de pele) | **BRACOS (PRA BLUSA)** | `fbracos1a` | Base |
-| **torso** | ✅ | 👤 Corpo Base (3 tons de pele) | **BRACOS (COMPLETO)** | `fbracos1a` | Sem blusa |
-| **bracos** | ✅ | 👤 Corpo Base (3 tons de pele) | **BRACOS (PRA BLUSA)** | `fbracos1a` | Base |
-| **pernas** | ✅ | 👤 Corpo Base (3 tons de pele) | **PERNAS (COMPLETO)** | `fpernas1a` | Base |
-| **cilios** | ✅ | 👤 Corpo Base (3 tons de pele) | **CÍLIOS** | `fcilios1a` |  |
-| **cabelo1** | ✅ | ✂️ 2 Cabelos + 3 Sobrancelhas | **CABELO 1 (Rabo de Cavalo/Longo)** | `fcabelo1a`, `fcabelo1b`, `fcabelo1c`, `fcabelo1d` | Diversos/Branco |
-| **cabelo2** | ✅ | ✂️ 2 Cabelos + 3 Sobrancelhas | **CABELO 2 (Cacheado/Longo)** | `fcabelo2a`, `fcabelo2b`, `fcabelo2c`, `fcabelo2d` | Diversos/Branco |
-| **regata** | ✅ | 👚 1 Regata + 1 Blusa | **REGATA** | `fregata1a` | Textura Branca |
-| **blusa** | ✅ | 👚 1 Regata + 1 Blusa | **BLUSA CANELADA** | `fblusa1a` | Textura Branca |
-| **shorts** | ✅ | 👗 1 Shorts + 1 Calça | **SHORTS** | `fshorts1a` | Textura Branca |
-| **calca** | ✅ | 👗 1 Shorts + 1 Calça | **CALÇA JEANS** | `fjeans1a`, `fjeans1b`, `fjeans1c`, `fjeans1d` | 4 texturas |
+| **00** | ✅ | 👤 Corpo Base | **FACE21** | `face21ka` | Base |
+| **03** | ✅ | 👤 Corpo Base | **CALCINHA** | `calcinha1a` | Calcinha |
+| **04** | ✅ | 👤 Corpo Base | **SUTIÃ** | `sutian1a` | Sutiã |
+| **05** | ✅ | 👩 Rostos | **FACE25** | `fface25a` | Base |
+| **06** | ✅ | 👩 Rostos | **FACE26** | `fface26a` | Base |
+| **07** | ✅ | 👩 Rostos | **FACE29** | `fface29a` | Base |
+| **09** | ✅ | 👤 Corpo Base | **BRACOS (PRA BLUSA)** | `fbracos1a` | Base |
+| **torso** | ✅ | 👤 Corpo Base | **BRACOS (COMPLETO)** | `fbracos1a` | Sem blusa |
+| **bracos** | ✅ | 👤 Corpo Base | **BRACOS (PRA BLUSA)** | `fbracos1a` | Base |
+| **pernas** | ✅ | 👤 Corpo Base | **PERNAS (COMPLETO)** | `fpernas1a` | Base |
+| **cilios** | ✅ | 👤 Corpo Base | **CÍLIOS** | `fcilios1a` |  |
+| **cabelo1** | ✅ | 💇‍♀️ Cabelos | **CABELO 1 (Rabo de Cavalo/Longo)** | `fcabelo1a`, `fcabelo1b`, `fcabelo1c`, `fcabelo1d` | Diversos/Branco |
+| **cabelo2** | ✅ | 💇‍♀️ Cabelos | **CABELO 2 (Cacheado/Longo)** | `fcabelo2a`, `fcabelo2b`, `fcabelo2c`, `fcabelo2d` | Diversos/Branco |
+| **regata** | ✅ | 👚 Roupas: Superiores | **REGATA** | `fregata1a` | Textura Branca |
+| **blusa** | ✅ | 👚 Roupas: Superiores | **BLUSA CANELADA** | `fblusa1a` | Textura Branca |
+| **shorts** | ✅ | 👗 Roupas: Inferiores | **SHORTS** | `fshorts1a` | Textura Branca |
+| **calca** | ✅ | 👗 Roupas: Inferiores | **CALÇA JEANS** | `fjeans1a`, `fjeans1b`, `fjeans1c`, `fjeans1d` | 4 texturas |
 | **havaianas** | ✅ | 👠 Calçados | **HAVAIANAS** | `havaianas1a` | Textura Branca |
 | **tenis** | ✅ | 👠 Calçados | **TÊNIS** | `ftenis1a` | 2 texturas |
 

@@ -339,7 +339,7 @@
       },
       "grupos": [
         {
-          "titulo": "Corpo Base (3 tons de pele)",
+          "titulo": "Corpo Base",
           "emoji": "👤",
           "resumo_texturas": "Malha Base",
           "itens": [
@@ -348,7 +348,7 @@
               "id": "face21k",
               "nome": "FACE21",
               "texturas": {
-                "face21ka": "#aaaaaa"
+                "face21ka": "#a08070"
               },
               "obs": "Base",
               "concluido": true,
@@ -359,7 +359,7 @@
               "id": "torso",
               "nome": "BRACOS (COMPLETO)",
               "texturas": {
-                "fbracos1a": "#aaaaaa"
+                "fbracos1a": "#a08070"
               },
               "obs": "Sem blusa",
               "concluido": true,
@@ -370,7 +370,7 @@
               "id": "bracos",
               "nome": "BRACOS (PRA BLUSA)",
               "texturas": {
-                "fbracos1a": "#aaaaaa"
+                "fbracos1a": "#a08070"
               },
               "obs": "Base",
               "concluido": true,
@@ -381,7 +381,7 @@
               "id": "pernas",
               "nome": "PERNAS (COMPLETO)",
               "texturas": {
-                "fpernas1a": "#aaaaaa"
+                "fpernas1a": "#a08070"
               },
               "obs": "Base",
               "concluido": true,
@@ -414,7 +414,7 @@
               "id": "09",
               "nome": "BRACOS (PRA BLUSA)",
               "texturas": {
-                "fbracos1a": "#aaaaaa"
+                "fbracos1a": "#a08070"
               },
               "obs": "Base",
               "concluido": true,
@@ -425,9 +425,7 @@
               "id": "-",
               "nome": "PERNAS (PRA CALÇA)",
               "texturas": {
-                "fbracos1a": "#aaaaaa",
-                "fpernas2a": "#aaaaaa",
-                "fpernas3a": "#aaaaaa"
+                "fbracos1a": "#a08070"
               },
               "obs": "Base",
               "concluido": false,
@@ -447,7 +445,7 @@
           "exclusive": false
         },
         {
-          "titulo": "3 Modelos de Face",
+          "titulo": "Rostos",
           "emoji": "👩",
           "resumo_texturas": "Malha Base",
           "itens": [
@@ -488,8 +486,8 @@
           "exclusive": true
         },
         {
-          "titulo": "2 Cabelos + 3 Sobrancelhas",
-          "emoji": "✂️",
+          "titulo": "Cabelos",
+          "emoji": "💇‍♀️",
           "resumo_texturas": "Diversos/Branco",
           "itens": [
             {
@@ -557,7 +555,7 @@
           "exclusive": true
         },
         {
-          "titulo": "3 Overlays de Maquiagem",
+          "titulo": "Overlays: Maquiagem",
           "emoji": "💄",
           "resumo_texturas": "Rosto",
           "itens": [
@@ -598,7 +596,7 @@
           "exclusive": false
         },
         {
-          "titulo": "1 Regata + 1 Blusa",
+          "titulo": "Roupas: Superiores",
           "emoji": "👚",
           "resumo_texturas": "Todas Brancas",
           "itens": [
@@ -628,7 +626,7 @@
           "exclusive": true
         },
         {
-          "titulo": "1 Shorts + 1 Calça",
+          "titulo": "Roupas: Inferiores",
           "emoji": "👗",
           "resumo_texturas": "Todas Brancas",
           "itens": [
