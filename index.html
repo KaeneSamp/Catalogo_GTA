@@ -2026,22 +2026,39 @@
                 const info = meshToGroup[clickedMeshName];
                 
                 if (info && info.groupData.exclusive && info.groupData.items.length > 1) {
-                    const nextIdx = (info.indexInGroup + 1) % info.groupData.items.length;
-                    const nextItem = info.groupData.items[nextIdx];
-                    
-                    meshes3D[clickedMeshName].visible = false;
-                    activeItems.delete(clickedMeshName);
-                    const oldBtn = document.getElementById(`ui-item-${clickedMeshName}`);
-                    if(oldBtn) oldBtn.classList.remove('active');
-                    
-                    meshes3D[nextItem.id].visible = true;
-                    activeItems.add(nextItem.id);
-                    const newBtn = document.getElementById(`ui-item-${nextItem.id}`);
-                    if(newBtn) newBtn.classList.add('active');
-                    
-                    const m = meshes3D[nextItem.id];
-                    m.scale.set(1.1, 1.1, 1.1);
-                    hud.style.display = 'none';
+                    let foundValidNext = false;
+                    let nextItem = null;
+                    let currentIdx = info.indexInGroup;
+
+                    for (let i = 1; i < info.groupData.items.length; i++) {
+                        let tryIdx = (currentIdx + i) % info.groupData.items.length;
+                        let candidate = info.groupData.items[tryIdx];
+                        
+                        // Verifica se é uma opção válida (não pendente E possui malha 3D carregada)
+                        if (candidate.status !== 'pend' && meshes3D[candidate.id]) {
+                            foundValidNext = true;
+                            nextItem = candidate;
+                            break;
+                        }
+                    }
+
+                    if (foundValidNext) {
+                        // Faz o SWAP apenas se encontrou uma proxima peca valida
+                        meshes3D[clickedMeshName].visible = false;
+                        activeItems.delete(clickedMeshName);
+                        const oldBtn = document.getElementById(`ui-item-${clickedMeshName}`);
+                        if(oldBtn) oldBtn.classList.remove('active');
+                        
+                        meshes3D[nextItem.id].visible = true;
+                        activeItems.add(nextItem.id);
+                        const newBtn = document.getElementById(`ui-item-${nextItem.id}`);
+                        if(newBtn) newBtn.classList.add('active');
+                        
+                        const m = meshes3D[nextItem.id];
+                        if(m) m.scale.set(1.1, 1.1, 1.1);
+                        hud.style.display = 'none';
+                    }
+                    // Se não encontrou, não faz nada! Mantém a malha atual visível e intacta.
                 }
             }
         });
