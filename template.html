@@ -141,6 +141,8 @@
         }
         
         .interactive-item.active { background: rgba(176, 132, 204, 0.1); border-color: var(--accent); }
+        .interactive-item.disabled { cursor: not-allowed; opacity: 0.6; }
+        .interactive-item.disabled:hover { background: #141415; border-color: #222; }
         
         .item-info { display: flex; flex-direction: column; gap: 4px; }
         .item-title { font-size: 0.9rem; font-weight: 600; color: #fff; }
@@ -563,7 +565,7 @@
                 groupData.items.forEach(item => {
                     const div = document.createElement('div');
                     const isActive = activeItems.has(item.id);
-                    div.className = `interactive-item ${isActive ? 'active' : ''}`;
+                    div.className = `interactive-item ${isActive ? 'active' : ''} ${item.status === 'pend' ? 'disabled' : ''}`;
                     div.id = `ui-item-${item.id}`;
                     
                     let badge = '';
@@ -573,7 +575,7 @@
                     div.innerHTML = `
                         <div class="item-info">
                             <span class="item-title">${item.name}</span>
-                            <span class="item-subtitle">Malha: ${item.id}</span>
+                            <span class="item-subtitle">Texturas: ${item.texturas_names && item.texturas_names.length ? item.texturas_names.join(", ") : "Nenhuma"}</span>
                             ${item.textures ? `
                                 <div class="texture-swatches">
                                     ${item.textures.map((tex, idx) => `
@@ -591,6 +593,7 @@
                     // Lógica de Clique (Interação UI -> 3D)
                     // Lógica de Clique (Interação UI -> 3D)
                     div.onclick = () => {
+                        if (item.status === 'pend') return; // Bloqueia selecao de itens incompletos
                         const wasActive = activeItems.has(item.id);
 
                         if (groupData.exclusive) {

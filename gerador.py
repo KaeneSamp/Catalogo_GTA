@@ -133,7 +133,8 @@ def gerar_html(dados):
                 logic_item = {
                     "id": item_id,
                     "name": item.get('nome', 'Item'),
-                    "status": "done" if item.get('concluido', False) else "pend"
+                    "status": "done" if item.get('concluido', False) else "pend",
+                    "texturas_names": item.get('texturas', [])
                 }
                 if item.get('visivel_padrao', False):
                     active_items.append(logic_item["id"])
