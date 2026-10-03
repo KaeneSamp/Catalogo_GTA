@@ -199,7 +199,7 @@ def gerar_md(dados):
                 
         def sort_key(x):
             try:
-                return int(x['id'])
+                return int(x.get('dff_id', x.get('id', 9999)))
             except ValueError:
                 return 9999
                 
@@ -207,7 +207,8 @@ def gerar_md(dados):
         for item in itens_ordenados:
             status = "✅" if item.get('concluido', False) else "⏳"
             texturas = ", ".join([f"`{t}`" for t in item['texturas']])
-            md += f"| **{item.get('id', '-')}** | {status} | {item.get('emoji', '')} {item.get('grupo', '')} | **{item['nome']}** | {texturas} | {item.get('obs', '')} |\n"
+            display_id = item.get('dff_id', item.get('id', '-'))
+            md += f"| **{display_id}** | {status} | {item.get('emoji', '')} {item.get('grupo', '')} | **{item['nome']}** | {texturas} | {item.get('obs', '')} |\n"
         md += "\n"
     return md
 
