@@ -4,16 +4,15 @@ import struct
 import json
 import os
 import subprocess
-import tkinter as tk
-from tkinter import ttk, messagebox
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk, Gdk
 
-# DFF Parsing
 def get_dff_nodes(filepath):
     with open(filepath, 'rb') as f:
         data = f.read()
     offset = 0
     names = []
-    # Simplified parser just extracting 0x0253F2FE (String nodes which represent frame names)
     while offset < len(data) - 12:
         cid, size, ver = struct.unpack('<III', data[offset:offset+12])
         if cid == 0x0253F2FE:
@@ -22,15 +21,15 @@ def get_dff_nodes(filepath):
         offset += 1
     return names
 
-class DffMatcherApp:
-    def __init__(self, root, dff_path):
-        self.root = root
-        self.root.title(f"Atrelar IDs - {os.path.basename(dff_path)}")
-        self.root.geometry("600x500")
-        self.dff_path = dff_path
+class DffMatcherWindow(Gtk.Window):
+    def __init__(self, dff_path):
+        super().__init__(title=f"Atrelar IDs - {os.path.basename(dff_path)}")
+        self.set_default_size(600, 500)
+        self.set_position(Gtk.WindowPosition.CENTER)
         
-        # Carregar items do JSON
+        self.dff_path = dff_path
         self.json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dados.json')
+        
         with open(self.json_path, 'r', encoding='utf-8') as f:
             self.data = json.load(f)
             
@@ -42,61 +41,66 @@ class DffMatcherApp:
                         self.catalog_items.append(f"{item['id']} ({item['nome']})")
                         
         self.catalog_items.insert(0, "-- IGNORAR --")
-        
         self.nodes = get_dff_nodes(self.dff_path)
         
-        # UI
-        main_frame = tk.Frame(self.root, padx=10, pady=10)
-        main_frame.pack(fill=tk.BOTH, expand=True)
+        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+        vbox.set_border_width(10)
+        self.add(vbox)
         
-        lbl = tk.Label(main_frame, text="Selecione a qual item do catálogo cada Node/Bone pertence:", font=("Arial", 10, "bold"))
-        lbl.pack(anchor="w", pady=(0, 10))
+        lbl = Gtk.Label(label="Selecione a qual item do catálogo cada Node/Bone pertence:")
+        lbl.set_halign(Gtk.Align.START)
+        vbox.pack_start(lbl, False, False, 0)
         
-        # Scrollable area
-        canvas = tk.Canvas(main_frame)
-        scrollbar = ttk.Scrollbar(main_frame, orient="vertical", command=canvas.yview)
-        scrollable_frame = tk.Frame(canvas)
+        scrolled = Gtk.ScrolledWindow()
+        scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        vbox.pack_start(scrolled, True, True, 0)
         
-        scrollable_frame.bind(
-            "<Configure>",
-            lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
-        )
-        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
-        canvas.configure(yscrollcommand=scrollbar.set)
+        listbox = Gtk.ListBox()
+        listbox.set_selection_mode(Gtk.SelectionMode.NONE)
+        scrolled.add(listbox)
         
-        canvas.pack(side="left", fill="both", expand=True)
-        scrollbar.pack(side="right", fill="y")
-        
-        self.vars = {}
+        self.combos = {}
         for idx, node in enumerate(self.nodes):
-            row = tk.Frame(scrollable_frame)
-            row.pack(fill=tk.X, pady=2)
+            row = Gtk.ListBoxRow()
+            hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+            hbox.set_border_width(5)
+            row.add(hbox)
             
-            lbl = tk.Label(row, text=f"ID: {idx} | {node}", width=30, anchor="w")
-            lbl.pack(side=tk.LEFT)
+            lbl_node = Gtk.Label(label=f"ID: {idx} | {node}")
+            lbl_node.set_halign(Gtk.Align.START)
+            lbl_node.set_width_chars(30)
+            hbox.pack_start(lbl_node, False, False, 0)
             
-            var = tk.StringVar(value="-- IGNORAR --")
-            combo = ttk.Combobox(row, textvariable=var, values=self.catalog_items, state="readonly", width=40)
-            combo.pack(side=tk.LEFT, padx=10)
-            
-            self.vars[idx] = (node, var)
-            
-        btn_frame = tk.Frame(self.root, pady=10)
-        btn_frame.pack(fill=tk.X)
-        
-        save_btn = tk.Button(btn_frame, text="Salvar e Atualizar Site", command=self.save, bg="#4CAF50", fg="white", font=("Arial", 10, "bold"))
-        save_btn.pack()
-
-    def save(self):
-        # Mapeamento do que foi selecionado
-        id_mapping = {}
-        for idx, (node, var) in self.vars.items():
-            val = var.get()
-            if val != "-- IGNORAR --":
-                item_id = val.split(' (')[0]
-                id_mapping[item_id] = str(idx) # ID vira o indice do bone
+            store = Gtk.ListStore(str)
+            for cat_item in self.catalog_items:
+                store.append([cat_item])
                 
-        # Atualiza o JSON
+            combo = Gtk.ComboBox.new_with_model(store)
+            renderer_text = Gtk.CellRendererText()
+            combo.pack_start(renderer_text, True)
+            combo.add_attribute(renderer_text, "text", 0)
+            combo.set_active(0)
+            
+            hbox.pack_start(combo, True, True, 0)
+            listbox.add(row)
+            self.combos[idx] = combo
+            
+        save_btn = Gtk.Button(label="Salvar e Atualizar Site")
+        save_btn.get_style_context().add_class("suggested-action")
+        save_btn.connect("clicked", self.on_save_clicked)
+        vbox.pack_start(save_btn, False, False, 0)
+
+    def on_save_clicked(self, widget):
+        id_mapping = {}
+        for idx, combo in self.combos.items():
+            tree_iter = combo.get_active_iter()
+            if tree_iter is not None:
+                model = combo.get_model()
+                val = model[tree_iter][0]
+                if val != "-- IGNORAR --":
+                    item_id = val.split(' (')[0]
+                    id_mapping[item_id] = str(idx)
+                    
         updates = 0
         for skin in self.data.get('skins', []):
             for grupo in skin.get('grupos', []):
@@ -108,14 +112,31 @@ class DffMatcherApp:
         with open(self.json_path, 'w', encoding='utf-8') as f:
             json.dump(self.data, f, indent=2, ensure_ascii=False)
             
-        # Roda o gerador.py
         gerador_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'gerador.py')
         try:
             subprocess.run(["python3", gerador_path], check=True)
-            messagebox.showinfo("Sucesso", f"{updates} itens atrelados com sucesso!\nSite gerado.")
-            self.root.destroy()
+            dialog = Gtk.MessageDialog(
+                transient_for=self,
+                flags=0,
+                message_type=Gtk.MessageType.INFO,
+                buttons=Gtk.ButtonsType.OK,
+                text="Sucesso!"
+            )
+            dialog.format_secondary_text(f"{updates} itens atrelados com sucesso!\nSite gerado.")
+            dialog.run()
+            dialog.destroy()
+            Gtk.main_quit()
         except Exception as e:
-            messagebox.showerror("Erro", f"Erro ao gerar site: {e}")
+            dialog = Gtk.MessageDialog(
+                transient_for=self,
+                flags=0,
+                message_type=Gtk.MessageType.ERROR,
+                buttons=Gtk.ButtonsType.OK,
+                text="Erro"
+            )
+            dialog.format_secondary_text(f"Erro ao gerar site: {e}")
+            dialog.run()
+            dialog.destroy()
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -123,7 +144,7 @@ if __name__ == "__main__":
         sys.exit(1)
         
     dff_file = sys.argv[1]
-    root = tk.Tk()
-    app = DffMatcherApp(root, dff_file)
-    root.mainloop()
-
+    win = DffMatcherWindow(dff_file)
+    win.connect("destroy", Gtk.main_quit)
+    win.show_all()
+    Gtk.main()
