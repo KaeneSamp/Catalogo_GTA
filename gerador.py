@@ -65,7 +65,7 @@ def get_pricing_html(skin_data):
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
-    </div></div>"""
+    </div>"""
     
     if is_pago:
         html += f'''
