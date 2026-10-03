@@ -20,72 +20,86 @@
             {
               "id": "00",
               "nome": "FACE0",
-              "texturas": [
-                "mface0a, mface0b, mface0c"
-              ],
+              "texturas": {
+                "mface0a": "#aaaaaa",
+                "mface0b": "#aaaaaa",
+                "mface0c": "#aaaaaa"
+              },
               "obs": "Base",
               "concluido": true
             },
             {
               "id": "01",
               "nome": "BRACOS (COMPLETO)",
-              "texturas": [
-                "mbracos1a, mbracos1b, mbracos1c"
-              ],
+              "texturas": {
+                "mbracos1a": "#aaaaaa",
+                "mbracos1b": "#aaaaaa",
+                "mbracos1c": "#aaaaaa"
+              },
               "obs": "Sem camisa",
               "concluido": true
             },
             {
               "id": "02",
               "nome": "BRACOS (PRA CAMISETA)",
-              "texturas": [
-                "mbracos1a, mbracos1b, mbracos1c"
-              ],
+              "texturas": {
+                "mbracos1a": "#aaaaaa",
+                "mbracos1b": "#aaaaaa",
+                "mbracos1c": "#aaaaaa"
+              },
               "obs": "Corte ombro",
               "concluido": true
             },
             {
               "id": "03",
               "nome": "PERNAS (COMPLETO)",
-              "texturas": [
-                "mpernas1a, mpernas1b, mpernas1c"
-              ],
+              "texturas": {
+                "mpernas1a": "#aaaaaa",
+                "mpernas1b": "#aaaaaa",
+                "mpernas1c": "#aaaaaa"
+              },
               "obs": "Base",
               "concluido": true
             },
             {
               "id": "04",
               "nome": "CUECA",
-              "texturas": [
-                "mcueca1"
-              ],
+              "texturas": {
+                "mcueca1": "#aaaaaa"
+              },
               "obs": "Base",
               "concluido": true
             },
             {
               "id": "06",
               "nome": "BRACOS (PRO CASACO)",
-              "texturas": [
-                "mbracos1a, mbracos1b, mbracos1c"
-              ],
+              "texturas": {
+                "mbracos1a": "#aaaaaa",
+                "mbracos1b": "#aaaaaa",
+                "mbracos1c": "#aaaaaa"
+              },
               "obs": "Apenas mãos",
               "concluido": true
             },
             {
               "id": "08",
               "nome": "PERNAS (PRA BERMUDA)",
-              "texturas": [
-                "mpernas1a, mpernas1b, mpernas1c"
-              ],
+              "texturas": {
+                "mpernas1a": "#aaaaaa",
+                "mpernas1b": "#aaaaaa",
+                "mpernas1c": "#aaaaaa"
+              },
               "obs": "Base",
               "concluido": true
             },
             {
               "id": "10",
               "nome": "PERNAS (PRA CALCA)",
-              "texturas": [
-                "mpernas1a, mpernas1b, mpernas1c"
-              ],
+              "texturas": {
+                "mpernas1a": "#aaaaaa",
+                "mpernas1b": "#aaaaaa",
+                "mpernas1c": "#aaaaaa"
+              },
               "obs": "Base",
               "concluido": true
             }
@@ -99,36 +113,42 @@
             {
               "id": "14",
               "nome": "FACE1",
-              "texturas": [
-                "mface45a, mface45b, mface45c"
-              ],
+              "texturas": {
+                "mface45a": "#aaaaaa",
+                "mface45b": "#aaaaaa",
+                "mface45c": "#aaaaaa"
+              },
               "obs": "Base",
               "concluido": true
             },
             {
               "id": "15",
               "nome": "FACE2",
-              "texturas": [
-                "mface24a, mface24b, mface24c"
-              ],
+              "texturas": {
+                "mface24a": "#aaaaaa",
+                "mface24b": "#aaaaaa",
+                "mface24c": "#aaaaaa"
+              },
               "obs": "Base",
               "concluido": true
             },
             {
               "id": "16",
               "nome": "FACE3",
-              "texturas": [
-                "mface8a, mface8b, mface8c"
-              ],
+              "texturas": {
+                "mface8a": "#aaaaaa",
+                "mface8b": "#aaaaaa",
+                "mface8c": "#aaaaaa"
+              },
               "obs": "Base",
               "concluido": true
             },
             {
               "id": "OVERLAY",
               "nome": "EXTRA",
-              "texturas": [
-                "olho1a"
-              ],
+              "texturas": {
+                "olho1a": "#aaaaaa"
+              },
               "obs": "Apenas textura-overlay",
               "concluido": true
             }
@@ -142,45 +162,45 @@
             {
               "id": "-",
               "nome": "CABELO 1",
-              "texturas": [
-                "mcabelo3a"
-              ],
+              "texturas": {
+                "mcabelo3a": "#aaaaaa"
+              },
               "obs": "Textura Branca",
               "concluido": true
             },
             {
               "id": "-",
               "nome": "CABELO 2",
-              "texturas": [
-                "mcabelo14a"
-              ],
+              "texturas": {
+                "mcabelo14a": "#aaaaaa"
+              },
               "obs": "Textura Branca",
               "concluido": true
             },
             {
               "id": "OVERLAY1",
               "nome": "SOMBRANCELHA 1",
-              "texturas": [
-                "meyebrow6a"
-              ],
+              "texturas": {
+                "meyebrow6a": "#aaaaaa"
+              },
               "obs": "Textura Branca",
               "concluido": true
             },
             {
               "id": "OVERLAY2",
               "nome": "SOMBRANCELHA 2",
-              "texturas": [
-                "meyebrow6b"
-              ],
+              "texturas": {
+                "meyebrow6b": "#aaaaaa"
+              },
               "obs": "Textura Branca",
               "concluido": true
             },
             {
               "id": "OVERLAY3",
               "nome": "SOMBRANCELHA 3",
-              "texturas": [
-                "meyebrow6c"
-              ],
+              "texturas": {
+                "meyebrow6c": "#aaaaaa"
+              },
               "obs": "Textura Branca",
               "concluido": true
             }
@@ -194,27 +214,27 @@
             {
               "id": "OVERLAY1",
               "nome": "BARBA 1",
-              "texturas": [
-                "barba2a"
-              ],
+              "texturas": {
+                "barba2a": "#aaaaaa"
+              },
               "obs": "Cavanhaque e Bigode",
               "concluido": true
             },
             {
               "id": "OVERLAY2",
               "nome": "BARBA 2",
-              "texturas": [
-                "barba3a"
-              ],
+              "texturas": {
+                "barba3a": "#aaaaaa"
+              },
               "obs": "Cavanhaque e Bigode",
               "concluido": true
             },
             {
               "id": "OVERLAY3",
               "nome": "BARBA 3",
-              "texturas": [
-                "barba18a"
-              ],
+              "texturas": {
+                "barba18a": "#aaaaaa"
+              },
               "obs": "Barba Completa",
               "concluido": true
             }
@@ -228,18 +248,18 @@
             {
               "id": "05",
               "nome": "CAMISETA (Básica)",
-              "texturas": [
-                "mcamisa1a"
-              ],
+              "texturas": {
+                "mcamisa1a": "#aaaaaa"
+              },
               "obs": "2 texturas",
               "concluido": true
             },
             {
               "id": "07",
               "nome": "CASACO (Moletom)",
-              "texturas": [
-                "mcasaco1a"
-              ],
+              "texturas": {
+                "mcasaco1a": "#aaaaaa"
+              },
               "obs": "2 texturas",
               "concluido": true
             }
@@ -253,18 +273,18 @@
             {
               "id": "09",
               "nome": "BERMUDA 1",
-              "texturas": [
-                "bermuda1a"
-              ],
+              "texturas": {
+                "bermuda1a": "#aaaaaa"
+              },
               "obs": "2 texturas",
               "concluido": true
             },
             {
               "id": "11",
               "nome": "CALCA 1",
-              "texturas": [
-                "calca1a"
-              ],
+              "texturas": {
+                "calca1a": "#aaaaaa"
+              },
               "obs": "3 texturas",
               "concluido": true
             }
@@ -278,29 +298,29 @@
             {
               "id": "12",
               "nome": "HAVAIANA",
-              "texturas": [
-                "havaiana1a",
-                "havaiana1b"
-              ],
+              "texturas": {
+                "havaiana1a": "#aaaaaa",
+                "havaiana1b": "#aaaaaa"
+              },
               "obs": "2 texturas",
               "concluido": true
             },
             {
               "id": "13",
               "nome": "TÊNIS",
-              "texturas": [
-                "tenis1a",
-                "tenis1b"
-              ],
+              "texturas": {
+                "tenis1a": "#aaaaaa",
+                "tenis1b": "#aaaaaa"
+              },
               "obs": "2 texturas",
               "concluido": true
             },
             {
               "id": "OVERLAY",
               "nome": "EXTRA",
-              "texturas": [
-                "havaianas1ov"
-              ],
+              "texturas": {
+                "havaianas1ov": "#aaaaaa"
+              },
               "obs": "Apenas textura-overlay",
               "concluido": true
             }
@@ -326,153 +346,97 @@
             {
               "id": "face21k",
               "nome": "FACE21",
-              "texturas": [
-                "fface21a"
-              ],
+              "texturas": {
+                "face21ka": "#aaaaaa"
+              },
               "obs": "Base",
               "concluido": true,
               "status": "done",
-              "texturas_3d": [
-                {
-                  "file": "face21ka.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": true
             },
             {
               "id": "bracos",
               "nome": "BRACOS (COMPLETO)",
-              "texturas": [
-                "fbracos1a"
-              ],
+              "texturas": {
+                "fbracos1a": "#aaaaaa"
+              },
               "obs": "Sem blusa",
               "concluido": true,
               "status": "done",
-              "texturas_3d": [
-                {
-                  "file": "fbracos1a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": true
             },
             {
               "id": "pernas",
               "nome": "PERNAS (COMPLETO)",
-              "texturas": [
-                "fpernas1a"
-              ],
+              "texturas": {
+                "fbracos1a": "#aaaaaa"
+              },
               "obs": "Base",
               "concluido": true,
               "status": "done",
-              "texturas_3d": [
-                {
-                  "file": "fbracos1a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": true
             },
             {
               "id": "03",
               "nome": "CALCINHA",
-              "texturas": [
-                "calcinha1a"
-              ],
+              "texturas": {
+                "calcinha1a": "#aaaaaa"
+              },
               "obs": "Calcinha",
               "concluido": true,
               "status": "done",
-              "texturas_3d": [
-                {
-                  "file": "calcinha1a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": false
             },
             {
               "id": "04",
               "nome": "SUTIÃ",
-              "texturas": [
-                "sutian1a"
-              ],
+              "texturas": {
+                "sutian1a": "#aaaaaa"
+              },
               "obs": "Sutiã",
               "concluido": true,
               "status": "done",
-              "texturas_3d": [
-                {
-                  "file": "sutian1a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": false
             },
             {
               "id": "09",
               "nome": "BRACOS (PRA BLUSA)",
-              "texturas": [
-                "fbracos1a"
-              ],
+              "texturas": {
+                "fbracos1a": "#aaaaaa"
+              },
               "obs": "Base",
               "concluido": true,
               "status": "done",
-              "texturas_3d": [
-                {
-                  "file": "fbracos1a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": false
             },
             {
               "id": "-",
               "nome": "PERNAS (PRA CALÇA)",
-              "texturas": [
-                "fpernas1a, fpernas2a, fpernas3a"
-              ],
+              "texturas": {
+                "fbracos1a": "#aaaaaa",
+                "fpernas2a": "#aaaaaa",
+                "fpernas3a": "#aaaaaa"
+              },
               "obs": "Base",
               "concluido": false,
               "status": "pend",
-              "texturas_3d": [
-                {
-                  "file": "fbracos1a.png",
-                  "color": "#aaaaaa"
-                },
-                {
-                  "file": "fpernas2a.png",
-                  "color": "#aaaaaa"
-                },
-                {
-                  "file": "fpernas3a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": false
             },
             {
               "id": "torso",
               "nome": "TORSO",
-              "texturas": [],
-              "texturas_3d": [
-                {
-                  "file": "fbracos1a.png",
-                  "color": "#ffccaa"
-                }
-              ],
+              "texturas": {
+                "fbracos1a": "#ffccaa"
+              },
               "concluido": true,
               "visivel_padrao": true
             },
             {
               "id": "cilhos",
               "nome": "CÍLIOS",
-              "texturas": [],
-              "texturas_3d": [
-                {
-                  "file": "fcilios1a.png",
-                  "color": "#111111"
-                }
-              ],
+              "texturas": {
+                "fcilios1a": "#111111"
+              },
               "concluido": true,
               "visivel_padrao": true
             }
@@ -487,52 +451,34 @@
             {
               "id": "05",
               "nome": "FACE25",
-              "texturas": [
-                "fface25a"
-              ],
+              "texturas": {
+                "fface25a": "#aaaaaa"
+              },
               "obs": "Base",
               "concluido": true,
               "status": "done",
-              "texturas_3d": [
-                {
-                  "file": "fface25a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": false
             },
             {
               "id": "06",
               "nome": "FACE26",
-              "texturas": [
-                "fface26a"
-              ],
+              "texturas": {
+                "fface26a": "#aaaaaa"
+              },
               "obs": "Base",
               "concluido": true,
               "status": "done",
-              "texturas_3d": [
-                {
-                  "file": "fface26a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": false
             },
             {
               "id": "07",
               "nome": "FACE29",
-              "texturas": [
-                "fface29a"
-              ],
+              "texturas": {
+                "fface29a": "#aaaaaa"
+              },
               "obs": "Base",
               "concluido": true,
               "status": "done",
-              "texturas_3d": [
-                {
-                  "file": "fface29a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": false
             }
           ],
@@ -546,110 +492,62 @@
             {
               "id": "cabelo1",
               "nome": "CABELO 1 (Rabo de Cavalo/Longo)",
-              "texturas": [
-                "fcabelo1a, fcabelo1b, fcabelo1c, fcabelo1d"
-              ],
+              "texturas": {
+                "fcabelo1a": "#aaaaaa",
+                "fcabelo1b": "#c0a080",
+                "fcabelo1c": "#502010",
+                "fcabelo1d": "#603020"
+              },
               "obs": "Diversos/Branco",
               "concluido": true,
               "status": "done",
-              "texturas_3d": [
-                {
-                  "file": "fcabelo1a.png",
-                  "color": "#aaaaaa"
-                },
-                {
-                  "file": "fcabelo1b.png",
-                  "color": "#c0a080"
-                },
-                {
-                  "file": "fcabelo1c.png",
-                  "color": "#502010"
-                },
-                {
-                  "file": "fcabelo1d.png",
-                  "color": "#603020"
-                }
-              ],
               "visivel_padrao": false
             },
             {
               "id": "cabelo2",
               "nome": "CABELO 2 (Cacheado/Longo)",
-              "texturas": [
-                "fcabelo2a, fcabelo2b, fcabelo2c, fcabelo2d"
-              ],
+              "texturas": {
+                "fcabelo2a": "#30221a",
+                "fcabelo2b": "#d6ab5c",
+                "fcabelo2c": "#1a1a1c",
+                "fcabelo2d": "#8c3b28"
+              },
               "obs": "Diversos/Branco",
               "concluido": true,
               "status": "done",
-              "texturas_3d": [
-                {
-                  "file": "fcabelo2a.png",
-                  "color": "#30221a"
-                },
-                {
-                  "file": "fcabelo2b.png",
-                  "color": "#d6ab5c"
-                },
-                {
-                  "file": "fcabelo2c.png",
-                  "color": "#1a1a1c"
-                },
-                {
-                  "file": "fcabelo2d.png",
-                  "color": "#8c3b28"
-                }
-              ],
               "visivel_padrao": true
             },
             {
               "id": "-",
               "nome": "SOBRANCELHA 1",
-              "texturas": [
-                "feyebrow1a"
-              ],
+              "texturas": {
+                "feyebrow1a": "#aaaaaa"
+              },
               "obs": "Textura Branca",
               "concluido": false,
               "status": "pend",
-              "texturas_3d": [
-                {
-                  "file": "feyebrow1a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": false
             },
             {
               "id": "-",
               "nome": "SOBRANCELHA 2",
-              "texturas": [
-                "feyebrow2a"
-              ],
+              "texturas": {
+                "feyebrow2a": "#aaaaaa"
+              },
               "obs": "Textura Branca",
               "concluido": false,
               "status": "pend",
-              "texturas_3d": [
-                {
-                  "file": "feyebrow2a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": false
             },
             {
               "id": "-",
               "nome": "SOBRANCELHA 3",
-              "texturas": [
-                "feyebrow3a"
-              ],
+              "texturas": {
+                "feyebrow3a": "#aaaaaa"
+              },
               "obs": "Textura Branca",
               "concluido": false,
               "status": "pend",
-              "texturas_3d": [
-                {
-                  "file": "feyebrow3a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": false
             }
           ],
@@ -663,52 +561,34 @@
             {
               "id": "-",
               "nome": "MAQUIAGEM 1",
-              "texturas": [
-                "fmakeup1a"
-              ],
+              "texturas": {
+                "fmakeup1a": "#aaaaaa"
+              },
               "obs": "Leve/Gloss",
               "concluido": false,
               "status": "pend",
-              "texturas_3d": [
-                {
-                  "file": "fmakeup1a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": false
             },
             {
               "id": "-",
               "nome": "MAQUIAGEM 2",
-              "texturas": [
-                "fmakeup2a"
-              ],
+              "texturas": {
+                "fmakeup2a": "#aaaaaa"
+              },
               "obs": "Sombra/Delineador",
               "concluido": false,
               "status": "pend",
-              "texturas_3d": [
-                {
-                  "file": "fmakeup2a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": false
             },
             {
               "id": "-",
               "nome": "MAQUIAGEM 3",
-              "texturas": [
-                "fmakeup3a"
-              ],
+              "texturas": {
+                "fmakeup3a": "#aaaaaa"
+              },
               "obs": "Festa/Batom Forte",
               "concluido": false,
               "status": "pend",
-              "texturas_3d": [
-                {
-                  "file": "fmakeup3a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": false
             }
           ],
@@ -722,35 +602,23 @@
             {
               "id": "regata",
               "nome": "REGATA",
-              "texturas": [
-                "fregata1a"
-              ],
+              "texturas": {
+                "fregata1a": "#aaaaaa"
+              },
               "obs": "Textura Branca",
               "concluido": true,
               "status": "done",
-              "texturas_3d": [
-                {
-                  "file": "fregata1a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": true
             },
             {
               "id": "blusa",
               "nome": "BLUSA CANELADA",
-              "texturas": [
-                "fblusa1a"
-              ],
+              "texturas": {
+                "fblusa1a": "#aaaaaa"
+              },
               "obs": "Textura Branca",
               "concluido": true,
               "status": "done",
-              "texturas_3d": [
-                {
-                  "file": "fblusa1a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": false
             }
           ],
@@ -764,47 +632,26 @@
             {
               "id": "shorts",
               "nome": "SHORTS",
-              "texturas": [
-                "fshorts1a"
-              ],
+              "texturas": {
+                "fshorts1a": "#aaaaaa"
+              },
               "obs": "Textura Branca",
               "concluido": true,
               "status": "done",
-              "texturas_3d": [
-                {
-                  "file": "fshorts1a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": false
             },
             {
               "id": "calca",
               "nome": "CALÇA JEANS",
-              "texturas": [
-                "fjeans1a, fjeans1b, fjeans1c, fjeans1d"
-              ],
+              "texturas": {
+                "fjeans1a": "#707070",
+                "fjeans1b": "#505070",
+                "fjeans1c": "#708090",
+                "fjeans1d": "#203040"
+              },
               "obs": "4 texturas",
               "concluido": true,
               "status": "done",
-              "texturas_3d": [
-                {
-                  "file": "fjeans1a.png",
-                  "color": "#707070"
-                },
-                {
-                  "file": "fjeans1b.png",
-                  "color": "#505070"
-                },
-                {
-                  "file": "fjeans1c.png",
-                  "color": "#708090"
-                },
-                {
-                  "file": "fjeans1d.png",
-                  "color": "#203040"
-                }
-              ],
               "visivel_padrao": true
             }
           ],
@@ -818,40 +665,24 @@
             {
               "id": "-",
               "nome": "SANDÁLIA / RASTEIRINHA",
-              "texturas": [
-                "fsandalia1a",
-                "fsandalia1b"
-              ],
+              "texturas": {
+                "fsandalia1a": "#aaaaaa",
+                "fsandalia1b": "#aaaaaa"
+              },
               "obs": "2 texturas",
               "concluido": false,
               "status": "pend",
-              "texturas_3d": [
-                {
-                  "file": "fsandalia1a.png",
-                  "color": "#aaaaaa"
-                },
-                {
-                  "file": "fsandalia1b.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": false
             },
             {
               "id": "tenis",
               "nome": "TÊNIS",
-              "texturas": [
-                "ftenis1a"
-              ],
+              "texturas": {
+                "ftenis1a": "#aaaaaa"
+              },
               "obs": "2 texturas",
               "concluido": true,
               "status": "done",
-              "texturas_3d": [
-                {
-                  "file": "ftenis1a.png",
-                  "color": "#aaaaaa"
-                }
-              ],
               "visivel_padrao": true
             }
           ],

@@ -155,13 +155,13 @@ def gerar_html(dados):
                     "id": item_id,
                     "name": item.get('nome', 'Item'),
                     "status": "done" if item.get('concluido', False) else "pend",
-                    "texturas_names": item.get('texturas', [])
+                    "texturas_names": list(item.get('texturas', {}).keys()) if isinstance(item.get('texturas'), dict) else item.get('texturas', [])
                 }
                 if item.get('visivel_padrao', False):
                     active_items.append(logic_item["id"])
                     
-                if 'texturas_3d' in item and len(item['texturas_3d']) > 0:
-                    logic_item['textures'] = item['texturas_3d']
+                if 'texturas' in item and isinstance(item['texturas'], dict) and len(item['texturas']) > 0:
+                    logic_item['textures'] = [{"file": k + ".png", "color": v} for k, v in item['texturas'].items()]
                     
                 logic_obj[group_name]["items"].append(logic_item)
                 
