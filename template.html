@@ -58,43 +58,90 @@
         }
         
         @media (max-width: 800px) {
-            body {
-                flex-direction: column;
-            }
+            body { flex-direction: column; }
+            .hide-mobile { display: none; }
+            
             .canvas-section {
-                height: 40vh; /* Da mais espaco pra interface no mobile */
-                flex: none;
-                width: 100%;
+                height: 45vh; flex: none; width: 100%;
+                transition: height 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
             .ui-section {
-                height: 60vh;
-                max-height: 60vh;
-                flex: none;
-                width: 100%;
-                border-left: none;
-                border-top: 1px solid var(--border-color);
+                height: 55vh; max-height: 55vh; flex: none; width: 100%;
+                border-left: none; border-top: 1px solid var(--border-color);
                 box-shadow: 0 -10px 30px rgba(0,0,0,0.8);
+                transition: height 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
             
-            /* Otimizacoes de Espaco no Mobile */
-            .ui-header { padding: 15px 15px 5px 15px; }
-            .ui-header h1 { font-size: 1.4rem; }
-            .ui-header p { font-size: 0.8rem; }
+            body.ui-collapsed .canvas-section { height: 85vh; }
+            body.ui-collapsed .ui-section { height: 15vh; max-height: 15vh; }
+            body.ui-collapsed .ui-content, body.ui-collapsed .pricing-section { display: none; }
             
-            .pricing-section { padding: 15px; }
-            .price-container { margin-bottom: 12px; }
-            .price-currency, .price-amount { font-size: 2.2rem; }
-            .badge-status { margin-bottom: 12px; padding: 6px 12px; font-size: 0.7rem; }
-            .btn-action, .btn-download { padding: 12px; font-size: 0.85rem; }
+            .mobile-drag-handle {
+                display: flex; justify-content: center; align-items: center;
+                padding: 8px 0 8px 0; cursor: pointer; width: 100%;
+            }
+            .handle-bar { width: 40px; height: 5px; background: #444; border-radius: 5px; }
+
+            .project-switcher { top: 10px; left: 10px; gap: 8px; flex-direction: row; }
+            .switch-btn { 
+                padding: 8px; font-size: clamp(1rem, 5vw, 1.2rem); border-radius: 50%; 
+                width: clamp(35px, 10vw, 42px); height: clamp(35px, 10vw, 42px); 
+                display: flex; align-items: center; justify-content: center; 
+            }
+
+            .ui-header { padding: clamp(5px, 2vw, 10px) 15px 5px 15px; }
+            .ui-header h1 { font-size: clamp(1.2rem, 6vw, 1.5rem); margin-bottom: 2px; }
+            .ui-header p { display: none; }
+
+            .ui-content { padding: clamp(5px, 2vw, 10px) 15px; }
+            .group-header { padding: clamp(8px, 3vw, 12px) 15px; font-size: clamp(0.85rem, 4vw, 0.95rem); }
+            .item-title { font-size: clamp(0.8rem, 3.8vw, 0.95rem); }
+            .item-subtitle { font-size: clamp(0.65rem, 3.2vw, 0.75rem); }
+            .interactive-item { padding: clamp(8px, 3vw, 12px) 15px; }
+
+            /* Fluid Pricing Section - Vertical Stack */
+            .pricing-drag-handle {
+                display: flex; justify-content: center; align-items: center;
+                padding: 0 0 15px 0; cursor: pointer; width: 100%;
+            }
+            .pricing-section {
+                padding: clamp(12px, 3vw, 15px);
+                display: flex;
+                flex-direction: column;
+                gap: clamp(8px, 2.5vw, 12px);
+                align-items: center;
+                text-align: center;
+                background: rgba(20, 20, 21, 0.65) !important;
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+                border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+                transition: padding 0.3s ease;
+            }
+            .pricing-section.minimized .price-container,
+            .pricing-section.minimized .badge-status,
+            .pricing-section.minimized .btn-action,
+            .pricing-section.minimized .btn-download {
+                display: none;
+            }
+            .pricing-section.minimized {
+                padding-bottom: 5px; 
+            }
+            .price-container { margin-bottom: 0; display: flex; align-items: baseline; justify-content: center; gap: 4px; }
+            .price-currency { font-size: clamp(0.9rem, 4vw, 1.1rem); color: var(--text-muted); }
+            .price-amount { font-size: clamp(1.3rem, 6vw, 1.7rem); }
+            .badge-status { margin-bottom: 0; font-size: clamp(0.6rem, 3vw, 0.75rem); padding: 4px 10px; }
             
-            .project-switcher { top: 10px; left: 10px; gap: 8px; }
-            .switch-btn { padding: 6px 12px; font-size: 0.8rem; }
-            
-            /* Ajuste dos itens do menu */
-            .ui-content { padding: 10px 15px; }
-            .group-header { padding: 12px 15px; font-size: 0.9rem; }
+            .pricing-section .btn-action, .pricing-section .btn-download {
+                width: 100%;
+                margin: 0; 
+                padding: clamp(12px, 3.5vw, 16px); 
+                font-size: clamp(0.85rem, 3.8vw, 0.95rem);
+            }
         }
 
+
+
+        .mobile-drag-handle, .pricing-drag-handle { display: none; }
         .ui-header {
             padding: 30px 20px 10px 20px;
             text-align: center;
@@ -180,15 +227,65 @@
         }
         
         /* O Brilho que varre o botao (Efeito Premium) */
-        .btn-action::after {
-            content: '';
-            position: absolute;
-            top: 0; left: -150%;
-            width: 50%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
-            transform: skewX(-25deg);
-            animation: buttonShine 3s infinite;
+
+        
+        /* O Brilho que varre APENAS as letras e o icone (Mascara) */
+        .btn-content {
+            position: relative;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
+        .btn-content.shine-layer {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 3;
+            color: #ffffff;
+            pointer-events: none;
+            
+            /* Brilho extra esfumacado / Glow premium */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+            
+            /* Mascara de degrade super suave e espalhada (nao quadrada) */
+            -webkit-mask-image: linear-gradient(
+                115deg, 
+                transparent 25%, 
+                rgba(0,0,0,0.1) 35%, 
+                rgba(0,0,0,0.8) 47%, 
+                rgba(0,0,0,1) 50%, 
+                rgba(0,0,0,0.8) 53%, 
+                rgba(0,0,0,0.1) 65%, 
+                transparent 75%
+            );
+            mask-image: linear-gradient(
+                115deg, 
+                transparent 25%, 
+                rgba(0,0,0,0.1) 35%, 
+                rgba(0,0,0,0.8) 47%, 
+                rgba(0,0,0,1) 50%, 
+                rgba(0,0,0,0.8) 53%, 
+                rgba(0,0,0,0.1) 65%, 
+                transparent 75%
+            );
+            
+            -webkit-mask-size: 300% 100%;
+            mask-size: 300% 100%;
+            
+            -webkit-mask-position: 100% 0;
+            mask-position: 100% 0;
+            
+            /* Transicao graciosa de 4.5 segundos com ease-in-out suave */
+            animation: textMaskShine 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        
+        @keyframes textMaskShine {
+            0% { -webkit-mask-position: 100% 0; mask-position: 100% 0; }
+            45% { -webkit-mask-position: 0% 0; mask-position: 0% 0; }
+            100% { -webkit-mask-position: 0% 0; mask-position: 0% 0; }
+        }
+
         .btn-action:hover { 
             box-shadow: 0 15px 35px rgba(176, 132, 204, 0.5);
             background: linear-gradient(135deg, #c99cef 0%, #e0bdff 100%);
@@ -403,15 +500,7 @@
             animation: gradientFlow 4s ease infinite;
             box-shadow: 0 5px 25px rgba(16, 185, 129, 0.4);
         }
-        .btn-download::after {
-            content: '';
-            position: absolute;
-            top: 0; left: -150%;
-            width: 50%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
-            transform: skewX(-25deg);
-            animation: buttonShine 3s infinite;
-        }
+        
         .btn-download:hover { 
             box-shadow: 0 15px 35px rgba(16, 185, 129, 0.6);
             background: linear-gradient(135deg, #059669 0%, #34d399 100%);
@@ -427,8 +516,8 @@
         
     <!-- SELETOR DE PACOTES -->
     <div class="project-switcher">
-        <button id="btn-pack-masc" class="switch-btn" onclick="switchPackage('masc')">🧔‍♂️ Pacote Masculino</button>
-        <button id="btn-pack-fem" class="switch-btn active" onclick="switchPackage('fem')">👩‍🦰 Pacote Feminino</button>
+        <button id="btn-pack-masc" class="switch-btn" onclick="switchPackage('masc')">🧔‍♂️ <span class="hide-mobile">Masculino</span></button>
+        <button id="btn-pack-fem" class="switch-btn active" onclick="switchPackage('fem')">👩‍🦰 <span class="hide-mobile">Feminino</span></button>
     </div>
     
     <!-- OVERLAY PARA O PACOTE MASCULINO -->
@@ -698,6 +787,11 @@
             return mat;
         }
 
+
+        function toggleMobileUI() {
+            document.body.classList.toggle('ui-collapsed');
+        }
+        
         async function init3D() {
             try {
                 const response = await fetch('assets/models/manifest.json');

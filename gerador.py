@@ -61,7 +61,7 @@ def get_pricing_html(skin_data):
     is_pago = orcamento.get('pago', False)
     link = orcamento.get('link_download', '#') if is_pago else orcamento.get('link_pagamento', '#')
     
-    html = ""
+    html = """<div class="pricing-drag-handle" onclick="this.parentElement.classList.toggle('minimized')"><div class="handle-bar"></div></div>"""
     
     if is_pago:
         html += f'''
@@ -72,12 +72,22 @@ def get_pricing_html(skin_data):
             <span>PAGAMENTO CONCLUÍDO</span>
         </div>
         <a href="{link}" target="_blank" class="btn-download" id="download-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            BAIXAR SKIN (DRIVE)
+            <span class="btn-content">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                BAIXAR SKIN (DRIVE)
+            </span>
+            <span class="btn-content shine-layer" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                BAIXAR SKIN (DRIVE)
+            </span>
         </a>
         '''
     else:
@@ -94,9 +104,16 @@ def get_pricing_html(skin_data):
             <span>PAGAMENTO PENDENTE</span>
         </div>
         <a href="{link}" target="_blank" class="btn-action" id="pay-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
-                <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>
-            </svg> EFETUAR PAGAMENTO
+            <span class="btn-content">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
+                    <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg> EFETUAR PAGAMENTO
+            </span>
+            <span class="btn-content shine-layer" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px; margin-bottom: 2px;">
+                    <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg> EFETUAR PAGAMENTO
+            </span>
         </a>
         '''
     return html
