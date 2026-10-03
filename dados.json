@@ -544,18 +544,30 @@
           "resumo_texturas": "Diversos/Branco",
           "itens": [
             {
-              "id": "-",
-              "nome": "CABELO 1 (Longo)",
+              "id": "cabelo1",
+              "nome": "CABELO 1 (Rabo de Cavalo/Longo)",
               "texturas": [
-                "fcabelo1a"
+                "fcabelo1a, fcabelo1b, fcabelo1c, fcabelo1d"
               ],
-              "obs": "Textura Branca",
-              "concluido": false,
-              "status": "pend",
+              "obs": "Diversos/Branco",
+              "concluido": true,
+              "status": "done",
               "texturas_3d": [
                 {
                   "file": "fcabelo1a.png",
                   "color": "#aaaaaa"
+                },
+                {
+                  "file": "fcabelo1b.png",
+                  "color": "#c0a080"
+                },
+                {
+                  "file": "fcabelo1c.png",
+                  "color": "#502010"
+                },
+                {
+                  "file": "fcabelo1d.png",
+                  "color": "#603020"
                 }
               ],
               "visivel_padrao": false
