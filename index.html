@@ -57,6 +57,7 @@
             z-index: 5;
         }
         
+        .mobile-drag-handle, .pricing-drag-handle { display: none; }
         @media (max-width: 800px) {
             body { flex-direction: column; }
             .hide-mobile { display: none; }
@@ -70,6 +71,8 @@
                 border-left: none; border-top: 1px solid var(--border-color);
                 box-shadow: 0 -10px 30px rgba(0,0,0,0.8);
                 transition: height 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+                border-radius: 24px 24px 0 0 !important; /* Mobile: Topo arredondado */
+                overflow: hidden;
             }
             
             body.ui-collapsed .canvas-section { height: 85vh; }
@@ -106,6 +109,7 @@
             }
             .pricing-section {
                 padding: clamp(12px, 3vw, 15px);
+                border-radius: 24px 24px 0 0 !important; /* Mobile: Topo arredondado */
                 display: flex;
                 flex-direction: column;
                 gap: clamp(8px, 2.5vw, 12px);
@@ -141,8 +145,7 @@
 
 
 
-        .mobile-drag-handle, .pricing-drag-handle { display: none; }
-        .ui-header {
+                .ui-header {
             padding: 30px 20px 10px 20px;
             text-align: center;
             flex-shrink: 0;
@@ -559,7 +562,7 @@
 
         <div id="pricing-panel" class="pricing-section">
             
-            <div class="pricing-drag-handle" onclick="this.parentElement.classList.toggle('minimized')"><div class="handle-bar"></div></div><div class="price-container">
+            <div class="pricing-drag-handle"><div class="handle-bar"></div></div><div class="price-container">
         <div class="price-display">
             <span class="price-currency">R$</span>
             <span class="price-amount">250<span class="price-cents">,00</span></span>
@@ -1066,7 +1069,7 @@
                                     <p>Arquivos Entregues (V1)</p>`;
                 
                 // Mudar Preco para Concluido
-                pricing.innerHTML = `<div class="pricing-drag-handle" onclick="this.parentElement.classList.toggle('minimized')"><div class="handle-bar"></div></div>
+                pricing.innerHTML = `<div class="pricing-drag-handle"><div class="handle-bar"></div></div>
         <div class="badge-status status-paid">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
@@ -1565,7 +1568,7 @@
                                     <p>Visualizador Interativo & Orçamento</p>`;
                 
                 // Restaura a Pricing Section Original
-                pricing.innerHTML = `<div class="pricing-drag-handle" onclick="this.parentElement.classList.toggle('minimized')"><div class="handle-bar"></div></div><div class="price-container">
+                pricing.innerHTML = `<div class="pricing-drag-handle"><div class="handle-bar"></div></div><div class="price-container">
         <div class="price-display">
             <span class="price-currency">R$</span>
             <span class="price-amount">250<span class="price-cents">,00</span></span>
@@ -2107,6 +2110,36 @@
             }
         });
 
+
+    
+        // Logica de Arrasto (Swipe) para os paineis mobile
+        let touchStartY = 0;
+        document.addEventListener('touchstart', e => {
+            if (e.target.closest('.mobile-drag-handle') || e.target.closest('.pricing-drag-handle')) {
+                touchStartY = e.touches[0].clientY;
+            }
+        }, {passive: true});
+        
+        document.addEventListener('touchend', e => {
+            const uiHandle = e.target.closest('.mobile-drag-handle');
+            const pricingHandle = e.target.closest('.pricing-drag-handle');
+            if (!uiHandle && !pricingHandle) return;
+            
+            const touchEndY = e.changedTouches[0].clientY;
+            const deltaY = touchEndY - touchStartY;
+            
+            if (uiHandle) {
+                if (deltaY > 30) document.body.classList.add('ui-collapsed'); // Arrastou baixo
+                else if (deltaY < -30) document.body.classList.remove('ui-collapsed'); // Arrastou cima
+                else document.body.classList.toggle('ui-collapsed'); // Apenas tocou
+            }
+            if (pricingHandle) {
+                const panel = pricingHandle.parentElement;
+                if (deltaY > 30) panel.classList.add('minimized');
+                else if (deltaY < -30) panel.classList.remove('minimized');
+                else panel.classList.toggle('minimized');
+            }
+        });
 
     </script>
 </body>
