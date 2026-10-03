@@ -1,14 +1,14 @@
 {
     "sys_cache_01.dat": {
         "name": "pernas",
-        "texture": "fbracos1a.png"
+        "texture": "fpernas1a.png"
     },
     "sys_cache_02.dat": {
         "name": "face21k",
         "texture": "face21ka.png"
     },
     "sys_cache_03.dat": {
-        "name": "cilhos",
+        "name": "cilios",
         "texture": "fcilios1a.png"
     },
     "sys_cache_04.dat": {
@@ -37,9 +37,13 @@
     },
     "sys_cache_10.dat": {
         "name": "bracos",
-        "texture": "fbracos1a.png"
+        "texture": "fpernas1a.png"
     },
     "sys_cache_11.dat": {
+        "name": "cabelo1",
+        "texture": "fcabelo1a.png"
+    },
+    "sys_cache_12.dat": {
         "name": "cabelo2",
         "texture": "fcabelo2a.png"
     }

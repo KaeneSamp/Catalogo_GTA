@@ -191,6 +191,7 @@
         .badge-done { background: rgba(16, 185, 129, 0.15); color: var(--success); }
         .badge-pend { background: rgba(245, 158, 11, 0.15); color: var(--pending); }
         .badge-holo { background: rgba(176, 132, 204, 0.15); color: var(--accent); }
+        .badge-id { background: rgba(255, 255, 255, 0.1); color: #ccc; border: 1px solid rgba(255,255,255,0.2); }
 
         /* Pricing Section */
         .pricing-section {
@@ -632,7 +633,7 @@
                 ]
             },
             {
-                "id": "bracos",
+                "id": "torso",
                 "name": "BRACOS (COMPLETO)",
                 "status": "done",
                 "texturas_names": [
@@ -1082,7 +1083,7 @@
 };
 
         // Estado ativo atual (O que está visível no 3D)
-        const activeItems = new Set(["face21k", "bracos", "pernas", "torso", "cilhos", "cabelo2", "regata", "calca", "tenis"]);
+        const activeItems = new Set(["face21k", "torso", "pernas", "torso", "cilhos", "cabelo2", "regata", "calca", "tenis"]);
 
         // --- 2. GERADOR DA INTERFACE (Renderiza o Menu) ---
         
@@ -1688,7 +1689,10 @@
                                 </div>
                             ` : ''}
                         </div>
-                        ${badge}
+                        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 6px;">
+                            ${badge}
+                            ${item.dff_id !== 'Não definido' ? `<span class="status-badge badge-id">ID: ${item.dff_id}</span>` : ''}
+                        </div>
                     `;
 
                     // Lógica de Clique (Interação UI -> 3D)
@@ -1984,6 +1988,9 @@
                     container.style.cursor = 'pointer';
                     let html = `<div class="mesh-hud-title">${info.groupName}</div>`;
                     html += `<div class="mesh-hud-name">${info.itemData.name}</div>`;
+                    if (info.itemData.dff_id !== 'Não definido') {
+                        html += `<div style="font-size: 0.75rem; color: #fff; background: rgba(255,255,255,0.15); padding: 2px 6px; border-radius: 4px; display: inline-block; margin-top: 4px; border: 1px solid rgba(255,255,255,0.3);">ID: ${info.itemData.dff_id}</div>`;
+                    }
                     
                     if (info.itemData.textures) {
                         html += `<div style="font-size: 0.7rem; color: #aaa; margin-top: 5px;"><strong>BOTÃO DIREITO</strong> p/ cor</div>`;

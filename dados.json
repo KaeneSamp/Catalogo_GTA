@@ -355,7 +355,7 @@
               "visivel_padrao": true
             },
             {
-              "id": "bracos",
+              "id": "torso",
               "nome": "BRACOS (COMPLETO)",
               "texturas": {
                 "fbracos1a": "#aaaaaa"
