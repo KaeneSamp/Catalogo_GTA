@@ -647,8 +647,8 @@
                 ]
             },
             {
-                "id": "pernas",
-                "name": "PERNAS (COMPLETO)",
+                "id": "bracos",
+                "name": "BRACOS (PRA BLUSA)",
                 "status": "done",
                 "texturas_names": [
                     "fbracos1a"
@@ -656,6 +656,20 @@
                 "textures": [
                     {
                         "file": "fbracos1a.png",
+                        "color": "#aaaaaa"
+                    }
+                ]
+            },
+            {
+                "id": "pernas",
+                "name": "PERNAS (COMPLETO)",
+                "status": "done",
+                "texturas_names": [
+                    "fpernas1a"
+                ],
+                "textures": [
+                    {
+                        "file": "fpernas1a.png",
                         "color": "#aaaaaa"
                     }
                 ]
@@ -1041,25 +1055,20 @@
             }
         ]
     },
-    "1 Havaiana + 1 Tênis": {
+    "Calçados": {
         "emoji": "👠",
         "exclusive": true,
         "items": [
             {
-                "id": "pend_2cb0fb",
-                "name": "SANDÁLIA / RASTEIRINHA",
-                "status": "pend",
+                "id": "havaianas",
+                "name": "HAVAIANAS",
+                "status": "done",
                 "texturas_names": [
-                    "fsandalia1a",
-                    "fsandalia1b"
+                    "havaianas1a"
                 ],
                 "textures": [
                     {
-                        "file": "fsandalia1a.png",
-                        "color": "#aaaaaa"
-                    },
-                    {
-                        "file": "fsandalia1b.png",
+                        "file": "havaianas1a.png",
                         "color": "#aaaaaa"
                     }
                 ]
@@ -1083,7 +1092,7 @@
 };
 
         // Estado ativo atual (O que está visível no 3D)
-        const activeItems = new Set(["face21k", "torso", "pernas", "torso", "cilhos", "cabelo2", "regata", "calca", "tenis"]);
+        const activeItems = new Set(["face21k", "torso", "bracos", "pernas", "torso", "cilhos", "cabelo2", "regata", "calca", "tenis"]);
 
         // --- 2. GERADOR DA INTERFACE (Renderiza o Menu) ---
         

@@ -366,10 +366,21 @@
               "visivel_padrao": true
             },
             {
+              "id": "bracos",
+              "nome": "BRACOS (PRA BLUSA)",
+              "texturas": {
+                "fbracos1a": "#aaaaaa"
+              },
+              "obs": "Base",
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": true
+            },
+            {
               "id": "pernas",
               "nome": "PERNAS (COMPLETO)",
               "texturas": {
-                "fbracos1a": "#aaaaaa"
+                "fpernas1a": "#aaaaaa"
               },
               "obs": "Base",
               "concluido": true,
@@ -658,20 +669,19 @@
           "exclusive": true
         },
         {
-          "titulo": "1 Havaiana + 1 Tênis",
+          "titulo": "Calçados",
           "emoji": "👠",
-          "resumo_texturas": "4 Texturas (2 cada)",
+          "resumo_texturas": "Todas Brancas",
           "itens": [
             {
-              "id": "-",
-              "nome": "SANDÁLIA / RASTEIRINHA",
+              "id": "havaianas",
+              "nome": "HAVAIANAS",
               "texturas": {
-                "fsandalia1a": "#aaaaaa",
-                "fsandalia1b": "#aaaaaa"
+                "havaianas1a": "#aaaaaa"
               },
-              "obs": "2 texturas",
-              "concluido": false,
-              "status": "pend",
+              "obs": "Textura Branca",
+              "concluido": true,
+              "status": "done",
               "visivel_padrao": false
             },
             {

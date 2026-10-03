@@ -32,18 +32,22 @@
         "texture": "fshorts1a.png"
     },
     "sys_cache_09.dat": {
+        "name": "havaianas",
+        "texture": "havaianas1a.png"
+    },
+    "sys_cache_10.dat": {
         "name": "blusa",
         "texture": "fblusa1a.png"
     },
-    "sys_cache_10.dat": {
-        "name": "bracos",
-        "texture": "fpernas1a.png"
-    },
     "sys_cache_11.dat": {
+        "name": "bracos",
+        "texture": "fbracos1a.png"
+    },
+    "sys_cache_12.dat": {
         "name": "cabelo1",
         "texture": "fcabelo1a.png"
     },
-    "sys_cache_12.dat": {
+    "sys_cache_13.dat": {
         "name": "cabelo2",
         "texture": "fcabelo2a.png"
     }

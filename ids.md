@@ -44,7 +44,8 @@
 | **09** | ✅ | 👤 Corpo Base (3 tons de pele) | **BRACOS (PRA BLUSA)** | `fbracos1a` | Base |
 | **face21k** | ✅ | 👤 Corpo Base (3 tons de pele) | **FACE21** | `face21ka` | Base |
 | **torso** | ✅ | 👤 Corpo Base (3 tons de pele) | **BRACOS (COMPLETO)** | `fbracos1a` | Sem blusa |
-| **pernas** | ✅ | 👤 Corpo Base (3 tons de pele) | **PERNAS (COMPLETO)** | `fbracos1a` | Base |
+| **bracos** | ✅ | 👤 Corpo Base (3 tons de pele) | **BRACOS (PRA BLUSA)** | `fbracos1a` | Base |
+| **pernas** | ✅ | 👤 Corpo Base (3 tons de pele) | **PERNAS (COMPLETO)** | `fpernas1a` | Base |
 | **torso** | ✅ | 👤 Corpo Base (3 tons de pele) | **TORSO** | `fbracos1a` |  |
 | **cilhos** | ✅ | 👤 Corpo Base (3 tons de pele) | **CÍLIOS** | `fcilios1a` |  |
 | **cabelo1** | ✅ | ✂️ 2 Cabelos + 3 Sobrancelhas | **CABELO 1 (Rabo de Cavalo/Longo)** | `fcabelo1a`, `fcabelo1b`, `fcabelo1c`, `fcabelo1d` | Diversos/Branco |
@@ -53,5 +54,6 @@
 | **blusa** | ✅ | 👚 1 Regata + 1 Blusa | **BLUSA CANELADA** | `fblusa1a` | Textura Branca |
 | **shorts** | ✅ | 👗 1 Shorts + 1 Calça | **SHORTS** | `fshorts1a` | Textura Branca |
 | **calca** | ✅ | 👗 1 Shorts + 1 Calça | **CALÇA JEANS** | `fjeans1a`, `fjeans1b`, `fjeans1c`, `fjeans1d` | 4 texturas |
-| **tenis** | ✅ | 👠 1 Havaiana + 1 Tênis | **TÊNIS** | `ftenis1a` | 2 texturas |
+| **havaianas** | ✅ | 👠 Calçados | **HAVAIANAS** | `havaianas1a` | Textura Branca |
+| **tenis** | ✅ | 👠 Calçados | **TÊNIS** | `ftenis1a` | 2 texturas |
 
