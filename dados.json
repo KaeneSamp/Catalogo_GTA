@@ -401,7 +401,7 @@
             },
             {
               "id": "pernas_calca",
-              "nome": "PERNAS (PRA CALÇA)",
+              "nome": "PERNAS (DA CALÇA)",
               "texturas": {
                 "fpernas1a": "#a08070"
               },
@@ -525,12 +525,12 @@
               "visivel_padrao": true
             },
             {
-              "id": "overlay_som1",
+              "id": "overlay",
               "nome": "SOBRANCELHA 1",
               "texturas": {
                 "feyebrow1a": "#ffffff",
-                "feyebrow1b": "#dddddd",
-                "feyebrow1c": "#bbbbbb"
+                "feyebrow1b": "#ffffff",
+                "feyebrow1c": "#ffffff"
               },
               "obs": "Textura Branca",
               "concluido": true,
@@ -561,36 +561,37 @@
           "resumo_texturas": "Rosto",
           "itens": [
             {
-              "id": "overlay1",
-              "nome": "MAQUIAGEM 1",
+              "id": "overlay",
+              "nome": "BLUSH: Bochechas",
               "texturas": {
-                "fmake1a": "#ffffff"
+                "fmake1a": "#ffffff",
+                "fmake1b": "#ffffff"
               },
-              "obs": "Leve/Gloss",
+              "obs": "Textura Branca",
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
               "dff_id": "OVERLAY"
             },
             {
-              "id": "overlay2",
-              "nome": "MAQUIAGEM 2",
+              "id": "overlay",
+              "nome": "BLUSH: Nariz",
               "texturas": {
                 "fmake2a": "#ffffff"
               },
-              "obs": "Sombra/Delineador",
+              "obs": "Textura Branca",
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
               "dff_id": "OVERLAY"
             },
             {
-              "id": "overlay3",
-              "nome": "MAQUIAGEM 3",
+              "id": "overlay",
+              "nome": "BLUSH: Testas",
               "texturas": {
                 "fmake3a": "#ffffff"
               },
-              "obs": "Festa/Batom Forte",
+              "obs": "Textura Branca",
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
