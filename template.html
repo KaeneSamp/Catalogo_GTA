@@ -874,7 +874,7 @@
                         if (item.cond_malhas) {
                             for (const req in item.cond_malhas) {
                                 if (meshesToShow.has(req)) {
-                                    meshesToShow.delete(req);
+                                                                        meshesToShow.delete(req);
                                     meshesToShow.add(item.cond_malhas[req]);
                                     window.currentMeshSwaps[req] = item.cond_malhas[req]; // Record swap
                                     const swapDiv = document.getElementById(`ui-item-${item.cond_malhas[req]}`);
