@@ -368,7 +368,8 @@
               "obs": "Sem blusa",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true
+              "visivel_padrao": true,
+              "dff_id": "06"
             },
             {
               "id": "pernas",
@@ -381,7 +382,8 @@
               "obs": "Base",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true
+              "visivel_padrao": true,
+              "dff_id": "04"
             },
             {
               "id": "calcinha",
@@ -392,7 +394,8 @@
               "obs": "Calcinha",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "11"
             },
             {
               "id": "sutia",
@@ -403,7 +406,8 @@
               "obs": "Sutiã",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "12"
             },
             {
               "id": "pernas_calca",
@@ -429,7 +433,8 @@
               "obs": "Carregado pela blusa",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "07"
             },
             {
               "id": "pernas_shorts",
@@ -442,7 +447,8 @@
               "obs": "Carregado pelo shorts",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "05"
             }
           ],
           "exclusive": false
@@ -468,7 +474,8 @@
               ],
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "01"
             },
             {
               "id": "face2",
@@ -486,7 +493,8 @@
               ],
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true
+              "visivel_padrao": true,
+              "dff_id": "02"
             },
             {
               "id": "face3",
@@ -504,7 +512,8 @@
               ],
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "03"
             }
           ],
           "exclusive": true
@@ -538,7 +547,8 @@
               "obs": "Diversos/Branco",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "19"
             },
             {
               "id": "cabelo2",
@@ -552,7 +562,8 @@
               "obs": "Diversos/Branco",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true
+              "visivel_padrao": true,
+              "dff_id": "20"
             },
             {
               "id": "overlay",
@@ -580,7 +591,8 @@
               "obs": "Carregado pela blusa",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "21"
             }
           ],
           "exclusive": true
@@ -644,7 +656,8 @@
               "obs": "Textura Branca",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true
+              "visivel_padrao": true,
+              "dff_id": "16"
             },
             {
               "id": "blusa",
@@ -661,7 +674,8 @@
               "cond_malhas": {
                 "cabelo2": "cabelo2_blusa",
                 "torso": "torso_blusa"
-              }
+              },
+              "dff_id": "13"
             }
           ],
           "exclusive": true
@@ -685,7 +699,8 @@
               "hides": [],
               "cond_malhas": {
                 "pernas": "pernas_shorts"
-              }
+              },
+              "dff_id": "17"
             },
             {
               "id": "calca",
@@ -703,7 +718,8 @@
               "hides": [],
               "cond_malhas": {
                 "pernas": "pernas_calca"
-              }
+              },
+              "dff_id": "14"
             }
           ],
           "exclusive": true
@@ -722,7 +738,8 @@
               "obs": "Textura Branca",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "15"
             },
             {
               "id": "tenis",
@@ -733,7 +750,8 @@
               "obs": "2 texturas",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true
+              "visivel_padrao": true,
+              "dff_id": "18"
             }
           ],
           "exclusive": true
