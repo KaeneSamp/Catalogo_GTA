@@ -50,12 +50,10 @@
 | **cabelo1** | ✅ | 💇‍♀️ Cabelos | **CABELO 1 (Rabo de Cavalo/Longo)** | `fcabelo1a`, `fcabelo1b`, `fcabelo1c`, `fcabelo1d` | - | Diversos/Branco |
 | **cabelo2** | ✅ | 💇‍♀️ Cabelos | **CABELO 2 (Cacheado/Longo)** | `fcabelo2a`, `fcabelo2b`, `fcabelo2c`, `fcabelo2d` | - | Diversos/Branco |
 | **cabelo2_blusa** | ✅ | 💇‍♀️ Cabelos | **CABELO 2 (DA BLUSA)** | `fcabelo2a`, `fcabelo2b`, `fcabelo2c`, `fcabelo2d` | - | Carregado pela blusa |
+| **overlay_som1** | ✅ | 💇‍♀️ Cabelos | **SOMBRANCELHA 1** | `feyebrow1a`, `feyebrow1b`, `feyebrow1c` | - | Textura Branca |
 | **overlay1** | ✅ | 💄 Overlays: Maquiagem | **MAQUIAGEM 1** | `fmake1a`, `fmake1b` | - | Leve/Gloss |
 | **overlay2** | ✅ | 💄 Overlays: Maquiagem | **MAQUIAGEM 2** | `fmake2a` | - | Sombra/Delineador |
 | **overlay3** | ✅ | 💄 Overlays: Maquiagem | **MAQUIAGEM 3** | `fmake3a` | - | Festa/Batom Forte |
-| **overlay_som1** | ✅ | 👁️ Overlays: Sombrancelhas | **SOMBRANCELHA 1** | `feyebrow1a` | - | - |
-| **overlay_som2** | ✅ | 👁️ Overlays: Sombrancelhas | **SOMBRANCELHA 2** | `feyebrow1b` | - | - |
-| **overlay_som3** | ✅ | 👁️ Overlays: Sombrancelhas | **SOMBRANCELHA 3** | `feyebrow1c` | - | - |
 | **regata** | ✅ | 👚 Roupas: Superiores | **REGATA** | `fregata1a` | - | Textura Branca |
 | **blusa** | ✅ | 👚 Roupas: Superiores | **BLUSA CANELADA** | `fblusa1a` | Se ID `cabelo2` -> Usar ID `cabelo2_blusa`<br>Se ID `torso` -> Usar ID `torso_blusa` | Textura Branca |
 | **shorts** | ✅ | 👗 Roupas: Inferiores | **SHORTS** | `fshorts1a` | Se ID `pernas` -> Usar ID `pernas_shorts` | Textura Branca |
