@@ -400,14 +400,14 @@
               "visivel_padrao": false
             },
             {
-              "id": "-",
+              "id": "pernas_calca",
               "nome": "PERNAS (PRA CALÇA)",
               "texturas": {
-                "fbracos1a": "#a08070"
+                "fpernas1a": "#a08070"
               },
-              "obs": "Base",
-              "concluido": false,
-              "status": "pend",
+              "obs": "Carregado pela calça",
+              "concluido": true,
+              "status": "done",
               "visivel_padrao": false
             },
             {
@@ -669,9 +669,10 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": true,
-              "hides": [
-                "pernas"
-              ]
+              "hides": [],
+              "cond_malhas": {
+                "pernas": "pernas_calca"
+              }
             }
           ],
           "exclusive": true

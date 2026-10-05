@@ -549,12 +549,12 @@
         <div id="header-panel" class="ui-header">
             <div class="header-title-row">
                 <h1>Skin <span>Feminina</span></h1>
-                <div class="circular-progress" style="--prog: 96;">
+                <div class="circular-progress" style="--prog: 100;">
                     <svg viewBox="0 0 36 36">
                         <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                         <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                     </svg>
-                    <div class="circle-text">96%</div>
+                    <div class="circle-text">100%</div>
                 </div>
             </div>
             <p>Visualizador Interativo & Orçamento</p>
@@ -704,19 +704,19 @@
                 ]
             },
             {
-                "id": "pend_23bf06",
+                "id": "pernas_calca",
                 "dff_id": "Não definido",
                 "name": "PERNAS (PRA CALÇA)",
-                "status": "pend",
+                "status": "done",
                 "texturas_names": [
-                    "fbracos1a"
+                    "fpernas1a"
                 ],
                 "malhas": [],
                 "hides": [],
                 "cond_malhas": {},
                 "textures": [
                     {
-                        "file": "fbracos1a.png",
+                        "file": "fpernas1a.png",
                         "color": "#a08070"
                     }
                 ]
@@ -743,24 +743,6 @@
                 "id": "pernas_shorts",
                 "dff_id": "Não definido",
                 "name": "PERNAS (DO SHORTS)",
-                "status": "done",
-                "texturas_names": [
-                    "fpernas1a"
-                ],
-                "malhas": [],
-                "hides": [],
-                "cond_malhas": {},
-                "textures": [
-                    {
-                        "file": "fpernas1a.png",
-                        "color": "#a08070"
-                    }
-                ]
-            },
-            {
-                "id": "pernas_calca",
-                "dff_id": "Não definido",
-                "name": "PERNAS (DA CALÇA)",
                 "status": "done",
                 "texturas_names": [
                     "fpernas1a"
@@ -1123,9 +1105,7 @@
                     "fjeans1d"
                 ],
                 "malhas": [],
-                "hides": [
-                    "pernas"
-                ],
+                "hides": [],
                 "cond_malhas": {
                     "pernas": "pernas_calca"
                 },
@@ -1713,12 +1693,12 @@
                 // Restaura o Cabecalho Original
                 header.innerHTML = `<div class="header-title-row">
                                         <h1>Skin <span>Feminina</span></h1>
-                                        <div class="circular-progress" style="--prog: 96;">
+                                        <div class="circular-progress" style="--prog: 100;">
                                             <svg viewBox="0 0 36 36">
                                                 <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                                 <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                             </svg>
-                                            <div class="circle-text">96%</div>
+                                            <div class="circle-text">100%</div>
                                         </div>
                                     </div>
                                     <p>Visualizador Interativo & Orçamento</p>`;
