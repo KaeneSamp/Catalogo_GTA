@@ -248,9 +248,15 @@ def gerar_md(dados):
     md = f"# {dados['projeto']}\n\n"
     for skin in dados.get('skins', []):
         md += f"## {skin['titulo']}\n\n"
-        md += "| ID | Status | Grupo | Acessório | Texturas | Obs |\n"
-        md += "|:---|:---|:---|:---|:---|:---|\n"
+        md += "| ID DFF | Status | Grupo | Acessório | Texturas | Adaptações Automáticas | Obs |\n"
+        md += "|:---|:---|:---|:---|:---|:---|:---|\n"
         
+        # Mapeamento interno para converter IDs do site em IDs do DFF
+        id_map = {}
+        for g in skin.get('grupos', []):
+            for i in g.get('itens', []):
+                id_map[i['id']] = str(i.get('dff_id', i['id']))
+                
         todos_itens = []
         for grupo in skin.get('grupos', []):
             for item in grupo.get('itens', []):
@@ -272,7 +278,25 @@ def gerar_md(dados):
             status = "✅" if item.get('concluido', False) else "⏳"
             texturas = ", ".join([f"`{t}`" for t in item['texturas']])
             display_id = item.get('dff_id', item.get('id', '-'))
-            md += f"| **{display_id}** | {status} | {item.get('emoji', '')} {item.get('grupo', '')} | **{item['nome']}** | {texturas} | {item.get('obs', '')} |\n"
+            
+            # --- Logica DFF Limpa (Focada em IDs e Swaps) ---
+            swaps = []
+            if item.get('cond_malhas'):
+                for req, swap in item.get('cond_malhas', {}).items():
+                    req_dff = id_map.get(req, req)
+                    swap_dff = id_map.get(swap, swap)
+                    swaps.append(f"Se ID `{req_dff}` -> Usar ID `{swap_dff}`")
+                    
+            if item.get('malhas'):
+                for m in item.get('malhas', []):
+                    req_dff = id_map.get(m, m)
+                    swaps.append(f"Requer ID `{req_dff}`")
+            
+            swaps_str = "<br>".join(swaps) if swaps else "-"
+            obs_str = item.get('obs', '-')
+            # ------------------------------------------------
+            
+            md += f"| **{display_id}** | {status} | {item.get('emoji', '')} {item.get('grupo', '')} | **{item['nome']}** | {texturas} | {swaps_str} | {obs_str} |\n"
         md += "\n"
     return md
 
