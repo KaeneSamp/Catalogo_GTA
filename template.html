@@ -661,7 +661,7 @@
                 groupData.items.forEach(item => {
                     const div = document.createElement('div');
                     const isActive = activeItems.has(item.id);
-                    div.className = `interactive-item ${isActive ? 'active' : ''} ${item.status === 'pend' ? 'disabled' : ''}`;
+                    div.className = `interactive-item ${isActive ? 'active' : ''} ${(item.status === 'pend' || item.dff_id === 'OVERLAY') ? 'disabled' : ''}`;
                     div.id = `ui-item-${item.id}`;
                     
                     let badge = '';
@@ -692,7 +692,7 @@
                     // Lógica de Clique (Interação UI -> 3D)
                     // Lógica de Clique (Interação UI -> 3D)
                     div.onclick = () => {
-                        if (item.status === 'pend') return; // Bloqueia selecao de itens incompletos
+                        if (item.status === 'pend' || item.dff_id === 'OVERLAY') return; // Bloqueia selecao de itens incompletos ou overlays
                         const wasActive = activeItems.has(item.id);
 
                         if (groupData.exclusive) {
