@@ -580,37 +580,40 @@
           "resumo_texturas": "Rosto",
           "itens": [
             {
-              "id": "-",
+              "id": "overlay1",
               "nome": "MAQUIAGEM 1",
               "texturas": {
-                "fmakeup1a": "#aaaaaa"
+                "fmake1a": "#ffffff"
               },
               "obs": "Leve/Gloss",
-              "concluido": false,
-              "status": "pend",
-              "visivel_padrao": false
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": false,
+              "dff_id": "OVERLAY"
             },
             {
-              "id": "-",
+              "id": "overlay2",
               "nome": "MAQUIAGEM 2",
               "texturas": {
-                "fmakeup2a": "#aaaaaa"
+                "fmake2a": "#ffffff"
               },
               "obs": "Sombra/Delineador",
-              "concluido": false,
-              "status": "pend",
-              "visivel_padrao": false
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": false,
+              "dff_id": "OVERLAY"
             },
             {
-              "id": "-",
+              "id": "overlay3",
               "nome": "MAQUIAGEM 3",
               "texturas": {
-                "fmakeup3a": "#aaaaaa"
+                "fmake3a": "#ffffff"
               },
               "obs": "Festa/Batom Forte",
-              "concluido": false,
-              "status": "pend",
-              "visivel_padrao": false
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": false,
+              "dff_id": "OVERLAY"
             }
           ],
           "exclusive": false

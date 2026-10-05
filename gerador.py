@@ -212,6 +212,7 @@ def gerar_html(dados):
 
                 logic_item = {
                     "id": item_id,
+                    "dff_id": item.get('dff_id', 'Não definido'),
                     "name": item.get('nome', 'Item'),
                     "status": "done" if item.get('concluido', False) else "pend",
                     "texturas_names": list(item.get('texturas', {}).keys()) if isinstance(item.get('texturas'), dict) else item.get('texturas', []),
@@ -307,5 +308,5 @@ if __name__ == "__main__":
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(gerar_html(dados))
         
-    with open("ids.md", "w", encoding="utf-8") as f:
-        f.write(gerar_md(dados))
+    # with open("ids.md", "w", encoding="utf-8") as f:
+        # f.write(gerar_md(dados))
