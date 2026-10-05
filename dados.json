@@ -345,15 +345,15 @@
           "itens": [
             {
               "dff_id": "00",
-              "id": "face21k",
-              "nome": "FACE21",
+              "id": "face021",
+              "nome": "FACE BASE (Sem Cílios)",
               "texturas": {
-                "face21ka": "#a08070"
+                "fface1a": "#ffccaa"
               },
               "obs": "Base",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true
+              "visivel_padrao": false
             },
             {
               "id": "torso",
@@ -362,17 +362,6 @@
                 "fbracos1a": "#a08070"
               },
               "obs": "Sem blusa",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": true
-            },
-            {
-              "id": "bracos",
-              "nome": "BRACOS (PRA BLUSA)",
-              "texturas": {
-                "fbracos1a": "#a08070"
-              },
-              "obs": "Base",
               "concluido": true,
               "status": "done",
               "visivel_padrao": true
@@ -389,7 +378,7 @@
               "visivel_padrao": true
             },
             {
-              "id": "03",
+              "id": "calcinha",
               "nome": "CALCINHA",
               "texturas": {
                 "calcinha1a": "#aaaaaa"
@@ -400,23 +389,12 @@
               "visivel_padrao": false
             },
             {
-              "id": "04",
+              "id": "sutia",
               "nome": "SUTIÃ",
               "texturas": {
                 "sutian1a": "#aaaaaa"
               },
               "obs": "Sutiã",
-              "concluido": true,
-              "status": "done",
-              "visivel_padrao": false
-            },
-            {
-              "id": "09",
-              "nome": "BRACOS (PRA BLUSA)",
-              "texturas": {
-                "fbracos1a": "#a08070"
-              },
-              "obs": "Base",
               "concluido": true,
               "status": "done",
               "visivel_padrao": false
@@ -433,13 +411,26 @@
               "visivel_padrao": false
             },
             {
-              "id": "cilios",
-              "nome": "CÍLIOS",
+              "id": "torso_blusa",
+              "nome": "BRAÇOS (DA BLUSA)",
               "texturas": {
-                "fcilios1a": "#111111"
+                "fbracos1a": "#a08070"
               },
+              "obs": "Carregado pela blusa",
               "concluido": true,
-              "visivel_padrao": true
+              "status": "done",
+              "visivel_padrao": false
+            },
+            {
+              "id": "pernas_shorts",
+              "nome": "PERNAS (DO SHORTS)",
+              "texturas": {
+                "fpernas1a": "#a08070"
+              },
+              "obs": "Carregado pelo shorts",
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": false
             }
           ],
           "exclusive": false
@@ -450,34 +441,49 @@
           "resumo_texturas": "Malha Base",
           "itens": [
             {
-              "id": "05",
-              "nome": "FACE25",
+              "id": "face1",
+              "nome": "FACE 1",
               "texturas": {
-                "fface25a": "#aaaaaa"
+                "fface1a": "#aaaaaa"
               },
-              "obs": "Base",
+              "malhas": [
+                "cilios1"
+              ],
+              "hides": [
+                "face021"
+              ],
               "concluido": true,
               "status": "done",
               "visivel_padrao": false
             },
             {
-              "id": "06",
-              "nome": "FACE26",
+              "id": "face2",
+              "nome": "FACE 2",
               "texturas": {
-                "fface26a": "#aaaaaa"
+                "fface2a": "#aaaaaa"
               },
-              "obs": "Base",
+              "malhas": [
+                "cilios2"
+              ],
+              "hides": [
+                "face021"
+              ],
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false
+              "visivel_padrao": true
             },
             {
-              "id": "07",
-              "nome": "FACE29",
+              "id": "face3",
+              "nome": "FACE 3",
               "texturas": {
-                "fface29a": "#aaaaaa"
+                "fface3a": "#aaaaaa"
               },
-              "obs": "Base",
+              "malhas": [
+                "cilios3"
+              ],
+              "hides": [
+                "face021"
+              ],
               "concluido": true,
               "status": "done",
               "visivel_padrao": false
@@ -550,6 +556,20 @@
               "concluido": false,
               "status": "pend",
               "visivel_padrao": false
+            },
+            {
+              "id": "cabelo2_blusa",
+              "nome": "CABELO 2 (DA BLUSA)",
+              "texturas": {
+                "fcabelo2a": "#30221a",
+                "fcabelo2b": "#d6ab5c",
+                "fcabelo2c": "#8a2b2b",
+                "fcabelo2d": "#aaaaaa"
+              },
+              "obs": "Carregado pela blusa",
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": false
             }
           ],
           "exclusive": true
@@ -620,7 +640,13 @@
               "obs": "Textura Branca",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "malhas": [],
+              "hides": [],
+              "cond_malhas": {
+                "cabelo2": "cabelo2_blusa",
+                "torso": "torso_blusa"
+              }
             }
           ],
           "exclusive": true
@@ -639,7 +665,12 @@
               "obs": "Textura Branca",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "malhas": [],
+              "hides": [],
+              "cond_malhas": {
+                "pernas": "pernas_shorts"
+              }
             },
             {
               "id": "calca",
@@ -653,7 +684,10 @@
               "obs": "4 texturas",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": true
+              "visivel_padrao": true,
+              "hides": [
+                "pernas"
+              ]
             }
           ],
           "exclusive": true

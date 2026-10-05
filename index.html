@@ -302,7 +302,7 @@
         
         @keyframes fillCircle {
             from { stroke-dasharray: 0, 100; }
-            to { stroke-dasharray: 70, 100; }
+            to { stroke-dasharray: var(--prog), 100; }
         }
 
         .circular-progress svg {
@@ -549,17 +549,12 @@
         <div id="header-panel" class="ui-header">
             <div class="header-title-row">
                 <h1>Skin <span>Feminina</span></h1>
-                <div class="circular-progress">
+                <div class="circular-progress" style="--prog: 73;">
                     <svg viewBox="0 0 36 36">
-                        <path class="circle-bg"
-                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                        <path class="circle-fill"
-                            stroke-dasharray="70, 100"
-                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
+                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                     </svg>
-                    <div class="circle-text">70%</div>
+                    <div class="circle-text">73%</div>
                 </div>
             </div>
             <p>Visualizador Interativo & Orçamento</p>
@@ -619,16 +614,19 @@
         "exclusive": false,
         "items": [
             {
-                "id": "face21k",
-                "name": "FACE21",
+                "id": "face021",
+                "name": "FACE BASE (Sem Cílios)",
                 "status": "done",
                 "texturas_names": [
-                    "face21ka"
+                    "fface1a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
-                        "file": "face21ka.png",
-                        "color": "#a08070"
+                        "file": "fface1a.png",
+                        "color": "#ffccaa"
                     }
                 ]
             },
@@ -639,20 +637,9 @@
                 "texturas_names": [
                     "fbracos1a"
                 ],
-                "textures": [
-                    {
-                        "file": "fbracos1a.png",
-                        "color": "#a08070"
-                    }
-                ]
-            },
-            {
-                "id": "bracos",
-                "name": "BRACOS (PRA BLUSA)",
-                "status": "done",
-                "texturas_names": [
-                    "fbracos1a"
-                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
                         "file": "fbracos1a.png",
@@ -667,6 +654,9 @@
                 "texturas_names": [
                     "fpernas1a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
                         "file": "fpernas1a.png",
@@ -675,12 +665,15 @@
                 ]
             },
             {
-                "id": "03",
+                "id": "calcinha",
                 "name": "CALCINHA",
                 "status": "done",
                 "texturas_names": [
                     "calcinha1a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
                         "file": "calcinha1a.png",
@@ -689,30 +682,19 @@
                 ]
             },
             {
-                "id": "04",
+                "id": "sutia",
                 "name": "SUTIÃ",
                 "status": "done",
                 "texturas_names": [
                     "sutian1a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
                         "file": "sutian1a.png",
                         "color": "#aaaaaa"
-                    }
-                ]
-            },
-            {
-                "id": "09",
-                "name": "BRACOS (PRA BLUSA)",
-                "status": "done",
-                "texturas_names": [
-                    "fbracos1a"
-                ],
-                "textures": [
-                    {
-                        "file": "fbracos1a.png",
-                        "color": "#a08070"
                     }
                 ]
             },
@@ -723,6 +705,9 @@
                 "texturas_names": [
                     "fbracos1a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
                         "file": "fbracos1a.png",
@@ -731,16 +716,53 @@
                 ]
             },
             {
-                "id": "cilios",
-                "name": "CÍLIOS",
+                "id": "torso_blusa",
+                "name": "BRAÇOS (DA BLUSA)",
                 "status": "done",
                 "texturas_names": [
-                    "fcilios1a"
+                    "fbracos1a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
-                        "file": "fcilios1a.png",
-                        "color": "#111111"
+                        "file": "fbracos1a.png",
+                        "color": "#a08070"
+                    }
+                ]
+            },
+            {
+                "id": "pernas_shorts",
+                "name": "PERNAS (DO SHORTS)",
+                "status": "done",
+                "texturas_names": [
+                    "fpernas1a"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "textures": [
+                    {
+                        "file": "fpernas1a.png",
+                        "color": "#a08070"
+                    }
+                ]
+            },
+            {
+                "id": "pernas_calca",
+                "name": "PERNAS (DA CALÇA)",
+                "status": "done",
+                "texturas_names": [
+                    "fpernas1a"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "textures": [
+                    {
+                        "file": "fpernas1a.png",
+                        "color": "#a08070"
                     }
                 ]
             }
@@ -751,43 +773,64 @@
         "exclusive": true,
         "items": [
             {
-                "id": "05",
-                "name": "FACE25",
+                "id": "face1",
+                "name": "FACE 1",
                 "status": "done",
                 "texturas_names": [
-                    "fface25a"
+                    "fface1a"
                 ],
+                "malhas": [
+                    "cilios1"
+                ],
+                "hides": [
+                    "face021"
+                ],
+                "cond_malhas": {},
                 "textures": [
                     {
-                        "file": "fface25a.png",
+                        "file": "fface1a.png",
                         "color": "#aaaaaa"
                     }
                 ]
             },
             {
-                "id": "06",
-                "name": "FACE26",
+                "id": "face2",
+                "name": "FACE 2",
                 "status": "done",
                 "texturas_names": [
-                    "fface26a"
+                    "fface2a"
                 ],
+                "malhas": [
+                    "cilios2"
+                ],
+                "hides": [
+                    "face021"
+                ],
+                "cond_malhas": {},
                 "textures": [
                     {
-                        "file": "fface26a.png",
+                        "file": "fface2a.png",
                         "color": "#aaaaaa"
                     }
                 ]
             },
             {
-                "id": "07",
-                "name": "FACE29",
+                "id": "face3",
+                "name": "FACE 3",
                 "status": "done",
                 "texturas_names": [
-                    "fface29a"
+                    "fface3a"
                 ],
+                "malhas": [
+                    "cilios3"
+                ],
+                "hides": [
+                    "face021"
+                ],
+                "cond_malhas": {},
                 "textures": [
                     {
-                        "file": "fface29a.png",
+                        "file": "fface3a.png",
                         "color": "#aaaaaa"
                     }
                 ]
@@ -808,6 +851,9 @@
                     "fcabelo1c",
                     "fcabelo1d"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
                         "file": "fcabelo1a.png",
@@ -837,6 +883,9 @@
                     "fcabelo2c",
                     "fcabelo2d"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
                         "file": "fcabelo2a.png",
@@ -863,6 +912,9 @@
                 "texturas_names": [
                     "feyebrow1a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
                         "file": "feyebrow1a.png",
@@ -877,6 +929,9 @@
                 "texturas_names": [
                     "feyebrow2a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
                         "file": "feyebrow2a.png",
@@ -891,9 +946,44 @@
                 "texturas_names": [
                     "feyebrow3a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
                         "file": "feyebrow3a.png",
+                        "color": "#aaaaaa"
+                    }
+                ]
+            },
+            {
+                "id": "cabelo2_blusa",
+                "name": "CABELO 2 (DA BLUSA)",
+                "status": "done",
+                "texturas_names": [
+                    "fcabelo2a",
+                    "fcabelo2b",
+                    "fcabelo2c",
+                    "fcabelo2d"
+                ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
+                "textures": [
+                    {
+                        "file": "fcabelo2a.png",
+                        "color": "#30221a"
+                    },
+                    {
+                        "file": "fcabelo2b.png",
+                        "color": "#d6ab5c"
+                    },
+                    {
+                        "file": "fcabelo2c.png",
+                        "color": "#8a2b2b"
+                    },
+                    {
+                        "file": "fcabelo2d.png",
                         "color": "#aaaaaa"
                     }
                 ]
@@ -911,6 +1001,9 @@
                 "texturas_names": [
                     "fmakeup1a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
                         "file": "fmakeup1a.png",
@@ -925,6 +1018,9 @@
                 "texturas_names": [
                     "fmakeup2a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
                         "file": "fmakeup2a.png",
@@ -939,6 +1035,9 @@
                 "texturas_names": [
                     "fmakeup3a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
                         "file": "fmakeup3a.png",
@@ -959,6 +1058,9 @@
                 "texturas_names": [
                     "fregata1a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
                         "file": "fregata1a.png",
@@ -973,6 +1075,12 @@
                 "texturas_names": [
                     "fblusa1a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {
+                    "cabelo2": "cabelo2_blusa",
+                    "torso": "torso_blusa"
+                },
                 "textures": [
                     {
                         "file": "fblusa1a.png",
@@ -993,6 +1101,11 @@
                 "texturas_names": [
                     "fshorts1a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {
+                    "pernas": "pernas_shorts"
+                },
                 "textures": [
                     {
                         "file": "fshorts1a.png",
@@ -1010,6 +1123,13 @@
                     "fjeans1c",
                     "fjeans1d"
                 ],
+                "malhas": [],
+                "hides": [
+                    "pernas"
+                ],
+                "cond_malhas": {
+                    "pernas": "pernas_calca"
+                },
                 "textures": [
                     {
                         "file": "fjeans1a.png",
@@ -1042,6 +1162,9 @@
                 "texturas_names": [
                     "havaianas1a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
                         "file": "havaianas1a.png",
@@ -1056,6 +1179,9 @@
                 "texturas_names": [
                     "ftenis1a"
                 ],
+                "malhas": [],
+                "hides": [],
+                "cond_malhas": {},
                 "textures": [
                     {
                         "file": "ftenis1a.png",
@@ -1068,7 +1194,7 @@
 };
 
         // Estado ativo atual (O que está visível no 3D)
-        const activeItems = new Set(["face21k", "torso", "bracos", "pernas", "cilios", "cabelo2", "regata", "calca", "tenis"]);
+        const activeItems = new Set(["torso", "pernas", "face2", "cabelo2", "regata", "calca", "tenis"]);
 
         // --- 2. GERADOR DA INTERFACE (Renderiza o Menu) ---
         
@@ -1586,12 +1712,12 @@
                 // Restaura o Cabecalho Original
                 header.innerHTML = `<div class="header-title-row">
                                         <h1>Skin <span>Feminina</span></h1>
-                                        <div class="circular-progress">
+                                        <div class="circular-progress" style="--prog: 73;">
                                             <svg viewBox="0 0 36 36">
                                                 <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                                <path class="circle-fill" stroke-dasharray="70, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                                <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                             </svg>
-                                            <div class="circle-text">70%</div>
+                                            <div class="circle-text">73%</div>
                                         </div>
                                     </div>
                                     <p>Visualizador Interativo & Orçamento</p>`;
@@ -1657,7 +1783,7 @@
                     
                     let badge = '';
                     if (item.status === 'done') badge = '<span class="status-badge badge-done">Pronto</span>';
-                    if (item.status === 'pend') badge = '<span class="status-badge badge-holo">Holograma (Pendente)</span>';
+                    if (item.status === 'pend') badge = '<span class="status-badge badge-holo">Pendente</span>';
 
                     div.innerHTML = `
                         <div class="item-info">
@@ -1687,32 +1813,27 @@
                         const wasActive = activeItems.has(item.id);
 
                         if (groupData.exclusive) {
-                            // Desativa TODOS do mesmo grupo (inclusive ele mesmo se estivesse ativo)
                             groupData.items.forEach(other => {
                                 activeItems.delete(other.id);
                                 const otherDiv = document.getElementById(`ui-item-${other.id}`);
                                 if (otherDiv) otherDiv.classList.remove('active');
-                                if (meshes3D[other.id]) meshes3D[other.id].visible = false;
                             });
                             
-                            // Se NÃO estava ativo antes do loop, ativa ele agora
                             if (!wasActive) {
                                 activeItems.add(item.id);
                                 div.classList.add('active');
-                                if (meshes3D[item.id]) meshes3D[item.id].visible = true;
                             }
                         } else {
-                            // Alternância normal para grupos não-exclusivos
                             if (wasActive) {
                                 activeItems.delete(item.id);
                                 div.classList.remove('active');
-                                if (meshes3D[item.id]) meshes3D[item.id].visible = false;
                             } else {
                                 activeItems.add(item.id);
                                 div.classList.add('active');
-                                if (meshes3D[item.id]) meshes3D[item.id].visible = true;
                             }
                         }
+                        
+                        window.updateVisibility();
                     };
                     content.appendChild(div);
                 });
@@ -1780,7 +1901,9 @@
             });
             if (textureFile) {
                 textureLoader.load('assets/img/' + textureFile, (tex) => {
-                    tex.encoding = THREE.sRGBEncoding || 3001;
+                                        tex.encoding = THREE.sRGBEncoding || 3001;
+                    tex.wrapS = THREE.RepeatWrapping;
+                    tex.wrapT = THREE.RepeatWrapping;
                     mat.map = tex;
                     mat.needsUpdate = true;
                 });
@@ -1793,6 +1916,96 @@
             document.body.classList.toggle('ui-collapsed');
         }
         
+        
+        window.updateVisibility = function() {
+            window.currentMeshSwaps = {}; // Initialize swaps mapping
+            
+            // Limpa estilos de swap
+            document.querySelectorAll('.interactive-item').forEach(el => {
+                el.style.borderStyle = '';
+                el.style.borderColor = '';
+                el.style.boxShadow = '';
+            });
+
+            for (let m in meshes3D) {
+                meshes3D[m].visible = false;
+            }
+            
+            let meshesToShow = new Set();
+            let meshesToHide = new Set();
+            
+            for (const groupId in logicConfig) {
+                logicConfig[groupId].items.forEach(item => {
+                    if (activeItems.has(item.id)) {
+                        meshesToShow.add(item.id);
+                        if (item.malhas && item.malhas.length > 0) {
+                            item.malhas.forEach(m => meshesToShow.add(m));
+                        }
+                        if (item.hides && item.hides.length > 0) {
+                            item.hides.forEach(m => meshesToHide.add(m));
+                        }
+                    }
+                });
+            }
+            
+            for (const groupId in logicConfig) {
+                logicConfig[groupId].items.forEach(item => {
+                    if (activeItems.has(item.id)) {
+                        if (item.cond_malhas) {
+                            for (const req in item.cond_malhas) {
+                                if (meshesToShow.has(req)) {
+                                    meshesToShow.delete(req);
+                                    meshesToShow.add(item.cond_malhas[req]);
+                                    window.currentMeshSwaps[req] = item.cond_malhas[req]; // Record swap
+                                    const swapDiv = document.getElementById(`ui-item-${item.cond_malhas[req]}`);
+                                    if(swapDiv) {
+                                        swapDiv.style.borderStyle = 'dashed';
+                                        swapDiv.style.borderColor = 'var(--accent)';
+                                        swapDiv.style.boxShadow = '0 0 10px rgba(176,132,204,0.1)';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            meshesToHide.forEach(m => meshesToShow.delete(m));
+            
+
+            meshesToShow.forEach(m => {
+                if (meshes3D[m]) {
+                    meshes3D[m].visible = true;
+                    
+                    // Sincronizar textura se for uma malha swap ou malha base que ja teve textura alterada
+                    // Encontrar qual itemId gerou essa malha
+                    let sourceItemId = m;
+                    // Se for um swap, m é o valor em currentMeshSwaps. Precisamos achar a key (o item original)
+                    for (const key in window.currentMeshSwaps) {
+                        if (window.currentMeshSwaps[key] === m) {
+                            sourceItemId = key;
+                            break;
+                        }
+                    }
+                    
+                    const info = meshToGroup[sourceItemId];
+                    if (info && info.itemData && info.itemData.currentTexIndex !== undefined) {
+                        const texData = info.itemData.textures[info.itemData.currentTexIndex];
+                        if (texData) {
+                            textureLoader.load('assets/img/' + texData.file, (tex) => {
+                                                    tex.encoding = THREE.sRGBEncoding || 3001;
+                    tex.wrapS = THREE.RepeatWrapping;
+                    tex.wrapT = THREE.RepeatWrapping; 
+                                meshes3D[m].material.map = tex;
+                                meshes3D[m].material.needsUpdate = true;
+                            });
+                        }
+                    }
+                }
+            });
+
+        };
+
         async function init3D() {
             try {
                 const response = await fetch('assets/models/manifest.json');
@@ -1827,7 +2040,7 @@
                     geo.setIndex(new THREE.BufferAttribute(ind, 1));
 
                     const status = statusMap[info.name] || 'done';
-                    let initialTex = null;
+                    let initialTex = info.texture;
                     if (status !== 'pend') {
                         // IGNORA o manifest.json do Blender completamente.
                         // Usa SEMPRE a primeira textura definida no dados.json (via logicConfig).
@@ -1924,7 +2137,9 @@
             if(meshes3D[meshId]) {
                 textureLoader.load('assets/img/' + textureFile, (tex) => {
                     // Força a textura a ter as mesmas propriedades da anterior
-                    tex.encoding = THREE.sRGBEncoding || 3001; 
+                                        tex.encoding = THREE.sRGBEncoding || 3001;
+                    tex.wrapS = THREE.RepeatWrapping;
+                    tex.wrapT = THREE.RepeatWrapping; 
                     meshes3D[meshId].material.map = tex;
                     meshes3D[meshId].material.needsUpdate = true;
                 });
@@ -2036,15 +2251,15 @@
 
                     if (foundValidNext) {
                         // Faz o SWAP apenas se encontrou uma proxima peca valida
-                        meshes3D[clickedMeshName].visible = false;
                         activeItems.delete(clickedMeshName);
                         const oldBtn = document.getElementById(`ui-item-${clickedMeshName}`);
                         if(oldBtn) oldBtn.classList.remove('active');
                         
-                        meshes3D[nextItem.id].visible = true;
                         activeItems.add(nextItem.id);
                         const newBtn = document.getElementById(`ui-item-${nextItem.id}`);
                         if(newBtn) newBtn.classList.add('active');
+                        
+                        window.updateVisibility();
                         
                         const m = meshes3D[nextItem.id];
                         if(m) m.scale.set(1.1, 1.1, 1.1);
@@ -2080,13 +2295,22 @@
             if (info && info.itemData.textures) {
                 info.itemData.currentTexIndex = texIndex;
                 const texData = info.itemData.textures[texIndex];
-                const mesh = meshes3D[meshId];
+                
+                // Aplicar a malha base OU a malha substituta (swap)
+                let targetMeshName = meshId;
+                if (window.currentMeshSwaps && window.currentMeshSwaps[meshId]) {
+                    targetMeshName = window.currentMeshSwaps[meshId];
+                }
+                
+                const mesh = meshes3D[targetMeshName];
                 
                 if(mesh) {
                     mesh.scale.set(1.15, 1.15, 1.15); // Aumenta 15% instantaneamente (Animacao POP)
                     
                     textureLoader.load('assets/img/' + texData.file, (tex) => {
-                        tex.encoding = THREE.sRGBEncoding || 3001; 
+                                            tex.encoding = THREE.sRGBEncoding || 3001;
+                    tex.wrapS = THREE.RepeatWrapping;
+                    tex.wrapT = THREE.RepeatWrapping; 
                         mesh.material.map = tex;
                         mesh.material.needsUpdate = true;
                     });

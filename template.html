@@ -302,7 +302,7 @@
         
         @keyframes fillCircle {
             from { stroke-dasharray: 0, 100; }
-            to { stroke-dasharray: 70, 100; }
+            to { stroke-dasharray: var(--prog), 100; }
         }
 
         .circular-progress svg {
@@ -549,17 +549,12 @@
         <div id="header-panel" class="ui-header">
             <div class="header-title-row">
                 <h1>Skin <span>Feminina</span></h1>
-                <div class="circular-progress">
+                <div class="circular-progress" style="--prog: __PROG_FEM__;">
                     <svg viewBox="0 0 36 36">
-                        <path class="circle-bg"
-                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                        <path class="circle-fill"
-                            stroke-dasharray="70, 100"
-                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
+                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                     </svg>
-                    <div class="circle-text">70%</div>
+                    <div class="circle-text">__PROG_FEM__%</div>
                 </div>
             </div>
             <p>Visualizador Interativo & Orçamento</p>
@@ -628,12 +623,12 @@
                 // Restaura o Cabecalho Original
                 header.innerHTML = `<div class="header-title-row">
                                         <h1>Skin <span>Feminina</span></h1>
-                                        <div class="circular-progress">
+                                        <div class="circular-progress" style="--prog: __PROG_FEM__;">
                                             <svg viewBox="0 0 36 36">
                                                 <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                                <path class="circle-fill" stroke-dasharray="70, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                                <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                                             </svg>
-                                            <div class="circle-text">70%</div>
+                                            <div class="circle-text">__PROG_FEM__%</div>
                                         </div>
                                     </div>
                                     <p>Visualizador Interativo & Orçamento</p>`;
@@ -671,7 +666,7 @@
                     
                     let badge = '';
                     if (item.status === 'done') badge = '<span class="status-badge badge-done">Pronto</span>';
-                    if (item.status === 'pend') badge = '<span class="status-badge badge-holo">Holograma (Pendente)</span>';
+                    if (item.status === 'pend') badge = '<span class="status-badge badge-holo">Pendente</span>';
 
                     div.innerHTML = `
                         <div class="item-info">
@@ -701,32 +696,27 @@
                         const wasActive = activeItems.has(item.id);
 
                         if (groupData.exclusive) {
-                            // Desativa TODOS do mesmo grupo (inclusive ele mesmo se estivesse ativo)
                             groupData.items.forEach(other => {
                                 activeItems.delete(other.id);
                                 const otherDiv = document.getElementById(`ui-item-${other.id}`);
                                 if (otherDiv) otherDiv.classList.remove('active');
-                                if (meshes3D[other.id]) meshes3D[other.id].visible = false;
                             });
                             
-                            // Se NÃO estava ativo antes do loop, ativa ele agora
                             if (!wasActive) {
                                 activeItems.add(item.id);
                                 div.classList.add('active');
-                                if (meshes3D[item.id]) meshes3D[item.id].visible = true;
                             }
                         } else {
-                            // Alternância normal para grupos não-exclusivos
                             if (wasActive) {
                                 activeItems.delete(item.id);
                                 div.classList.remove('active');
-                                if (meshes3D[item.id]) meshes3D[item.id].visible = false;
                             } else {
                                 activeItems.add(item.id);
                                 div.classList.add('active');
-                                if (meshes3D[item.id]) meshes3D[item.id].visible = true;
                             }
                         }
+                        
+                        window.updateVisibility();
                     };
                     content.appendChild(div);
                 });
@@ -794,7 +784,9 @@
             });
             if (textureFile) {
                 textureLoader.load('assets/img/' + textureFile, (tex) => {
-                    tex.encoding = THREE.sRGBEncoding || 3001;
+                                        tex.encoding = THREE.sRGBEncoding || 3001;
+                    tex.wrapS = THREE.RepeatWrapping;
+                    tex.wrapT = THREE.RepeatWrapping;
                     mat.map = tex;
                     mat.needsUpdate = true;
                 });
@@ -807,6 +799,96 @@
             document.body.classList.toggle('ui-collapsed');
         }
         
+        
+        window.updateVisibility = function() {
+            window.currentMeshSwaps = {}; // Initialize swaps mapping
+            
+            // Limpa estilos de swap
+            document.querySelectorAll('.interactive-item').forEach(el => {
+                el.style.borderStyle = '';
+                el.style.borderColor = '';
+                el.style.boxShadow = '';
+            });
+
+            for (let m in meshes3D) {
+                meshes3D[m].visible = false;
+            }
+            
+            let meshesToShow = new Set();
+            let meshesToHide = new Set();
+            
+            for (const groupId in logicConfig) {
+                logicConfig[groupId].items.forEach(item => {
+                    if (activeItems.has(item.id)) {
+                        meshesToShow.add(item.id);
+                        if (item.malhas && item.malhas.length > 0) {
+                            item.malhas.forEach(m => meshesToShow.add(m));
+                        }
+                        if (item.hides && item.hides.length > 0) {
+                            item.hides.forEach(m => meshesToHide.add(m));
+                        }
+                    }
+                });
+            }
+            
+            for (const groupId in logicConfig) {
+                logicConfig[groupId].items.forEach(item => {
+                    if (activeItems.has(item.id)) {
+                        if (item.cond_malhas) {
+                            for (const req in item.cond_malhas) {
+                                if (meshesToShow.has(req)) {
+                                    meshesToShow.delete(req);
+                                    meshesToShow.add(item.cond_malhas[req]);
+                                    window.currentMeshSwaps[req] = item.cond_malhas[req]; // Record swap
+                                    const swapDiv = document.getElementById(`ui-item-${item.cond_malhas[req]}`);
+                                    if(swapDiv) {
+                                        swapDiv.style.borderStyle = 'dashed';
+                                        swapDiv.style.borderColor = 'var(--accent)';
+                                        swapDiv.style.boxShadow = '0 0 10px rgba(176,132,204,0.1)';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            meshesToHide.forEach(m => meshesToShow.delete(m));
+            
+
+            meshesToShow.forEach(m => {
+                if (meshes3D[m]) {
+                    meshes3D[m].visible = true;
+                    
+                    // Sincronizar textura se for uma malha swap ou malha base que ja teve textura alterada
+                    // Encontrar qual itemId gerou essa malha
+                    let sourceItemId = m;
+                    // Se for um swap, m é o valor em currentMeshSwaps. Precisamos achar a key (o item original)
+                    for (const key in window.currentMeshSwaps) {
+                        if (window.currentMeshSwaps[key] === m) {
+                            sourceItemId = key;
+                            break;
+                        }
+                    }
+                    
+                    const info = meshToGroup[sourceItemId];
+                    if (info && info.itemData && info.itemData.currentTexIndex !== undefined) {
+                        const texData = info.itemData.textures[info.itemData.currentTexIndex];
+                        if (texData) {
+                            textureLoader.load('assets/img/' + texData.file, (tex) => {
+                                                    tex.encoding = THREE.sRGBEncoding || 3001;
+                    tex.wrapS = THREE.RepeatWrapping;
+                    tex.wrapT = THREE.RepeatWrapping; 
+                                meshes3D[m].material.map = tex;
+                                meshes3D[m].material.needsUpdate = true;
+                            });
+                        }
+                    }
+                }
+            });
+
+        };
+
         async function init3D() {
             try {
                 const response = await fetch('assets/models/manifest.json');
@@ -841,7 +923,7 @@
                     geo.setIndex(new THREE.BufferAttribute(ind, 1));
 
                     const status = statusMap[info.name] || 'done';
-                    let initialTex = null;
+                    let initialTex = info.texture;
                     if (status !== 'pend') {
                         // IGNORA o manifest.json do Blender completamente.
                         // Usa SEMPRE a primeira textura definida no dados.json (via logicConfig).
@@ -938,7 +1020,9 @@
             if(meshes3D[meshId]) {
                 textureLoader.load('assets/img/' + textureFile, (tex) => {
                     // Força a textura a ter as mesmas propriedades da anterior
-                    tex.encoding = THREE.sRGBEncoding || 3001; 
+                                        tex.encoding = THREE.sRGBEncoding || 3001;
+                    tex.wrapS = THREE.RepeatWrapping;
+                    tex.wrapT = THREE.RepeatWrapping; 
                     meshes3D[meshId].material.map = tex;
                     meshes3D[meshId].material.needsUpdate = true;
                 });
@@ -1050,15 +1134,15 @@
 
                     if (foundValidNext) {
                         // Faz o SWAP apenas se encontrou uma proxima peca valida
-                        meshes3D[clickedMeshName].visible = false;
                         activeItems.delete(clickedMeshName);
                         const oldBtn = document.getElementById(`ui-item-${clickedMeshName}`);
                         if(oldBtn) oldBtn.classList.remove('active');
                         
-                        meshes3D[nextItem.id].visible = true;
                         activeItems.add(nextItem.id);
                         const newBtn = document.getElementById(`ui-item-${nextItem.id}`);
                         if(newBtn) newBtn.classList.add('active');
+                        
+                        window.updateVisibility();
                         
                         const m = meshes3D[nextItem.id];
                         if(m) m.scale.set(1.1, 1.1, 1.1);
@@ -1094,13 +1178,22 @@
             if (info && info.itemData.textures) {
                 info.itemData.currentTexIndex = texIndex;
                 const texData = info.itemData.textures[texIndex];
-                const mesh = meshes3D[meshId];
+                
+                // Aplicar a malha base OU a malha substituta (swap)
+                let targetMeshName = meshId;
+                if (window.currentMeshSwaps && window.currentMeshSwaps[meshId]) {
+                    targetMeshName = window.currentMeshSwaps[meshId];
+                }
+                
+                const mesh = meshes3D[targetMeshName];
                 
                 if(mesh) {
                     mesh.scale.set(1.15, 1.15, 1.15); // Aumenta 15% instantaneamente (Animacao POP)
                     
                     textureLoader.load('assets/img/' + texData.file, (tex) => {
-                        tex.encoding = THREE.sRGBEncoding || 3001; 
+                                            tex.encoding = THREE.sRGBEncoding || 3001;
+                    tex.wrapS = THREE.RepeatWrapping;
+                    tex.wrapT = THREE.RepeatWrapping; 
                         mesh.material.map = tex;
                         mesh.material.needsUpdate = true;
                     });

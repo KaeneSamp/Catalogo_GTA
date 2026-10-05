@@ -132,6 +132,65 @@ def gerar_html(dados):
     pricing_masc = get_pricing_html(skin_masc).replace("`", "\\`") if skin_masc else ""
     pricing_fem = get_pricing_html(skin_fem).replace("`", "\\`") if skin_fem else ""
     
+
+    def calc_prog(skin):
+        if not skin: return "0"
+        total = sum(len(g.get('itens', [])) for g in skin.get('grupos', []))
+        done = sum(1 for g in skin.get('grupos', []) for i in g.get('itens', []) if i.get('concluido', False))
+        return str(round((done / total * 100))) if total > 0 else "0"
+
+    prog_masc = calc_prog(skin_masc)
+    prog_fem = calc_prog(skin_fem)
+
+
+    # --- BLINDAGEM DE DEPENDENCIAS (AUTO-SYNC COM BLENDER) ---
+    try:
+        with open('assets/models/manifest.json', 'r', encoding='utf-8') as f:
+            manifest = json.load(f)
+            
+        mesh_names = [v['name'] for v in manifest.values()]
+        
+        for skin in dados['skins']:
+            # Mapeamento rapido de qual item pertence a qual grupo
+            item_to_group = {}
+            for group in skin['grupos']:
+                for item in group['itens']:
+                    item_to_group[item['id']] = group
+            
+            for m in mesh_names:
+                if '_' in m:
+                    base, trigger = m.split('_', 1)
+                    
+                    # Se o trigger e o base existem no dados.json
+                    if trigger in item_to_group and base in item_to_group:
+                        # 1. Adiciona a cond_malha no trigger (ex: calca)
+                        trigger_item = next(i for i in item_to_group[trigger]['itens'] if i['id'] == trigger)
+                        if 'cond_malhas' not in trigger_item:
+                            trigger_item['cond_malhas'] = {}
+                        trigger_item['cond_malhas'][base] = m
+                        
+                        # 2. Registra o item secundario (ex: pernas_calca) no mesmo grupo do base (ex: Corpo Base)
+                        if m not in item_to_group:
+                            base_group = item_to_group[base]
+                            base_item = next(i for i in base_group['itens'] if i['id'] == base)
+                            
+                            novo_item = {
+                                "id": m,
+                                "nome": f"{base_item['nome'].split('(')[0].strip()} (DA {trigger_item['nome'].split(' ')[0].strip()})",
+                                "texturas": base_item.get('texturas', {}).copy(),
+                                "obs": f"Autolink: {trigger_item['nome']}",
+                                "concluido": True,
+                                "status": "done",
+                                "visivel_padrao": False
+                            }
+                            # Evita duplicar se o usuario ja tinha posto manualmente
+                            if not any(i['id'] == m for i in base_group['itens']):
+                                base_group['itens'].append(novo_item)
+                                item_to_group[m] = base_group
+    except Exception as e:
+        print("Aviso: Falha na blindagem inteligente", e)
+    # ---------------------------------------------------------
+
     # 1. Build logicConfig object for Female
     logic_obj = {}
     active_items = []
@@ -155,7 +214,10 @@ def gerar_html(dados):
                     "id": item_id,
                     "name": item.get('nome', 'Item'),
                     "status": "done" if item.get('concluido', False) else "pend",
-                    "texturas_names": list(item.get('texturas', {}).keys()) if isinstance(item.get('texturas'), dict) else item.get('texturas', [])
+                    "texturas_names": list(item.get('texturas', {}).keys()) if isinstance(item.get('texturas'), dict) else item.get('texturas', []),
+                    "malhas": item.get('malhas', []),
+                    "hides": item.get('hides', []),
+                    "cond_malhas": item.get('cond_malhas', {})
                 }
                 if item.get('visivel_padrao', False):
                     active_items.append(logic_item["id"])
@@ -177,6 +239,8 @@ def gerar_html(dados):
     template = template.replace('__PRICING_FEM_JS__', pricing_fem)
     template = template.replace('__LOGIC_CONFIG__', logic_config_json)
     template = template.replace('__ACTIVE_ITEMS__', active_items_str)
+    template = template.replace('__PROG_MASC__', prog_masc)
+    template = template.replace('__PROG_FEM__', prog_fem)
 
     return template
 

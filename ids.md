@@ -36,19 +36,20 @@
 
 | ID | Status | Grupo | Acessório | Texturas | Obs |
 |:---|:---|:---|:---|:---|:---|
-| **00** | ✅ | 👤 Corpo Base | **FACE21** | `face21ka` | Base |
-| **03** | ✅ | 👤 Corpo Base | **CALCINHA** | `calcinha1a` | Calcinha |
-| **04** | ✅ | 👤 Corpo Base | **SUTIÃ** | `sutian1a` | Sutiã |
-| **05** | ✅ | 👩 Rostos | **FACE25** | `fface25a` | Base |
-| **06** | ✅ | 👩 Rostos | **FACE26** | `fface26a` | Base |
-| **07** | ✅ | 👩 Rostos | **FACE29** | `fface29a` | Base |
-| **09** | ✅ | 👤 Corpo Base | **BRACOS (PRA BLUSA)** | `fbracos1a` | Base |
+| **00** | ✅ | 👤 Corpo Base | **FACE BASE (Sem Cílios)** | `fface1a` | Base |
 | **torso** | ✅ | 👤 Corpo Base | **BRACOS (COMPLETO)** | `fbracos1a` | Sem blusa |
-| **bracos** | ✅ | 👤 Corpo Base | **BRACOS (PRA BLUSA)** | `fbracos1a` | Base |
 | **pernas** | ✅ | 👤 Corpo Base | **PERNAS (COMPLETO)** | `fpernas1a` | Base |
-| **cilios** | ✅ | 👤 Corpo Base | **CÍLIOS** | `fcilios1a` |  |
+| **calcinha** | ✅ | 👤 Corpo Base | **CALCINHA** | `calcinha1a` | Calcinha |
+| **sutia** | ✅ | 👤 Corpo Base | **SUTIÃ** | `sutian1a` | Sutiã |
+| **torso_blusa** | ✅ | 👤 Corpo Base | **BRAÇOS (DA BLUSA)** | `fbracos1a` | Carregado pela blusa |
+| **pernas_shorts** | ✅ | 👤 Corpo Base | **PERNAS (DO SHORTS)** | `fpernas1a` | Carregado pelo shorts |
+| **pernas_calca** | ✅ | 👤 Corpo Base | **PERNAS (DA CALÇA)** | `fpernas1a` | Autolink: CALÇA JEANS |
+| **face1** | ✅ | 👩 Rostos | **FACE 1** | `fface1a` |  |
+| **face2** | ✅ | 👩 Rostos | **FACE 2** | `fface2a` |  |
+| **face3** | ✅ | 👩 Rostos | **FACE 3** | `fface3a` |  |
 | **cabelo1** | ✅ | 💇‍♀️ Cabelos | **CABELO 1 (Rabo de Cavalo/Longo)** | `fcabelo1a`, `fcabelo1b`, `fcabelo1c`, `fcabelo1d` | Diversos/Branco |
 | **cabelo2** | ✅ | 💇‍♀️ Cabelos | **CABELO 2 (Cacheado/Longo)** | `fcabelo2a`, `fcabelo2b`, `fcabelo2c`, `fcabelo2d` | Diversos/Branco |
+| **cabelo2_blusa** | ✅ | 💇‍♀️ Cabelos | **CABELO 2 (DA BLUSA)** | `fcabelo2a`, `fcabelo2b`, `fcabelo2c`, `fcabelo2d` | Carregado pela blusa |
 | **regata** | ✅ | 👚 Roupas: Superiores | **REGATA** | `fregata1a` | Textura Branca |
 | **blusa** | ✅ | 👚 Roupas: Superiores | **BLUSA CANELADA** | `fblusa1a` | Textura Branca |
 | **shorts** | ✅ | 👗 Roupas: Inferiores | **SHORTS** | `fshorts1a` | Textura Branca |
