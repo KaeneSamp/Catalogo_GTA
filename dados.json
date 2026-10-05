@@ -348,7 +348,9 @@
               "id": "face021",
               "nome": "FACE BASE (Sem Cílios)",
               "texturas": {
-                "fface1a": "#ffccaa"
+                "fface1a": "#b08070",
+                "fface1b": "#906050",
+                "fface1c": "#302010"
               },
               "obs": "Base",
               "concluido": true,
@@ -359,7 +361,9 @@
               "id": "torso",
               "nome": "BRACOS (COMPLETO)",
               "texturas": {
-                "fbracos1a": "#a08070"
+                "fbracos1a": "#b08070",
+                "fbracos1b": "#906050",
+                "fbracos1c": "#302010"
               },
               "obs": "Sem blusa",
               "concluido": true,
@@ -370,7 +374,9 @@
               "id": "pernas",
               "nome": "PERNAS (COMPLETO)",
               "texturas": {
-                "fpernas1a": "#a08070"
+                "fpernas1a": "#b08070",
+                "fpernas1b": "#906050",
+                "fpernas1c": "#302010"
               },
               "obs": "Base",
               "concluido": true,
@@ -403,7 +409,9 @@
               "id": "pernas_calca",
               "nome": "PERNAS (DA CALÇA)",
               "texturas": {
-                "fpernas1a": "#a08070"
+                "fpernas1a": "#b08070",
+                "fpernas1b": "#906050",
+                "fpernas1c": "#302010"
               },
               "obs": "Carregado pela calça",
               "concluido": true,
@@ -414,7 +422,9 @@
               "id": "torso_blusa",
               "nome": "BRAÇOS (DA BLUSA)",
               "texturas": {
-                "fbracos1a": "#a08070"
+                "fbracos1a": "#b08070",
+                "fbracos1b": "#906050",
+                "fbracos1c": "#302010"
               },
               "obs": "Carregado pela blusa",
               "concluido": true,
@@ -425,7 +435,9 @@
               "id": "pernas_shorts",
               "nome": "PERNAS (DO SHORTS)",
               "texturas": {
-                "fpernas1a": "#a08070"
+                "fpernas1a": "#b08070",
+                "fpernas1b": "#906050",
+                "fpernas1c": "#302010"
               },
               "obs": "Carregado pelo shorts",
               "concluido": true,
@@ -444,7 +456,9 @@
               "id": "face1",
               "nome": "FACE 1",
               "texturas": {
-                "fface1a": "#aaaaaa"
+                "fface1a": "#b08070",
+                "fface1b": "#906050",
+                "fface1c": "#302010"
               },
               "malhas": [
                 "cilios1"
@@ -460,7 +474,9 @@
               "id": "face2",
               "nome": "FACE 2",
               "texturas": {
-                "fface2a": "#aaaaaa"
+                "fface2a": "#b08070",
+                "fface2b": "#906050",
+                "fface2c": "#302010"
               },
               "malhas": [
                 "cilios2"
@@ -476,7 +492,9 @@
               "id": "face3",
               "nome": "FACE 3",
               "texturas": {
-                "fface3a": "#aaaaaa"
+                "fface3a": "#b08070",
+                "fface3b": "#906050",
+                "fface3c": "#302010"
               },
               "malhas": [
                 "cilios3"
@@ -496,6 +514,18 @@
           "emoji": "💇‍♀️",
           "resumo_texturas": "Diversos/Branco",
           "itens": [
+            {
+              "id": "overlay",
+              "nome": "OVERLAY CABELO",
+              "texturas": {
+                "fcabeloov1": "#aaaaaa"
+              },
+              "obs": "Textura Branca",
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": false,
+              "dff_id": "OVERLAY"
+            },
             {
               "id": "cabelo1",
               "nome": "CABELO 1 (Rabo de Cavalo/Longo)",
