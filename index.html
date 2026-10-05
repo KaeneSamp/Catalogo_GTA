@@ -305,9 +305,33 @@
             to { stroke-dasharray: var(--prog), 100; }
         }
 
+        
         .circular-progress svg {
             width: 100%; height: 100%;
         }
+        
+        /* 100% Premium AAA CSS - Halo Roxo */
+        .premium-completed-halo {
+            background: linear-gradient(135deg, #b084cc, #6b4c8a);
+            border-radius: 50%; opacity: 1;
+            display: flex; justify-content: center; align-items: center;
+            box-shadow: 0 0 20px rgba(176, 132, 204, 0.5);
+        }
+        .premium-completed-halo::before {
+            content: ''; position: absolute; inset: -6px;
+            border-radius: 50%; border: 2px dashed rgba(176, 132, 204, 0.7);
+            animation: spinOrbit 8s linear infinite;
+        }
+        .premium-completed-halo svg {
+            width: 22px; height: 22px; color: white; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5)); stroke-width: 3;
+            animation: popCheck 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0; transform: scale(0.5);
+        }
+        @keyframes spinOrbit { 100% { transform: rotate(360deg); } }
+        @keyframes popCheck { to { opacity: 1; transform: scale(1); } }
+            50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(16,185,129,0.8), 0 0 40px rgba(16,185,129,0.4); }
+        }
+
         .circle-bg {
             fill: none; stroke: rgba(255, 255, 255, 0.1); stroke-width: 3.5;
         }
@@ -355,7 +379,7 @@
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
         }
         .badge-dot {
-            width: 6px; height: 6px; border-radius: 50%; 
+            width: 6px; height: 6px; border-radius: 50%; opacity: 1; 
             background: #10b981; /* Verde esmeralda (success) */
             box-shadow: 0 0 10px #10b981;
         }
@@ -378,7 +402,7 @@
             display: flex; gap: 8px; margin-top: 10px;
         }
         .swatch {
-            width: 18px; height: 18px; border-radius: 50%;
+            width: 18px; height: 18px; border-radius: 50%; opacity: 1;
             border: 2px solid transparent; cursor: pointer;
             transition: 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
             box-shadow: 0 2px 6px rgba(0,0,0,0.5);
@@ -549,13 +573,7 @@
         <div id="header-panel" class="ui-header">
             <div class="header-title-row">
                 <h1>Skin <span>Feminina</span></h1>
-                <div class="circular-progress" style="--prog: 100;">
-                    <svg viewBox="0 0 36 36">
-                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                    </svg>
-                    <div class="circle-text">100%</div>
-                </div>
+                <div class="circular-progress premium-completed-halo" title="Projeto 100% Concluído!">                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">                        <polyline points="20 6 9 17 4 12"></polyline>                    </svg>                </div>
             </div>
             <p>Visualizador Interativo & Orçamento</p>
         </div>
@@ -1693,13 +1711,7 @@
                 // Restaura o Cabecalho Original
                 header.innerHTML = `<div class="header-title-row">
                                         <h1>Skin <span>Feminina</span></h1>
-                                        <div class="circular-progress" style="--prog: 100;">
-                                            <svg viewBox="0 0 36 36">
-                                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                                <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                                            </svg>
-                                            <div class="circle-text">100%</div>
-                                        </div>
+                                        <div class="circular-progress premium-completed-halo" title="Projeto 100% Concluído!">                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">                        <polyline points="20 6 9 17 4 12"></polyline>                    </svg>                </div>
                                     </div>
                                     <p>Visualizador Interativo & Orçamento</p>`;
                 

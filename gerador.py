@@ -122,6 +122,22 @@ def get_pricing_html(skin_data):
         '''
     return html
 
+def get_prog_widget(prog):
+    if prog == '100':
+        return '''<div class="circular-progress premium-completed-halo" title="Projeto 100% Concluído!">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>'''
+    else:
+        return f'''<div class="circular-progress" style="--prog: {prog};">
+                    <svg viewBox="0 0 36 36">
+                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        <path class="circle-fill" style="stroke-dasharray: var(--prog), 100;" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    </svg>
+                    <div class="circle-text">{prog}%</div>
+                </div>'''
+
 def gerar_html(dados):
     skin_masc = next((s for s in dados['skins'] if s['id'] == 'masculina'), None)
     skin_fem = next((s for s in dados['skins'] if s['id'] == 'feminina'), None)
@@ -242,6 +258,8 @@ def gerar_html(dados):
     template = template.replace('__ACTIVE_ITEMS__', active_items_str)
     template = template.replace('__PROG_MASC__', prog_masc)
     template = template.replace('__PROG_FEM__', prog_fem)
+    template = template.replace('__WIDGET_PROG_MASC__', get_prog_widget(prog_masc))
+    template = template.replace('__WIDGET_PROG_FEM__', get_prog_widget(prog_fem).replace('\n', ''))
 
     return template
 
