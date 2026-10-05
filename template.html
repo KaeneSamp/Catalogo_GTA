@@ -683,7 +683,7 @@
                 content.className = 'group-content';
 
                 groupData.items.forEach(item => {
-                    if (condMeshes.has(item.id)) return; // Esconde da UI itens que são puramente condicionais
+                    if (condMeshes.has(item.id) || item.hide_ui) return; // Esconde da UI itens que são puramente condicionais
 
                     const div = document.createElement('div');
                     const isActive = activeItems.has(item.id);
@@ -964,11 +964,16 @@
                     if (status !== 'pend') {
                         // IGNORA o manifest.json do Blender completamente.
                         // Usa SEMPRE a primeira textura definida no dados.json (via logicConfig).
-                        const itemGrp = Object.values(logicConfig).find(g => g.items.some(i => i.id === info.name));
+                        const itemGrp = Object.values(logicConfig).find(g => g.items.some(i => (i.id === info.name) || (i.malhas && i.malhas.includes(info.name))));
                         if (itemGrp) {
-                            const itm = itemGrp.items.find(i => i.id === info.name);
+                            const itm = itemGrp.items.find(i => (i.id === info.name) || (i.malhas && i.malhas.includes(info.name)));
                             if (itm.textures && itm.textures.length > 0) {
-                                initialTex = itm.textures[0].file;
+                                // Especial para cilios: usar a textura fixa dos cilios
+                                if (info.name.startsWith('cilios')) {
+                                    initialTex = 'fcilios1a.png';
+                                } else {
+                                    initialTex = itm.textures[0].file;
+                                }
                             }
                         }
                     }
@@ -1257,7 +1262,11 @@
                         const smesh = meshes3D[targetSkinMesh];
                         if (smesh) {
                             const stexData = skinInfo.itemData.textures[texIndex];
-                            textureLoader.load('assets/img/' + stexData.file, (tex) => {
+                            let imgFile = stexData.file;
+                            if (targetSkinMesh.startsWith('cilios')) {
+                                imgFile = 'fcilios1a.png';
+                            }
+                            textureLoader.load('assets/img/' + imgFile, (tex) => {
                                 tex.encoding = THREE.sRGBEncoding || 3001;
                                 tex.wrapS = THREE.RepeatWrapping;
                                 tex.wrapT = THREE.RepeatWrapping; 

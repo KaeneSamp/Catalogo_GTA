@@ -234,7 +234,8 @@ def gerar_html(dados):
                     "texturas_names": list(item.get('texturas', {}).keys()) if isinstance(item.get('texturas'), dict) else item.get('texturas', []),
                     "malhas": item.get('malhas', []),
                     "hides": item.get('hides', []),
-                    "cond_malhas": item.get('cond_malhas', {})
+                    "cond_malhas": item.get('cond_malhas', {}),
+                    "hide_ui": item.get('hide_ui', False)
                 }
                 if item.get('visivel_padrao', False):
                     active_items.append(logic_item["id"])
@@ -326,5 +327,5 @@ if __name__ == "__main__":
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(gerar_html(dados))
         
-    # with open("ids.md", "w", encoding="utf-8") as f:
-        # f.write(gerar_md(dados))
+    with open("ids.md", "w", encoding="utf-8") as f:
+        f.write(gerar_md(dados))

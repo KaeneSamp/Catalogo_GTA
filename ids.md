@@ -1,84 +1,67 @@
-# IDs das Malhas (Automático)
+# Sistema de Skin Modular .DFF
 
 ## ♂️ Skin Masculina
 
-### Corpo Base (3 tons de pele)
-- **FACE0**: ID ??
-- **BRACOS (COMPLETO)**: ID ??
-- **BRACOS (PRA CAMISETA)**: ID ??
-- **PERNAS (COMPLETO)**: ID ??
-- **CUECA**: ID ??
-- **BRACOS (PRO CASACO)**: ID ??
-- **PERNAS (PRA BERMUDA)**: ID ??
-- **PERNAS (PRA CALCA)**: ID ??
+| ID DFF | Status | Grupo | Acessório | Texturas | Adaptações Automáticas | Obs |
+|:---|:---|:---|:---|:---|:---|:---|
+| **00** | ✅ | 👤 Corpo Base (3 tons de pele) | **FACE0** | `mface0a`, `mface0b`, `mface0c` | - | Base |
+| **01** | ✅ | 👤 Corpo Base (3 tons de pele) | **BRACOS (COMPLETO)** | `mbracos1a`, `mbracos1b`, `mbracos1c` | - | Sem camisa |
+| **02** | ✅ | 👤 Corpo Base (3 tons de pele) | **BRACOS (PRA CAMISETA)** | `mbracos1a`, `mbracos1b`, `mbracos1c` | - | Corte ombro |
+| **03** | ✅ | 👤 Corpo Base (3 tons de pele) | **PERNAS (COMPLETO)** | `mpernas1a`, `mpernas1b`, `mpernas1c` | - | Base |
+| **04** | ✅ | 👤 Corpo Base (3 tons de pele) | **CUECA** | `mcueca1` | - | Base |
+| **05** | ✅ | 👕 1 Camisa + 1 Casaco | **CAMISETA (Básica)** | `mcamisa1a` | - | 2 texturas |
+| **06** | ✅ | 👤 Corpo Base (3 tons de pele) | **BRACOS (PRO CASACO)** | `mbracos1a`, `mbracos1b`, `mbracos1c` | - | Apenas mãos |
+| **07** | ✅ | 👕 1 Camisa + 1 Casaco | **CASACO (Moletom)** | `mcasaco1a` | - | 2 texturas |
+| **08** | ✅ | 👤 Corpo Base (3 tons de pele) | **PERNAS (PRA BERMUDA)** | `mpernas1a`, `mpernas1b`, `mpernas1c` | - | Base |
+| **09** | ✅ | 🩳 1 Bermuda + 1 Calca | **BERMUDA 1** | `bermuda1a` | - | 2 texturas |
+| **10** | ✅ | 👤 Corpo Base (3 tons de pele) | **PERNAS (PRA CALCA)** | `mpernas1a`, `mpernas1b`, `mpernas1c` | - | Base |
+| **11** | ✅ | 🩳 1 Bermuda + 1 Calca | **CALCA 1** | `calca1a` | - | 3 texturas |
+| **12** | ✅ | 👟 1 Havaiana + 1 Tênis | **HAVAIANA** | `havaiana1a`, `havaiana1b` | - | 2 texturas |
+| **13** | ✅ | 👟 1 Havaiana + 1 Tênis | **TÊNIS** | `tenis1a`, `tenis1b` | - | 2 texturas |
+| **14** | ✅ | 🧑 3 Modelos de Face | **FACE1** | `mface45a`, `mface45b`, `mface45c` | - | Base |
+| **15** | ✅ | 🧑 3 Modelos de Face | **FACE2** | `mface24a`, `mface24b`, `mface24c` | - | Base |
+| **16** | ✅ | 🧑 3 Modelos de Face | **FACE3** | `mface8a`, `mface8b`, `mface8c` | - | Base |
+| **OVERLAY** | ✅ | 🧑 3 Modelos de Face | **EXTRA** | `olho1a` | - | Apenas textura-overlay |
+| **-** | ✅ | ✂️ 2 Cabelos + 3 Sombrancelhas | **CABELO 1** | `mcabelo3a` | - | Textura Branca |
+| **-** | ✅ | ✂️ 2 Cabelos + 3 Sombrancelhas | **CABELO 2** | `mcabelo14a` | - | Textura Branca |
+| **OVERLAY** | ✅ | ✂️ 2 Cabelos + 3 Sombrancelhas | **SOMBRANCELHA 1** | `meyebrow6a` | - | Textura Branca |
+| **OVERLAY** | ✅ | ✂️ 2 Cabelos + 3 Sombrancelhas | **SOMBRANCELHA 2** | `meyebrow6b` | - | Textura Branca |
+| **OVERLAY** | ✅ | ✂️ 2 Cabelos + 3 Sombrancelhas | **SOMBRANCELHA 3** | `meyebrow6c` | - | Textura Branca |
+| **OVERLAY** | ✅ | 🧔 3 Overlays de Barba | **BARBA 1** | `barba2a` | - | Cavanhaque e Bigode |
+| **OVERLAY** | ✅ | 🧔 3 Overlays de Barba | **BARBA 2** | `barba3a` | - | Cavanhaque e Bigode |
+| **OVERLAY** | ✅ | 🧔 3 Overlays de Barba | **BARBA 3** | `barba18a` | - | Barba Completa |
+| **OVERLAY** | ✅ | 👟 1 Havaiana + 1 Tênis | **EXTRA** | `havaianas1ov` | - | Apenas textura-overlay |
 
-### 3 Modelos de Face
-- **FACE1**: ID ??
-- **FACE2**: ID ??
-- **FACE3**: ID ??
-- **EXTRA**: ID ??
-
-### 2 Cabelos + 3 Sombrancelhas
-- **CABELO 1**: ID ??
-- **CABELO 2**: ID ??
-- **SOMBRANCELHA 1**: ID ??
-- **SOMBRANCELHA 2**: ID ??
-- **SOMBRANCELHA 3**: ID ??
-
-### 3 Overlays de Barba
-- **BARBA 1**: ID ??
-- **BARBA 2**: ID ??
-- **BARBA 3**: ID ??
-
-### 1 Camisa + 1 Casaco
-- **CAMISETA (Básica)**: ID ??
-- **CASACO (Moletom)**: ID ??
-
-### 1 Bermuda + 1 Calca
-- **BERMUDA 1**: ID ??
-- **CALCA 1**: ID ??
-
-### 1 Havaiana + 1 Tênis
-- **HAVAIANA**: ID ??
-- **TÊNIS**: ID ??
-- **EXTRA**: ID ??
 ## ♀️ Skin Feminina
 
-### Corpo Base
-- **FACE BASE (Sem Cílios)**: ID 00
-- **BRACOS (COMPLETO)**: ID 01
-- **PERNAS (COMPLETO)**: ID 04
-- **CALCINHA**: ID 02
-- **SUTIÃ**: ID 12
-- **PERNAS (DA CALÇA)**: ID ??
-- **BRAÇOS (DA BLUSA)**: ID 01
-- **PERNAS (DO SHORTS)**: ID 05
+| ID DFF | Status | Grupo | Acessório | Texturas | Adaptações Automáticas | Obs |
+|:---|:---|:---|:---|:---|:---|:---|
+| **00** | ✅ | 👤 Corpo Base | **BRACOS (COMPLETO)** | `fbracos1a`, `fbracos1b`, `fbracos1c` | Requer ID `00` | Sem blusa |
+| **01** | ✅ | 👤 Corpo Base | **BRAÇOS (DA BLUSA)** | `fbracos1a`, `fbracos1b`, `fbracos1c` | Requer ID `01` | Carregado pela blusa |
+| **02** | ✅ | 👩 Rostos | **FACE 1** | `fface1a`, `fface1b`, `fface1c` | Requer ID `09`<br>Requer ID `02` | - |
+| **03** | ✅ | 👩 Rostos | **FACE 2** | `fface2a`, `fface2b`, `fface2c` | Requer ID `10`<br>Requer ID `03` | - |
+| **04** | ✅ | 👩 Rostos | **FACE 3** | `fface3a`, `fface3b`, `fface3c` | Requer ID `11`<br>Requer ID `04` | - |
+| **05** | ✅ | 👤 Corpo Base | **FACE BASE (Sem Cílios)** | `fface3a`, `fface3b`, `fface3c` | - | Base |
+| **06** | ✅ | 👤 Corpo Base | **PERNAS (DA CALÇA)** | `fpernas1a`, `fpernas1b`, `fpernas1c` | Requer ID `06` | Carregado pela calça |
+| **07** | ✅ | 👤 Corpo Base | **PERNAS (COMPLETO)** | `fpernas1a`, `fpernas1b`, `fpernas1c` | Requer ID `07` | Base |
+| **08** | ✅ | 👤 Corpo Base | **PERNAS (DO SHORTS)** | `fpernas1a`, `fpernas1b`, `fpernas1c` | Requer ID `08` | Carregado pelo shorts |
+| **09** | ✅ | 👤 Corpo Base | **CÍLIOS (FACE 1)** | `fcilios1a` | Requer ID `09` | Integrado à Face 1 |
+| **10** | ✅ | 👤 Corpo Base | **CÍLIOS (FACE 2)** | `fcilios1a` | Requer ID `10` | Integrado à Face 2 |
+| **11** | ✅ | 👤 Corpo Base | **CÍLIOS (FACE 3)** | `fcilios1a` | Requer ID `11` | Integrado à Face 3 |
+| **12** | ✅ | 👤 Corpo Base | **CALCINHA** | `calcinha1a` | Requer ID `12` | Calcinha |
+| **13** | ✅ | 👤 Corpo Base | **SUTIÃ** | `sutian1a` | Requer ID `13` | Sutiã |
+| **14** | ✅ | 👠 Calçados | **TÊNIS** | `ftenis1a` | Requer ID `14` | 2 texturas |
+| **15** | ✅ | 👠 Calçados | **HAVAIANAS** | `havaianas1a` | Requer ID `15` | Textura Branca |
+| **16** | ✅ | 👚 Roupas: Superiores | **BLUSA CANELADA** | `fblusa1a` | Se ID `22` -> Usar ID `21`<br>Se ID `00` -> Usar ID `01`<br>Requer ID `16` | Textura Branca |
+| **17** | ✅ | 👗 Roupas: Inferiores | **CALÇA JEANS** | `fjeans1a`, `fjeans1b`, `fjeans1c`, `fjeans1d` | Se ID `07` -> Usar ID `06`<br>Requer ID `17` | 4 texturas |
+| **18** | ✅ | 👚 Roupas: Superiores | **REGATA** | `fregata1a` | Requer ID `18` | Textura Branca |
+| **19** | ✅ | 👗 Roupas: Inferiores | **SHORTS** | `fshorts1a` | Se ID `07` -> Usar ID `08`<br>Requer ID `19` | Textura Branca |
+| **20** | ✅ | 💇‍♀️ Cabelos | **CABELO 1 (Rabo de Cavalo/Longo)** | `fcabelo1a`, `fcabelo1b`, `fcabelo1c`, `fcabelo1d` | Requer ID `20` | Diversos/Branco |
+| **21** | ✅ | 💇‍♀️ Cabelos | **CABELO 2 (DA BLUSA)** | `fcabelo2a`, `fcabelo2b`, `fcabelo2c`, `fcabelo2d` | Requer ID `21` | Carregado pela blusa |
+| **22** | ✅ | 💇‍♀️ Cabelos | **CABELO 2 (Cacheado/Longo)** | `fcabelo2a`, `fcabelo2b`, `fcabelo2c`, `fcabelo2d` | Requer ID `22` | Diversos/Branco |
+| **OVERLAY** | ✅ | 💇‍♀️ Cabelos | **OVERLAY CABELO** | `fcabeloov1` | - | Textura Branca |
+| **OVERLAY** | ✅ | 💇‍♀️ Cabelos | **SOBRANCELHA 1** | `feyebrow1a`, `feyebrow1b`, `feyebrow1c` | - | Textura Branca |
+| **OVERLAY** | ✅ | 💄 Overlays: Maquiagem | **BLUSH: Bochechas** | `fmake1a`, `fmake1b` | - | Textura Branca |
+| **OVERLAY** | ✅ | 💄 Overlays: Maquiagem | **BLUSH: Nariz** | `fmake2a` | - | Textura Branca |
+| **OVERLAY** | ✅ | 💄 Overlays: Maquiagem | **BLUSH: Testas** | `fmake3a` | - | Textura Branca |
 
-### Rostos
-- **FACE 1**: ID 00
-- **FACE 2**: ID 02
-- **FACE 3**: ID 03
-
-### Cabelos
-- **OVERLAY CABELO**: ID OVERLAY
-- **CABELO 1 (Rabo de Cavalo/Longo)**: ID 19
-- **CABELO 2 (Cacheado/Longo)**: ID 20
-- **SOBRANCELHA 1**: ID OVERLAY
-- **CABELO 2 (DA BLUSA)**: ID 21
-
-### Overlays: Maquiagem
-- **BLUSH: Bochechas**: ID OVERLAY
-- **BLUSH: Nariz**: ID OVERLAY
-- **BLUSH: Testas**: ID OVERLAY
-
-### Roupas: Superiores
-- **REGATA**: ID 16
-- **BLUSA CANELADA**: ID 13
-
-### Roupas: Inferiores
-- **SHORTS**: ID 17
-- **CALÇA JEANS**: ID 14
-
-### Calçados
-- **HAVAIANAS**: ID 15
-- **TÊNIS**: ID 18

@@ -150,7 +150,8 @@
                 "olho1a": "#aaaaaa"
               },
               "obs": "Apenas textura-overlay",
-              "concluido": true
+              "concluido": true,
+              "dff_id": "OVERLAY"
             }
           ]
         },
@@ -184,7 +185,8 @@
                 "meyebrow6a": "#aaaaaa"
               },
               "obs": "Textura Branca",
-              "concluido": true
+              "concluido": true,
+              "dff_id": "OVERLAY"
             },
             {
               "id": "OVERLAY2",
@@ -193,7 +195,8 @@
                 "meyebrow6b": "#aaaaaa"
               },
               "obs": "Textura Branca",
-              "concluido": true
+              "concluido": true,
+              "dff_id": "OVERLAY"
             },
             {
               "id": "OVERLAY3",
@@ -202,7 +205,8 @@
                 "meyebrow6c": "#aaaaaa"
               },
               "obs": "Textura Branca",
-              "concluido": true
+              "concluido": true,
+              "dff_id": "OVERLAY"
             }
           ]
         },
@@ -218,7 +222,8 @@
                 "barba2a": "#aaaaaa"
               },
               "obs": "Cavanhaque e Bigode",
-              "concluido": true
+              "concluido": true,
+              "dff_id": "OVERLAY"
             },
             {
               "id": "OVERLAY2",
@@ -227,7 +232,8 @@
                 "barba3a": "#aaaaaa"
               },
               "obs": "Cavanhaque e Bigode",
-              "concluido": true
+              "concluido": true,
+              "dff_id": "OVERLAY"
             },
             {
               "id": "OVERLAY3",
@@ -236,7 +242,8 @@
                 "barba18a": "#aaaaaa"
               },
               "obs": "Barba Completa",
-              "concluido": true
+              "concluido": true,
+              "dff_id": "OVERLAY"
             }
           ]
         },
@@ -322,7 +329,8 @@
                 "havaianas1ov": "#aaaaaa"
               },
               "obs": "Apenas textura-overlay",
-              "concluido": true
+              "concluido": true,
+              "dff_id": "OVERLAY"
             }
           ]
         }
@@ -344,18 +352,23 @@
           "resumo_texturas": "Malha Base",
           "itens": [
             {
-              "dff_id": "00",
+              "dff_id": "05",
               "id": "face021",
               "nome": "FACE BASE (Sem Cílios)",
               "texturas": {
-                "fface1a": "#b08070",
-                "fface1b": "#906050",
-                "fface1c": "#302010"
+                "fface3a": "#b08070",
+                "fface3b": "#906050",
+                "fface3c": "#302010"
               },
               "obs": "Base",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "malhas": [],
+              "hides": [],
+              "triangulos": [
+                2700
+              ]
             },
             {
               "id": "torso",
@@ -369,7 +382,14 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": true,
-              "dff_id": "06"
+              "dff_id": "00",
+              "malhas": [
+                "torso"
+              ],
+              "hides": [],
+              "triangulos": [
+                6928
+              ]
             },
             {
               "id": "pernas",
@@ -383,7 +403,14 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": true,
-              "dff_id": "04"
+              "dff_id": "07",
+              "malhas": [
+                "pernas"
+              ],
+              "hides": [],
+              "triangulos": [
+                1724
+              ]
             },
             {
               "id": "calcinha",
@@ -395,7 +422,14 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
-              "dff_id": "11"
+              "dff_id": "12",
+              "malhas": [
+                "calcinha"
+              ],
+              "hides": [],
+              "triangulos": [
+                212
+              ]
             },
             {
               "id": "sutia",
@@ -407,7 +441,14 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
-              "dff_id": "12"
+              "dff_id": "13",
+              "malhas": [
+                "sutia"
+              ],
+              "hides": [],
+              "triangulos": [
+                922
+              ]
             },
             {
               "id": "pernas_calca",
@@ -420,7 +461,15 @@
               "obs": "Carregado pela calça",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false
+              "visivel_padrao": false,
+              "dff_id": "06",
+              "malhas": [
+                "pernas_calca"
+              ],
+              "hides": [],
+              "triangulos": [
+                1022
+              ]
             },
             {
               "id": "torso_blusa",
@@ -434,7 +483,14 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
-              "dff_id": "07"
+              "dff_id": "01",
+              "malhas": [
+                "torso_blusa"
+              ],
+              "hides": [],
+              "triangulos": [
+                5454
+              ]
             },
             {
               "id": "pernas_shorts",
@@ -448,7 +504,74 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
-              "dff_id": "05"
+              "dff_id": "08",
+              "malhas": [
+                "pernas_shorts"
+              ],
+              "hides": [],
+              "triangulos": [
+                1582
+              ]
+            },
+            {
+              "id": "cilios1",
+              "nome": "CÍLIOS (FACE 1)",
+              "texturas": {
+                "fcilios1a": "#000000"
+              },
+              "malhas": [
+                "cilios1"
+              ],
+              "hides": [],
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": false,
+              "dff_id": "09",
+              "triangulos": [
+                128
+              ],
+              "hide_ui": true,
+              "obs": "Integrado à Face 1"
+            },
+            {
+              "id": "cilios2",
+              "nome": "CÍLIOS (FACE 2)",
+              "texturas": {
+                "fcilios1a": "#000000"
+              },
+              "malhas": [
+                "cilios2"
+              ],
+              "hides": [],
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": false,
+              "dff_id": "10",
+              "triangulos": [
+                128
+              ],
+              "hide_ui": true,
+              "obs": "Integrado à Face 2"
+            },
+            {
+              "id": "cilios3",
+              "nome": "CÍLIOS (FACE 3)",
+              "texturas": {
+                "fcilios1a": "#000000"
+              },
+              "malhas": [
+                "cilios3"
+              ],
+              "hides": [],
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": false,
+              "dff_id": "11",
+              "triangulos": [
+                128
+              ],
+              "hide_ui": true,
+              "obs": "Integrado à Face 3"
             }
           ],
           "exclusive": false
@@ -467,7 +590,8 @@
                 "fface1c": "#302010"
               },
               "malhas": [
-                "cilios1"
+                "cilios1",
+                "face1"
               ],
               "hides": [
                 "face021"
@@ -475,7 +599,10 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
-              "dff_id": "01"
+              "dff_id": "02",
+              "triangulos": [
+                2700
+              ]
             },
             {
               "id": "face2",
@@ -486,7 +613,8 @@
                 "fface2c": "#302010"
               },
               "malhas": [
-                "cilios2"
+                "cilios2",
+                "face2"
               ],
               "hides": [
                 "face021"
@@ -494,7 +622,10 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": true,
-              "dff_id": "02"
+              "dff_id": "03",
+              "triangulos": [
+                2700
+              ]
             },
             {
               "id": "face3",
@@ -505,7 +636,8 @@
                 "fface3c": "#302010"
               },
               "malhas": [
-                "cilios3"
+                "cilios3",
+                "face3"
               ],
               "hides": [
                 "face021"
@@ -513,7 +645,10 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
-              "dff_id": "03"
+              "dff_id": "04",
+              "triangulos": [
+                2700
+              ]
             }
           ],
           "exclusive": true
@@ -533,7 +668,9 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
-              "dff_id": "OVERLAY"
+              "dff_id": "OVERLAY",
+              "malhas": [],
+              "hides": []
             },
             {
               "id": "cabelo1",
@@ -548,7 +685,14 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
-              "dff_id": "19"
+              "dff_id": "20",
+              "malhas": [
+                "cabelo1"
+              ],
+              "hides": [],
+              "triangulos": [
+                3082
+              ]
             },
             {
               "id": "cabelo2",
@@ -563,7 +707,14 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": true,
-              "dff_id": "20"
+              "dff_id": "22",
+              "malhas": [
+                "cabelo2"
+              ],
+              "hides": [],
+              "triangulos": [
+                2995
+              ]
             },
             {
               "id": "overlay",
@@ -577,7 +728,9 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
-              "dff_id": "OVERLAY"
+              "dff_id": "OVERLAY",
+              "malhas": [],
+              "hides": []
             },
             {
               "id": "cabelo2_blusa",
@@ -592,7 +745,14 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
-              "dff_id": "21"
+              "dff_id": "21",
+              "malhas": [
+                "cabelo2_blusa"
+              ],
+              "hides": [],
+              "triangulos": [
+                5990
+              ]
             }
           ],
           "exclusive": true
@@ -613,7 +773,9 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
-              "dff_id": "OVERLAY"
+              "dff_id": "OVERLAY",
+              "malhas": [],
+              "hides": []
             },
             {
               "id": "overlay",
@@ -625,7 +787,9 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
-              "dff_id": "OVERLAY"
+              "dff_id": "OVERLAY",
+              "malhas": [],
+              "hides": []
             },
             {
               "id": "overlay",
@@ -637,7 +801,9 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
-              "dff_id": "OVERLAY"
+              "dff_id": "OVERLAY",
+              "malhas": [],
+              "hides": []
             }
           ],
           "exclusive": false
@@ -657,7 +823,14 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": true,
-              "dff_id": "16"
+              "dff_id": "18",
+              "malhas": [
+                "regata"
+              ],
+              "hides": [],
+              "triangulos": [
+                1194
+              ]
             },
             {
               "id": "blusa",
@@ -669,13 +842,18 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
-              "malhas": [],
+              "malhas": [
+                "blusa"
+              ],
               "hides": [],
               "cond_malhas": {
                 "cabelo2": "cabelo2_blusa",
                 "torso": "torso_blusa"
               },
-              "dff_id": "13"
+              "dff_id": "16",
+              "triangulos": [
+                3770
+              ]
             }
           ],
           "exclusive": true
@@ -695,12 +873,17 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
-              "malhas": [],
+              "malhas": [
+                "shorts"
+              ],
               "hides": [],
               "cond_malhas": {
                 "pernas": "pernas_shorts"
               },
-              "dff_id": "17"
+              "dff_id": "19",
+              "triangulos": [
+                4054
+              ]
             },
             {
               "id": "calca",
@@ -719,7 +902,13 @@
               "cond_malhas": {
                 "pernas": "pernas_calca"
               },
-              "dff_id": "14"
+              "dff_id": "17",
+              "malhas": [
+                "calca"
+              ],
+              "triangulos": [
+                674
+              ]
             }
           ],
           "exclusive": true
@@ -739,7 +928,14 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": false,
-              "dff_id": "15"
+              "dff_id": "15",
+              "malhas": [
+                "havaianas"
+              ],
+              "hides": [],
+              "triangulos": [
+                472
+              ]
             },
             {
               "id": "tenis",
@@ -751,7 +947,14 @@
               "concluido": true,
               "status": "done",
               "visivel_padrao": true,
-              "dff_id": "18"
+              "dff_id": "14",
+              "malhas": [
+                "tenis"
+              ],
+              "hides": [],
+              "triangulos": [
+                1667
+              ]
             }
           ],
           "exclusive": true
