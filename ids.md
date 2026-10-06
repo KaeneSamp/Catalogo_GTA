@@ -38,16 +38,16 @@
 |:---|:---|:---|:---|:---|:---|:---|
 | **00** | ✅ | 👤 Corpo Base | **BRACOS (COMPLETO)** | `fbracos1a`, `fbracos1b`, `fbracos1c` | Requer ID `00` | Sem blusa |
 | **01** | ✅ | 👤 Corpo Base | **BRAÇOS (DA BLUSA)** | `fbracos1a`, `fbracos1b`, `fbracos1c` | Requer ID `01` | Carregado pela blusa |
-| **02** | ✅ | 👩 Rostos | **FACE 1** | `fface1a`, `fface1b`, `fface1c` | Requer ID `09`<br>Requer ID `02` | - |
+| **02** | ✅ | 👩 Rostos | **FACE 1** | `fface1a`, `fface1b`, `fface1c` | Requer ID `11`<br>Requer ID `02` | - |
 | **03** | ✅ | 👩 Rostos | **FACE 2** | `fface2a`, `fface2b`, `fface2c` | Requer ID `10`<br>Requer ID `03` | - |
-| **04** | ✅ | 👩 Rostos | **FACE 3** | `fface3a`, `fface3b`, `fface3c` | Requer ID `11`<br>Requer ID `04` | - |
+| **04** | ✅ | 👩 Rostos | **FACE 3** | `fface3a`, `fface3b`, `fface3c` | Requer ID `09`<br>Requer ID `04` | - |
 | **05** | ✅ | 👤 Corpo Base | **FACE BASE (Sem Cílios)** | `fface3a`, `fface3b`, `fface3c` | - | Base |
 | **06** | ✅ | 👤 Corpo Base | **PERNAS (DA CALÇA)** | `fpernas1a`, `fpernas1b`, `fpernas1c` | Requer ID `06` | Carregado pela calça |
 | **07** | ✅ | 👤 Corpo Base | **PERNAS (COMPLETO)** | `fpernas1a`, `fpernas1b`, `fpernas1c` | Requer ID `07` | Base |
 | **08** | ✅ | 👤 Corpo Base | **PERNAS (DO SHORTS)** | `fpernas1a`, `fpernas1b`, `fpernas1c` | Requer ID `08` | Carregado pelo shorts |
-| **09** | ✅ | 👤 Corpo Base | **CÍLIOS (FACE 1)** | `fcilios1a` | Requer ID `09` | Integrado à Face 1 |
+| **09** | ✅ | 👤 Corpo Base | **CÍLIOS (FACE 3)** | `fcilios1a` | Requer ID `09` | Integrado à Face 3 |
 | **10** | ✅ | 👤 Corpo Base | **CÍLIOS (FACE 2)** | `fcilios1a` | Requer ID `10` | Integrado à Face 2 |
-| **11** | ✅ | 👤 Corpo Base | **CÍLIOS (FACE 3)** | `fcilios1a` | Requer ID `11` | Integrado à Face 3 |
+| **11** | ✅ | 👤 Corpo Base | **CÍLIOS (FACE 1)** | `fcilios1a` | Requer ID `11` | Integrado à Face 1 |
 | **12** | ✅ | 👤 Corpo Base | **CALCINHA** | `calcinha1a` | Requer ID `12` | Calcinha |
 | **13** | ✅ | 👤 Corpo Base | **SUTIÃ** | `sutian1a` | Requer ID `13` | Sutiã |
 | **14** | ✅ | 👠 Calçados | **TÊNIS** | `ftenis1a` | Requer ID `14` | 2 texturas |
