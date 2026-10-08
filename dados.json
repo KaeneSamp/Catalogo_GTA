@@ -649,6 +649,20 @@
               "triangulos": [
                 2700
               ]
+            },
+            {
+              "id": "overlay",
+              "nome": "OLHO",
+              "texturas": {
+                "folho1a": "#ffffff"
+              },
+              "obs": "Textura Branca",
+              "concluido": true,
+              "status": "done",
+              "visivel_padrao": false,
+              "dff_id": "OVERLAY",
+              "malhas": [],
+              "hides": []
             }
           ],
           "exclusive": true

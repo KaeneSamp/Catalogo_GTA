@@ -5,7 +5,7 @@
     },
     "sys_cache_02.dat": {
         "name": "sutia",
-        "texture": "sutian1a.png"
+        "texture": null
     },
     "sys_cache_03.dat": {
         "name": "torso",
@@ -13,81 +13,73 @@
     },
     "sys_cache_04.dat": {
         "name": "calcinha",
-        "texture": "calcinha1a.png"
+        "texture": null
     },
     "sys_cache_05.dat": {
         "name": "face021",
         "texture": "fface1a.png"
     },
     "sys_cache_06.dat": {
-        "name": "cilios1",
-        "texture": null
+        "name": "cilios2",
+        "texture": "fcilios1a.png"
     },
     "sys_cache_07.dat": {
-        "name": "face1",
-        "texture": "fface1a.png"
-    },
-    "sys_cache_08.dat": {
-        "name": "cilios2",
-        "texture": null
-    },
-    "sys_cache_09.dat": {
         "name": "face2",
         "texture": "fface2a.png"
     },
-    "sys_cache_10.dat": {
+    "sys_cache_08.dat": {
         "name": "cilios3",
-        "texture": null
+        "texture": "fcilios1a.png"
     },
-    "sys_cache_11.dat": {
+    "sys_cache_09.dat": {
         "name": "face3",
         "texture": "fface3a.png"
     },
-    "sys_cache_12.dat": {
+    "sys_cache_10.dat": {
         "name": "tenis",
         "texture": "ftenis1a.png"
     },
-    "sys_cache_13.dat": {
+    "sys_cache_11.dat": {
         "name": "regata",
         "texture": "fregata1a.png"
     },
-    "sys_cache_14.dat": {
+    "sys_cache_12.dat": {
         "name": "havaianas",
         "texture": "havaianas1a.png"
     },
-    "sys_cache_15.dat": {
+    "sys_cache_13.dat": {
         "name": "blusa",
         "texture": "fblusa1a.png"
     },
-    "sys_cache_16.dat": {
+    "sys_cache_14.dat": {
         "name": "torso_blusa",
         "texture": "fbracos1a.png"
     },
-    "sys_cache_17.dat": {
+    "sys_cache_15.dat": {
         "name": "cabelo2_blusa",
         "texture": "fcabelo2a.png"
     },
-    "sys_cache_18.dat": {
+    "sys_cache_16.dat": {
         "name": "shorts",
         "texture": "fshorts1a.png"
     },
-    "sys_cache_19.dat": {
+    "sys_cache_17.dat": {
         "name": "pernas_shorts",
         "texture": "fpernas1a.png"
     },
-    "sys_cache_20.dat": {
+    "sys_cache_18.dat": {
         "name": "pernas_calca",
         "texture": "fpernas1a.png"
     },
-    "sys_cache_21.dat": {
+    "sys_cache_19.dat": {
         "name": "calca",
         "texture": "fjeans1a.png"
     },
-    "sys_cache_22.dat": {
+    "sys_cache_20.dat": {
         "name": "cabelo1",
         "texture": "fcabelo1a.png"
     },
-    "sys_cache_23.dat": {
+    "sys_cache_21.dat": {
         "name": "cabelo2",
         "texture": "fcabelo2a.png"
     }

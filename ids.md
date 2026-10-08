@@ -59,6 +59,7 @@
 | **20** | ✅ | 💇‍♀️ Cabelos | **CABELO 1 (Rabo de Cavalo/Longo)** | `fcabelo1a`, `fcabelo1b`, `fcabelo1c`, `fcabelo1d` | Requer ID `20` | Diversos/Branco |
 | **21** | ✅ | 💇‍♀️ Cabelos | **CABELO 2 (DA BLUSA)** | `fcabelo2a`, `fcabelo2b`, `fcabelo2c`, `fcabelo2d` | Requer ID `21` | Carregado pela blusa |
 | **22** | ✅ | 💇‍♀️ Cabelos | **CABELO 2 (Cacheado/Longo)** | `fcabelo2a`, `fcabelo2b`, `fcabelo2c`, `fcabelo2d` | Requer ID `22` | Diversos/Branco |
+| **OVERLAY** | ✅ | 👩 Rostos | **OLHO** | `folho1a` | - | Textura Branca |
 | **OVERLAY** | ✅ | 💇‍♀️ Cabelos | **OVERLAY CABELO** | `fcabeloov1` | - | Textura Branca |
 | **OVERLAY** | ✅ | 💇‍♀️ Cabelos | **SOBRANCELHA 1** | `feyebrow1a`, `feyebrow1b`, `feyebrow1c` | - | Textura Branca |
 | **OVERLAY** | ✅ | 💄 Overlays: Maquiagem | **BLUSH: Bochechas** | `fmake1a`, `fmake1b` | - | Textura Branca |
