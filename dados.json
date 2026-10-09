@@ -161,7 +161,7 @@
           "resumo_texturas": "Todas Brancas",
           "itens": [
             {
-              "id": "-",
+              "id": "17",
               "nome": "CABELO 1",
               "texturas": {
                 "mcabelo3a": "#aaaaaa"
@@ -170,7 +170,7 @@
               "concluido": true
             },
             {
-              "id": "-",
+              "id": "18",
               "nome": "CABELO 2",
               "texturas": {
                 "mcabelo14a": "#aaaaaa"
@@ -438,7 +438,7 @@
               "obs": "Sutiã",
               "concluido": true,
               "status": "done",
-              "visivel_padrao": false,
+              "visivel_padrao": true,
               "dff_id": "13",
               "malhas": [
                 "sutia"
