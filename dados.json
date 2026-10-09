@@ -306,8 +306,8 @@
               "id": "12",
               "nome": "HAVAIANA",
               "texturas": {
-                "havaiana1a": "#aaaaaa",
-                "havaiana1b": "#aaaaaa"
+                "havaianas1a": "#aaaaaa",
+                "havaianas1b": "#aaaaaa"
               },
               "obs": "2 texturas",
               "concluido": true

@@ -16,7 +16,7 @@
 | **09** | ✅ | 🩳 1 Bermuda + 1 Calca | **BERMUDA 1** | `bermuda1a` | - | 2 texturas |
 | **10** | ✅ | 👤 Corpo Base (3 tons de pele) | **PERNAS (PRA CALCA)** | `mpernas1a`, `mpernas1b`, `mpernas1c` | - | Base |
 | **11** | ✅ | 🩳 1 Bermuda + 1 Calca | **CALCA 1** | `calca1a` | - | 3 texturas |
-| **12** | ✅ | 👟 1 Havaiana + 1 Tênis | **HAVAIANA** | `havaiana1a`, `havaiana1b` | - | 2 texturas |
+| **12** | ✅ | 👟 1 Havaiana + 1 Tênis | **HAVAIANA** | `havaianas1a`, `havaianas1b` | - | 2 texturas |
 | **13** | ✅ | 👟 1 Havaiana + 1 Tênis | **TÊNIS** | `tenis1a`, `tenis1b` | - | 2 texturas |
 | **14** | ✅ | 🧑 3 Modelos de Face | **FACE1** | `mface45a`, `mface45b`, `mface45c` | - | Base |
 | **15** | ✅ | 🧑 3 Modelos de Face | **FACE2** | `mface24a`, `mface24b`, `mface24c` | - | Base |
