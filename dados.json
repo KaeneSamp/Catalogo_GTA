@@ -317,7 +317,7 @@
               "texturas": {
                 "tenis1a": "#aaaaaa"
               },
-              "obs": "2 texturas",
+              "obs": "Textura Branca",
               "concluido": true
             },
             {
@@ -967,6 +967,16 @@
               "triangulos": [
                 1667
               ]
+            },
+            {
+              "id": "OVERLAY",
+              "nome": "EXTRA",
+              "texturas": {
+                "havaianas1ov": "#aaaaaa"
+              },
+              "obs": "Apenas textura-overlay",
+              "concluido": true,
+              "dff_id": "OVERLAY"
             }
           ],
           "exclusive": true

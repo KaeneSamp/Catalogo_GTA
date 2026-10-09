@@ -17,7 +17,7 @@
 | **10** | ✅ | 👤 Corpo Base (3 tons de pele) | **PERNAS (PRA CALCA)** | `mpernas1a`, `mpernas1b`, `mpernas1c` | - | Base |
 | **11** | ✅ | 🩳 1 Bermuda + 1 Calca | **CALCA 1** | `calca1a` | - | 3 texturas |
 | **12** | ✅ | 👟 1 Havaiana + 1 Tênis | **HAVAIANA** | `havaianas1a` | - | Textura Branca + Overlay |
-| **13** | ✅ | 👟 1 Havaiana + 1 Tênis | **TÊNIS** | `tenis1a` | - | 2 texturas |
+| **13** | ✅ | 👟 1 Havaiana + 1 Tênis | **TÊNIS** | `tenis1a` | - | Textura Branca |
 | **14** | ✅ | 🧑 3 Modelos de Face | **FACE1** | `mface45a`, `mface45b`, `mface45c` | - | Base |
 | **15** | ✅ | 🧑 3 Modelos de Face | **FACE2** | `mface24a`, `mface24b`, `mface24c` | - | Base |
 | **16** | ✅ | 🧑 3 Modelos de Face | **FACE3** | `mface8a`, `mface8b`, `mface8c` | - | Base |
@@ -65,4 +65,5 @@
 | **OVERLAY** | ✅ | 💄 Overlays: Maquiagem | **BLUSH: Bochechas** | `fmake1a`, `fmake1b` | - | Textura Branca |
 | **OVERLAY** | ✅ | 💄 Overlays: Maquiagem | **BLUSH: Nariz** | `fmake2a` | - | Textura Branca |
 | **OVERLAY** | ✅ | 💄 Overlays: Maquiagem | **BLUSH: Testas** | `fmake3a` | - | Textura Branca |
+| **OVERLAY** | ✅ | 👠 Calçados | **EXTRA** | `havaianas1ov` | - | Apenas textura-overlay |
 
