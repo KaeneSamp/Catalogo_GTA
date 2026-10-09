@@ -307,9 +307,9 @@
               "nome": "HAVAIANA",
               "texturas": {
                 "havaianas1a": "#aaaaaa",
-                "havaianas1b": "#aaaaaa"
+                "havaianas1ov": "#aaaaaa"
               },
-              "obs": "2 texturas",
+              "obs": "Textura Branca + Overlay",
               "concluido": true
             },
             {
