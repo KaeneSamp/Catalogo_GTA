@@ -65,7 +65,7 @@
               "id": "04",
               "nome": "CUECA",
               "texturas": {
-                "mcueca1": "#aaaaaa"
+                "mcueca1a": "#aaaaaa"
               },
               "obs": "Base",
               "concluido": true
@@ -316,8 +316,7 @@
               "id": "13",
               "nome": "TÊNIS",
               "texturas": {
-                "tenis1a": "#aaaaaa",
-                "tenis1b": "#aaaaaa"
+                "tenis1a": "#aaaaaa"
               },
               "obs": "2 texturas",
               "concluido": true
