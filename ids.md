@@ -41,24 +41,25 @@
 | **02** | ✅ | 👩 Rostos | **FACE 1** | `fface1a`, `fface1b`, `fface1c` | Requer ID `11`<br>Requer ID `02` | - |
 | **03** | ✅ | 👩 Rostos | **FACE 2** | `fface2a`, `fface2b`, `fface2c` | Requer ID `10`<br>Requer ID `03` | - |
 | **04** | ✅ | 👩 Rostos | **FACE 3** | `fface3a`, `fface3b`, `fface3c` | Requer ID `09`<br>Requer ID `04` | - |
-| **05** | ✅ | 👤 Corpo Base | **FACE BASE (Sem Cílios)** | `fface3a`, `fface3b`, `fface3c` | - | Base |
+| **05** | ✅ | 👤 Corpo Base | **FACE BASE** | `fface1a`, `fface1b`, `fface1c` | Requer ID `12`<br>Requer ID `05` | Base |
 | **06** | ✅ | 👤 Corpo Base | **PERNAS (DA CALÇA)** | `fpernas1a`, `fpernas1b`, `fpernas1c` | Requer ID `06` | Carregado pela calça |
 | **07** | ✅ | 👤 Corpo Base | **PERNAS (COMPLETO)** | `fpernas1a`, `fpernas1b`, `fpernas1c` | Requer ID `07` | Base |
 | **08** | ✅ | 👤 Corpo Base | **PERNAS (DO SHORTS)** | `fpernas1a`, `fpernas1b`, `fpernas1c` | Requer ID `08` | Carregado pelo shorts |
 | **09** | ✅ | 👤 Corpo Base | **CÍLIOS (FACE 3)** | `fcilios1a` | Requer ID `09` | Integrado à Face 3 |
 | **10** | ✅ | 👤 Corpo Base | **CÍLIOS (FACE 2)** | `fcilios1a` | Requer ID `10` | Integrado à Face 2 |
 | **11** | ✅ | 👤 Corpo Base | **CÍLIOS (FACE 1)** | `fcilios1a` | Requer ID `11` | Integrado à Face 1 |
-| **12** | ✅ | 👤 Corpo Base | **CALCINHA** | `calcinha1a` | Requer ID `12` | Calcinha |
-| **13** | ✅ | 👤 Corpo Base | **SUTIÃ** | `sutian1a` | Requer ID `13` | Sutiã |
-| **14** | ✅ | 👠 Calçados | **TÊNIS** | `ftenis1a` | Requer ID `14` | 2 texturas |
-| **15** | ✅ | 👠 Calçados | **HAVAIANAS** | `havaianas1a` | Requer ID `15` | Textura Branca |
-| **16** | ✅ | 👚 Roupas: Superiores | **BLUSA CANELADA** | `fblusa1a` | Se ID `22` -> Usar ID `21`<br>Se ID `00` -> Usar ID `01`<br>Requer ID `16` | Textura Branca |
-| **17** | ✅ | 👗 Roupas: Inferiores | **CALÇA JEANS** | `fjeans1a`, `fjeans1b`, `fjeans1c`, `fjeans1d` | Se ID `07` -> Usar ID `06`<br>Requer ID `17` | 4 texturas |
-| **18** | ✅ | 👚 Roupas: Superiores | **REGATA** | `fregata1a` | Requer ID `18` | Textura Branca |
-| **19** | ✅ | 👗 Roupas: Inferiores | **SHORTS** | `fshorts1a` | Se ID `07` -> Usar ID `08`<br>Requer ID `19` | Textura Branca |
-| **20** | ✅ | 💇‍♀️ Cabelos | **CABELO 1 (Rabo de Cavalo/Longo)** | `fcabelo1a`, `fcabelo1b`, `fcabelo1c`, `fcabelo1d` | Requer ID `20` | Diversos/Branco |
-| **21** | ✅ | 💇‍♀️ Cabelos | **CABELO 2 (DA BLUSA)** | `fcabelo2a`, `fcabelo2b`, `fcabelo2c`, `fcabelo2d` | Requer ID `21` | Carregado pela blusa |
-| **22** | ✅ | 💇‍♀️ Cabelos | **CABELO 2 (Cacheado/Longo)** | `fcabelo2a`, `fcabelo2b`, `fcabelo2c`, `fcabelo2d` | Requer ID `22` | Diversos/Branco |
+| **12** | ✅ | 👤 Corpo Base | **CÍLIOS (FACE BASE)** | `fcilios1a` | Requer ID `12` | Integrado à Face Base |
+| **13** | ✅ | 👤 Corpo Base | **CALCINHA** | `calcinha1a` | Requer ID `13` | Calcinha |
+| **14** | ✅ | 👤 Corpo Base | **SUTIÃ** | `sutian1a` | Requer ID `14` | Sutiã |
+| **15** | ✅ | 👠 Calçados | **TÊNIS** | `ftenis1a` | Requer ID `15` | 2 texturas |
+| **16** | ✅ | 👠 Calçados | **HAVAIANAS** | `havaianas1a` | Requer ID `16` | Textura Branca |
+| **17** | ✅ | 👚 Roupas: Superiores | **BLUSA CANELADA** | `fblusa1a` | Se ID `23` -> Usar ID `22`<br>Se ID `00` -> Usar ID `01`<br>Requer ID `17` | Textura Branca |
+| **18** | ✅ | 👗 Roupas: Inferiores | **CALÇA JEANS** | `fjeans1a`, `fjeans1b`, `fjeans1c`, `fjeans1d` | Se ID `07` -> Usar ID `06`<br>Requer ID `18` | 4 texturas |
+| **19** | ✅ | 👚 Roupas: Superiores | **REGATA** | `fregata1a` | Requer ID `19` | Textura Branca |
+| **20** | ✅ | 👗 Roupas: Inferiores | **SHORTS** | `fshorts1a` | Se ID `07` -> Usar ID `08`<br>Requer ID `20` | Textura Branca |
+| **21** | ✅ | 💇‍♀️ Cabelos | **CABELO 1 (Rabo de Cavalo/Longo)** | `fcabelo1a`, `fcabelo1b`, `fcabelo1c`, `fcabelo1d` | Requer ID `21` | Diversos/Branco |
+| **22** | ✅ | 💇‍♀️ Cabelos | **CABELO 2 (DA BLUSA)** | `fcabelo2a`, `fcabelo2b`, `fcabelo2c`, `fcabelo2d` | Requer ID `22` | Carregado pela blusa |
+| **23** | ✅ | 💇‍♀️ Cabelos | **CABELO 2 (Cacheado/Longo)** | `fcabelo2a`, `fcabelo2b`, `fcabelo2c`, `fcabelo2d` | Requer ID `23` | Diversos/Branco |
 | **OVERLAY** | ✅ | 👩 Rostos | **OLHO** | `folho1a` | - | Textura Branca |
 | **OVERLAY** | ✅ | 💇‍♀️ Cabelos | **OVERLAY CABELO** | `fcabeloov1` | - | Textura Branca |
 | **OVERLAY** | ✅ | 💇‍♀️ Cabelos | **SOBRANCELHA 1** | `feyebrow1a`, `feyebrow1b`, `feyebrow1c` | - | Textura Branca |
